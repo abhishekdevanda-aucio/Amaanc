@@ -7,28 +7,28 @@ const industries = [
     title: "Financial Services",
     description: "Digital banking, wealth management, and regulatory compliance solutions.",
     href: "/industries/financial-services",
-    image: "/images/home/modern-bank-office-interior-with-digital-screens.jpg",
+    image: "/placeholder.svg",
   },
   {
     icon: Stethoscope,
     title: "Healthcare",
     description: "Patient engagement, care coordination, and health data management.",
     href: "/industries/healthcare",
-    image: "/images/home/modern-hospital-reception-with-digital-technology.jpg",
+    image: "/placeholder.svg",
   },
   {
     icon: Factory,
     title: "Manufacturing",
     description: "Supply chain optimization, IoT integration, and smart factory solutions.",
     href: "/industries/manufacturing",
-    image: "/images/home/modern-manufacturing-facility-with-robotics.jpg",
+    image: "/placeholder.svg",
   },
   {
     icon: ShoppingCart,
     title: "Retail & E-commerce",
     description: "Omnichannel experiences, customer 360, and personalization at scale.",
     href: "/industries/retail",
-    image: "/images/home/modern-retail-store-with-digital-signage.jpg",
+    image: "/placeholder.svg",
   },
 ]
 

@@ -8,7 +8,7 @@ const testimonials = [
     author: "Sarah Chen",
     title: "CTO",
     company: "Global Financial Services",
-    image: "/images/home/professional-woman-headshot.png",
+    image: "/placeholder.svg",
   },
   {
     quote:
@@ -16,7 +16,7 @@ const testimonials = [
     author: "Dr. Michael Roberts",
     title: "Chief Digital Officer",
     company: "Regional Healthcare Network",
-    image: "/images/home/professional-man-headshot-portrait-doctor.jpg",
+    image: "/placeholder.svg",
   },
   {
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
     author: "Jennifer Walsh",
     title: "VP of Technology",
     company: "Fortune 500 Retailer",
-    image: "/images/home/professional-woman-executive-headshot.png",
+    image: "/placeholder.svg",
   },
 ]
 

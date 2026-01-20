@@ -9,7 +9,7 @@ const caseStudies = [
     client: "Fortune 500 Bank",
     industry: "Financial Services",
     results: ["40% increase in sales efficiency", "60% faster customer onboarding", "$2M annual savings"],
-    image: "/images/home/banking-dashboard-analytics-interface.jpg",
+    image: "/placeholder.svg",
     href: "/case-studies/global-bank-transformation",
   },
   {
@@ -17,7 +17,7 @@ const caseStudies = [
     client: "Regional Healthcare Network",
     industry: "Healthcare",
     results: ["Unified 15 hospital systems", "Real-time patient data access", "30% reduction in admin time"],
-    image: "/images/home/healthcare-data-visualization-dashboard.jpg",
+    image: "/placeholder.svg",
     href: "/case-studies/healthcare-integration",
   },
   {
@@ -25,7 +25,7 @@ const caseStudies = [
     client: "Global Manufacturer",
     industry: "Manufacturing",
     results: ["25% reduction in downtime", "Predictive maintenance enabled", "15% cost savings"],
-    image: "/images/home/smart-factory-dashboard-with-iot-sensors.jpg",
+    image: "/placeholder.svg",
     href: "/case-studies/manufacturing-ai",
   },
 ]
