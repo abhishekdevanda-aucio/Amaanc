@@ -23,7 +23,9 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <Header />
-        {children}
+        <main className="flex-1 relative">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

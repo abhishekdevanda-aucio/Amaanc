@@ -78,7 +78,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
+                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -92,7 +92,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.industries.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
+                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm">
+                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -153,7 +153,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-background/60 hover:text-background transition-colors"
+                  className="text-sm text-background/60 hover:text-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm"
                 >
                   {link.label}
                 </Link>
