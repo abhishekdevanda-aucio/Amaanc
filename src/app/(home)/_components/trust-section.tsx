@@ -1,5 +1,4 @@
 import { Building2, Landmark, Factory, TrainFront, Briefcase, ShoppingBag, ShieldCheck } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const industries = [
     { icon: <Landmark className="w-6 h-6" />, name: "Finance" },

@@ -2,22 +2,24 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 
 const caseStudies = [
   {
     title: "Global Bank Digital Transformation",
     client: "Fortune 500 Bank",
     industry: "Financial Services",
-    results: ["40% increase in sales efficiency", "60% faster customer onboarding", "$2M annual savings"],
+    description: "Modernized legacy systems to enable real-time personalized banking experiences.",
+    results: ["40% sales efficiency", "60% faster onboarding"],
     image: "/placeholder.svg",
     href: "/case-studies/global-bank-transformation",
   },
   {
     title: "Healthcare System Integration",
-    client: "Regional Healthcare Network",
+    client: "Regional Network",
     industry: "Healthcare",
-    results: ["Unified 15 hospital systems", "Real-time patient data access", "30% reduction in admin time"],
+    description: "Unified patient data across 15 hospitals for seamless care delivery.",
+    results: ["Real-time data access", "30% admin reduction"],
     image: "/placeholder.svg",
     href: "/case-studies/healthcare-integration",
   },
@@ -25,7 +27,8 @@ const caseStudies = [
     title: "Manufacturing AI Implementation",
     client: "Global Manufacturer",
     industry: "Manufacturing",
-    results: ["25% reduction in downtime", "Predictive maintenance enabled", "15% cost savings"],
+    description: "Predictive maintenance powered by AI to reduce costly downtime.",
+    results: ["25% less downtime", "$2M annual savings"],
     image: "/placeholder.svg",
     href: "/case-studies/manufacturing-ai",
   },
@@ -33,18 +36,89 @@ const caseStudies = [
 
 export function CaseStudiesTeaser() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Case Studies</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-balance">Real Results for Real Businesses</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
+              Success Stories
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
+              Real Results for Real Businesses
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               Discover how we&apos;ve helped enterprises transform their operations and achieve measurable outcomes.
             </p>
           </div>
-          <Button variant="outline" asChild className="shrink-0 bg-transparent">
+          <Button variant="outline" asChild className="shrink-0 hidden md:inline-flex group">
+            <Link href="/case-studies">
+              View All Case Studies
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
+
+        {/* Balanced Grid Layout */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {caseStudies.map((study) => (
+            <Link
+              key={study.title}
+              href={study.href}
+              className="group flex flex-col bg-background border border-border/50 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full"
+            >
+              {/* Image Container */}
+              <div className="aspect-video relative overflow-hidden bg-muted">
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4">
+                  <div className="h-10 w-10 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <ArrowUpRight className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 md:p-8 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-4">
+                  <Badge variant="secondary" className="font-medium">
+                    {study.industry}
+                  </Badge>
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    {study.client}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
+                  {study.title}
+                </h3>
+
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+                  {study.description}
+                </p>
+
+                {/* KPI/Results Footer */}
+                <div className="pt-5 border-t border-border/50 space-y-2">
+                  {study.results.map((result, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
+                      <div className="h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
+                      {result}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile View All Button */}
+        <div className="mt-10 md:hidden text-center">
+          <Button variant="outline" asChild className="w-full">
             <Link href="/case-studies">
               View All Case Studies
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -52,71 +126,6 @@ export function CaseStudiesTeaser() {
           </Button>
         </div>
 
-        {/* Featured Case Study */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          <Link
-            href={caseStudies[0].href}
-            className="group relative overflow-hidden rounded-xl bg-card border border-border/50 hover:shadow-xl transition-all"
-          >
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src={caseStudies[0].image || "/placeholder.svg"}
-                alt={caseStudies[0].title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-6">
-              <Badge variant="secondary" className="mb-3">
-                {caseStudies[0].industry}
-              </Badge>
-              <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                {caseStudies[0].title}
-              </h3>
-              <p className="text-muted-foreground mb-4">{caseStudies[0].client}</p>
-              <ul className="space-y-2">
-                {caseStudies[0].results.map((result) => (
-                  <li key={result} className="flex items-center gap-2 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {result}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Link>
-
-          {/* Secondary Case Studies */}
-          <div className="flex flex-col gap-6">
-            {caseStudies.slice(1).map((study) => (
-              <Link
-                key={study.title}
-                href={study.href}
-                className="group flex gap-4 p-4 rounded-xl bg-card border border-border/50 hover:shadow-lg transition-all"
-              >
-                <div className="w-32 h-24 rounded-lg overflow-hidden shrink-0 relative">
-                  <Image
-                    src={study.image || "/placeholder.svg"}
-                    alt={study.title}
-                    fill
-                    sizes="128px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <Badge variant="secondary" className="mb-2 text-xs">
-                    {study.industry}
-                  </Badge>
-                  <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors line-clamp-2">
-                    {study.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{study.client}</p>
-                </div>
-                <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 mt-1" />
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
