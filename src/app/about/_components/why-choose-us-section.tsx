@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Trophy, Users, Zap, ShieldCheck, Globe, Clock, Lightbulb } from "lucide-react";
+import { CheckCircle2, Trophy, Users, Zap, ShieldCheck } from "lucide-react";
 
 export function WhyChooseUsSection() {
     return (
@@ -28,7 +28,7 @@ export function WhyChooseUsSection() {
 
                         <CardContent className="relative z-10 space-y-6">
                             <p className="text-white/90 text-lg leading-relaxed max-w-md">
-                                We've evolved from a boutique agency to a global digital powerhouse. Our journey is defined by the businesses we've transformed and the innovations we've pioneered.
+                                We&apos;ve evolved from a boutique agency to a global digital powerhouse. Our journey is defined by the businesses we&apos;ve transformed and the innovations we&apos;ve pioneered.
                             </p>
 
                             <div className="grid grid-cols-2 gap-4 pt-4">

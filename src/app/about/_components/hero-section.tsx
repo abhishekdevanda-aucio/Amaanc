@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Target, Zap } from "lucide-react";
+import { Users, Target, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {

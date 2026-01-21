@@ -17,7 +17,7 @@ export function CTASection() {
                     Ready to Transform Your Business?
                 </h2>
                 <p className="text-lg md:text-xl text-primary-foreground/90 max-w-[600px] mx-auto leading-relaxed">
-                    Let's discuss how we can help you achieve your goals with our tailored solutions.
+                    Let&apos;s discuss how we can help you achieve your goals with our tailored solutions.
                     Join the hundreds of businesses growing with Amaanc.
                 </p>
 

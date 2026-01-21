@@ -16,7 +16,7 @@ export function MissionSection() {
                                 Driven by a Passion for <span className="text-primary">Solutions</span>
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                At Amaanc, we describe ourselves as "Solution Junkies." We don't just write code; we solve complex business
+                                At Amaanc, we describe ourselves as &quot;Solution Junkies.&quot; We don&apos;t just write code; we solve complex business
                                 problems. Since 2012, we have been dedicated to helping businesses leverage technology to streamline
                                 operations and drive growth.
                             </p>

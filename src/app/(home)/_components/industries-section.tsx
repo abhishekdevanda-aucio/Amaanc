@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Building2, Stethoscope, Factory, ShoppingCart } from "lucide-react"
 
 const industries = [
@@ -57,10 +58,12 @@ export function IndustriesSection() {
               <div className="flex flex-col md:flex-row">
                 {/* Image */}
                 <div className="md:w-2/5 h-48 md:h-auto relative overflow-hidden">
-                  <img
+                  <Image
                     src={industry.image || "/placeholder.svg"}
                     alt={industry.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors" />
                 </div>

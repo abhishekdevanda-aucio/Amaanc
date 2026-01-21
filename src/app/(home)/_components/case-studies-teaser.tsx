@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
@@ -58,10 +59,12 @@ export function CaseStudiesTeaser() {
             className="group relative overflow-hidden rounded-xl bg-card border border-border/50 hover:shadow-xl transition-all"
           >
             <div className="aspect-video overflow-hidden">
-              <img
+              <Image
                 src={caseStudies[0].image || "/placeholder.svg"}
                 alt={caseStudies[0].title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6">
@@ -91,11 +94,13 @@ export function CaseStudiesTeaser() {
                 href={study.href}
                 className="group flex gap-4 p-4 rounded-xl bg-card border border-border/50 hover:shadow-lg transition-all"
               >
-                <div className="w-32 h-24 rounded-lg overflow-hidden shrink-0">
-                  <img
+                <div className="w-32 h-24 rounded-lg overflow-hidden shrink-0 relative">
+                  <Image
                     src={study.image || "/placeholder.svg"}
                     alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="128px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="flex-1 min-w-0">
