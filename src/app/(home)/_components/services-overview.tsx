@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Cloud, Brain, Workflow, Code2 } from "lucide-react"
 
@@ -43,12 +44,18 @@ export function ServicesOverview() {
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-4">
         {/* Section Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider">Our Services</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-balance">
-            Comprehensive Solutions for Digital Transformation
+          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
+            Our Services
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
+            Comprehensive Solutions for <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
+              Digital Transformation
+            </span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             From Salesforce expertise to AI-powered innovation, we deliver end-to-end solutions that drive measurable
             business outcomes.
           </p>

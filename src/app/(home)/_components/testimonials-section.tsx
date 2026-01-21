@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
 const testimonials = [
@@ -9,7 +10,7 @@ const testimonials = [
     author: "Sarah Chen",
     title: "CTO",
     company: "Global Financial Services",
-    image: "/placeholder.svg",
+    image: "/images/home/testimonial-1.webp",
   },
   {
     quote:
@@ -17,7 +18,7 @@ const testimonials = [
     author: "Dr. Michael Roberts",
     title: "Chief Digital Officer",
     company: "Regional Healthcare Network",
-    image: "/placeholder.svg",
+    image: "/images/home/testimonial-2.webp",
   },
   {
     quote:
@@ -25,7 +26,7 @@ const testimonials = [
     author: "Jennifer Walsh",
     title: "VP of Technology",
     company: "Fortune 500 Retailer",
-    image: "/placeholder.svg",
+    image: "/images/home/testimonial-3.jpg",
   },
 ]
 
@@ -35,9 +36,16 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-medium text-primary-foreground/80 uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-balance">What Our Clients Say</h2>
-          <p className="text-background/70 text-lg leading-relaxed">
+          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-background/20 bg-background/10 text-background backdrop-blur-sm">
+            Testimonials
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-background">
+            What Our <br className="hidden md:block" />
+            <span className="text-primary-foreground">
+              Clients Say
+            </span>
+          </h2>
+          <p className="text-background/80 text-lg leading-relaxed">
             Don&apos;t just take our word for it. Here&apos;s what our enterprise clients have to say about working with
             Amaanc.
           </p>
@@ -58,7 +66,7 @@ export function TestimonialsSection() {
                     alt={testimonial.author}
                     width={48}
                     height={48}
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover aspect-square h-12 w-12"
                   />
                   <div>
                     <div className="font-semibold text-background">{testimonial.author}</div>

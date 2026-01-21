@@ -11,7 +11,7 @@ const caseStudies = [
     industry: "Financial Services",
     description: "Modernized legacy systems to enable real-time personalized banking experiences.",
     results: ["40% sales efficiency", "60% faster onboarding"],
-    image: "/placeholder.svg",
+    image: "/images/home/case-study-global-bank-digital-transformation.png",
     href: "/case-studies/global-bank-transformation",
   },
   {
@@ -20,7 +20,7 @@ const caseStudies = [
     industry: "Healthcare",
     description: "Unified patient data across 15 hospitals for seamless care delivery.",
     results: ["Real-time data access", "30% admin reduction"],
-    image: "/placeholder.svg",
+    image: "/images/home/case-study-healthcare-system-integration.webp",
     href: "/case-studies/healthcare-integration",
   },
   {
@@ -29,7 +29,7 @@ const caseStudies = [
     industry: "Manufacturing",
     description: "Predictive maintenance powered by AI to reduce costly downtime.",
     results: ["25% less downtime", "$2M annual savings"],
-    image: "/placeholder.svg",
+    image: "/images/home/case-study-manufacturing-ai-implementation.webp",
     href: "/case-studies/manufacturing-ai",
   },
 ]

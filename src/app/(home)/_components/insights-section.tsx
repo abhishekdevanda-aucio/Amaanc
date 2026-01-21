@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-// Mock data for insights - in a real app this would come from a CMS
 const insights = [
     {
         title: "The Future of AI in Enterprise Salesforce Implementations",
@@ -11,7 +11,7 @@ const insights = [
         date: "Mar 15, 2024",
         author: "Abhishek Devanda",
         category: "AI & Salesforce",
-        color: "bg-blue-500",
+        image: "/images/home/insight-ai-salesforce.jpg",
     },
     {
         title: "Navigating Compliance in Regulated Markets",
@@ -19,7 +19,7 @@ const insights = [
         date: "Mar 10, 2024",
         author: "Expert Team",
         category: "Compliance",
-        color: "bg-green-500",
+        image: "/images/home/insight-compliance.jpg",
     },
     {
         title: "Optimizing Multi-Cloud Architectures for Scale",
@@ -27,7 +27,7 @@ const insights = [
         date: "Feb 28, 2024",
         author: "Tech Lead",
         category: "Architecture",
-        color: "bg-purple-500",
+        image: "/images/home/insight-architecture.webp",
     },
 ];
 
@@ -60,9 +60,14 @@ export function InsightsSection() {
                         >
                             {/* Abstract Cover Image Placeholder */}
                             <div className="h-48 w-full bg-muted relative overflow-hidden">
-                                <div className={`absolute inset-0 opacity-10 ${insight.color} mix-blend-multiply`} />
-                                <div className="absolute inset-0 bg-linear-to-t from-card to-transparent" />
-                                <Badge className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm text-foreground hover:bg-background">
+                                <Image
+                                    src={insight.image}
+                                    alt={insight.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors" />
+                                <Badge className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground hover:bg-background shadow-sm">
                                     {insight.category}
                                 </Badge>
                             </div>
