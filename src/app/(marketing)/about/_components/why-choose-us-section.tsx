@@ -8,7 +8,7 @@ export function WhyChooseUsSection() {
             <div className="container px-4 md:px-6">
                 <div className="text-center mb-16 space-y-4 animate-in slide-in-from-bottom duration-700">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Why Partner with Amaanc?</h2>
-                    <p className="text-muted-foreground max-w-[700px] mx-auto text-lg md:text-xl">
+                    <p className="text-muted-foreground max-w-175 mx-auto text-lg md:text-xl">
                         We blend technical expertise with business acumen to deliver solutions that matter.
                     </p>
                 </div>

@@ -49,7 +49,7 @@ export function MissionSection() {
                         </div>
                     </div>
 
-                    <div className="relative lg:h-[600px] h-[400px] rounded-2xl overflow-hidden border bg-background shadow-2xl animate-in slide-in-from-right duration-700 delay-200 group">
+                    <div className="relative lg:h-150 h-100 rounded-2xl overflow-hidden border bg-background shadow-2xl animate-in slide-in-from-right duration-700 delay-200 group">
                         <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-background to-accent/5" />
 
                         {/* Abstract Visual Elements */}
@@ -57,7 +57,7 @@ export function MissionSection() {
 
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-8">
                             {/* Floating Elements Animation */}
-                            <div className="relative w-full max-w-[300px] aspect-square">
+                            <div className="relative w-full max-w-75 aspect-square">
                                 <div className="absolute top-0 right-0 p-4 bg-card rounded-xl shadow-lg animate-bounce delay-100 border">
                                     <Users className="h-8 w-8 text-primary" />
                                 </div>

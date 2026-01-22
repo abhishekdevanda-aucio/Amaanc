@@ -8,15 +8,15 @@ export function CTASection() {
             {/* Background with Gradient */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-primary" />
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-black/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
+                <div className="absolute top-0 right-0 w-200 h-200 bg-accent/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-150 h-150 bg-black/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
             </div>
 
             <div className="container px-4 md:px-6 text-center space-y-8 relative z-10">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary-foreground max-w-2xl mx-auto">
                     Ready to Transform Your Business?
                 </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 max-w-[600px] mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-primary-foreground/90 max-w-150 mx-auto leading-relaxed">
                     Let&apos;s discuss how we can help you achieve your goals with our tailored solutions.
                     Join the hundreds of businesses growing with Amaanc.
                 </p>
