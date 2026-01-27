@@ -1,0 +1,38 @@
+
+"use client"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { IconPlus } from "@tabler/icons-react"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { IndustryForm } from "./industry-form"
+
+export function IndustryDialog() {
+    const [open, setOpen] = useState(false)
+
+    return (
+        <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+                <Button>
+                    <IconPlus className="mr-2 size-4" /> Add Industry
+                </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                    <DialogTitle>Add New Industry</DialogTitle>
+                    <DialogDescription>
+                        Create a new industry vertical.
+                    </DialogDescription>
+                </DialogHeader>
+                <IndustryForm setOpen={setOpen} />
+            </DialogContent>
+        </Dialog>
+    )
+}

@@ -2,7 +2,6 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
 
 export type AuthState = {
     error?: string;
@@ -31,13 +30,11 @@ export async function signInWithEmail(
         return { error: error.message };
     }
 
-    revalidatePath("/", "layout");
     redirect("/dashboard");
 }
 
 export async function signOut(): Promise<void> {
     const supabase = await createClient();
     await supabase.auth.signOut();
-    revalidatePath("/", "layout");
     redirect("/login");
 }
