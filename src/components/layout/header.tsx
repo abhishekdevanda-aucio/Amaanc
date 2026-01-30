@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -15,6 +14,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/layout/logo"
 
 const services = [
   {
@@ -70,16 +70,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center">
-              <Image
-                src="/logo/amaanc-logo.png"
-                alt="Amaanc Logo"
-                width={40}
-                height={40}
-                className="h-8 w-auto object-contain"
-                priority
-              />
-              <span className="ml-1 text-2xl font-bold text-primary">Amaanc</span>
-              <span className="ml-2 text-xs text-muted-foreground hidden sm:block">Since 2012</span>
+              <Logo />
             </div>
           </Link>
 

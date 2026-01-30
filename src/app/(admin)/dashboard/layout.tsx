@@ -4,6 +4,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { getSession } from "@/lib/isAuthenticated"
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -21,14 +22,20 @@ export default async function DashboardLayout({
   }
 
   return (
-    <SidebarProvider>
-      <DashboardSidebar user={user} />
-      <SidebarInset>
-        <DashboardHeader />
-        <div className="flex flex-1 flex-col">
-          {children}
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      disableTransitionOnChange
+    >
+      <SidebarProvider>
+        <DashboardSidebar user={user} />
+        <SidebarInset>
+          <DashboardHeader />
+          <div className="flex flex-1 flex-col">
+            {children}
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </ThemeProvider>
   )
 }

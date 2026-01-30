@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Cloud, Sparkles, Workflow } from "lucide-react";
+import { Logo } from "@/components/layout/logo";
 
 export function LoginBranding() {
     return (
@@ -17,15 +17,7 @@ export function LoginBranding() {
             <div className="relative z-10 flex flex-col justify-between h-full p-12 text-primary-foreground">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <Image
-                        src="/logo/amaanc-logo.png"
-                        alt="Amaanc Logo"
-                        width={40}
-                        height={40}
-                        className="h-10 w-auto object-contain brightness-0 invert"
-                        priority
-                    />
-                    <span className="text-2xl font-bold">Amaanc</span>
+                    <Logo className="brightness-0 invert"/>
                 </Link>
 
                 {/* Center Content */}

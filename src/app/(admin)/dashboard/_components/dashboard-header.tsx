@@ -13,6 +13,7 @@ import {
 import { usePathname } from "next/navigation"
 import React from "react"
 import Link from "next/link"
+import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 export function DashboardHeader() {
   const pathname = usePathname()
@@ -24,41 +25,42 @@ export function DashboardHeader() {
   const cleanSegments = segments.filter(s => s !== '(admin)')
 
   return (
-    <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
-      <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
-        <SidebarTrigger className="-ml-1" />
-        <Separator
-          orientation="vertical"
-          className="mx-2 data-[orientation=vertical]:h-4"
-        />
+    <header className="sticky top-0 z-50 flex h-16 shrink-0 items-center gap-2 border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-16">
+      <div className="flex w-full items-center gap-2 px-4">
+        <div className="flex items-center gap-2">
+          <SidebarTrigger className="-ml-1" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 h-4"
+          />
+          <Breadcrumb>
+            <BreadcrumbList>
+              {cleanSegments.map((segment, index) => {
+                const href = `/${cleanSegments.slice(0, index + 1).join('/')}`
+                const isLast = index === cleanSegments.length - 1
+                const title = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ')
 
-        <Breadcrumb>
-          <BreadcrumbList>
-            {cleanSegments.map((segment, index) => {
-              const href = `/${cleanSegments.slice(0, index + 1).join('/')}`
-              const isLast = index === cleanSegments.length - 1
-              const title = segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' ')
-
-              return (
-                <React.Fragment key={href}>
-                  <BreadcrumbItem className="hidden md:block">
-                    {isLast ? (
-                      <BreadcrumbPage>{title}</BreadcrumbPage>
-                    ) : (
-                      <BreadcrumbLink asChild>
-                        <Link href={href}>{title}</Link>
-                      </BreadcrumbLink>
-                    )}
-                  </BreadcrumbItem>
-                  {!isLast && <BreadcrumbSeparator className="hidden md:block" />}
-                </React.Fragment>
-              )
-            })}
-          </BreadcrumbList>
-        </Breadcrumb>
+                return (
+                  <React.Fragment key={href}>
+                    <BreadcrumbItem className="hidden md:block">
+                      {isLast ? (
+                        <BreadcrumbPage>{title}</BreadcrumbPage>
+                      ) : (
+                        <BreadcrumbLink asChild>
+                          <Link href={href}>{title}</Link>
+                        </BreadcrumbLink>
+                      )}
+                    </BreadcrumbItem>
+                    {!isLast && <BreadcrumbSeparator className="hidden md:block" />}
+                  </React.Fragment>
+                )
+              })}
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
 
         <div className="ml-auto flex items-center gap-2">
-          {/* Add useful actions here later */}
+          <ThemeToggle />
         </div>
       </div>
     </header>
