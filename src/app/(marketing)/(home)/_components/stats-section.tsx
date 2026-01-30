@@ -38,7 +38,7 @@ export function StatsSection() {
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white leading-tight">
               Seeking Expert <br />
-              <span className="text-accent/90">Salesforce Development</span> Services?
+              <span className="text-primary-foreground">Salesforce Development</span> Services?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
               Partner with a team that has delivered excellence for over a decade. We transform complex requirements into scalable solutions.

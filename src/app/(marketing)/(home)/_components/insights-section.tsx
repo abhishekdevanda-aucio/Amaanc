@@ -35,7 +35,7 @@ export function InsightsSection() {
     return (
         <section className="py-24 bg-background">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6 text-center md:text-left">
                     <div className="max-w-2xl">
                         <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
                             Thought Leadership
@@ -44,7 +44,7 @@ export function InsightsSection() {
                             Ideas & Insights
                         </h2>
                     </div>
-                    <Link href="/insights" className="inline-flex">
+                    <Link href="/blogs" className="hidden md:inline-flex">
                         <Button variant="outline" className="group inline-flex items-center">
                             View All Articles
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -102,6 +102,15 @@ export function InsightsSection() {
                             </div>
                         </article>
                     ))}
+                </div>
+
+                <div className="mt-12 flex justify-center md:hidden">
+                    <Link href="/blogs" className="inline-flex w-full sm:w-auto">
+                        <Button variant="outline" className="group inline-flex items-center w-full justify-center">
+                            View All Articles
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>

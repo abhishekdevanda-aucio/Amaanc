@@ -3,24 +3,27 @@ import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react"
 
 const footerLinks = {
   services: [
-    { label: "Salesforce Solutions", href: "/services/salesforce" },
-    { label: "AI & Analytics", href: "/services/ai-analytics" },
-    { label: "System Integration", href: "/services/integration" },
-    { label: "Custom Development", href: "/services/custom-development" },
+    { label: "Core Expertise", href: "/services/core-expertise" },
+    { label: "Enterprise Solutions", href: "/services/enterprise-solutions" },
+    { label: "Design & Development", href: "/services/design-development" },
+    { label: "Implementation & Support", href: "/services/implementation-support" },
+    { label: "Talent & Growth", href: "/services/talent-growth" },
   ],
   industries: [
-    { label: "Financial Services", href: "/industries/financial-services" },
+    { label: "Financial", href: "/industries/financial" },
     { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "Manufacturing", href: "/industries/manufacturing" },
-    { label: "Retail & E-commerce", href: "/industries/retail" },
+    { label: "Banking", href: "/industries/banking" },
+    { label: "Utilities", href: "/industries/utilities" },
+    { label: "Railway", href: "/industries/railway" },
+    { label: "Insurance", href: "/industries/insurance" },
+    { label: "Retail", href: "/industries/retail" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Newsroom", href: "/newsroom" },
+    { label: "Resources", href: "/resources" },
     { label: "Events", href: "/events" },
-    { label: "Careers", href: "/careers" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
