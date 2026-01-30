@@ -55,7 +55,7 @@ export function IndustriesSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
+          <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
             Industries We Serve
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
@@ -113,11 +113,12 @@ export function IndustriesSection() {
           <blockquote className="text-lg md:text-xl text-foreground font-medium italic mb-6">
             &ldquo;While we have deep experience in the industries above, our solutions are adaptable. We welcome the opportunity to partner with clients in any sector seeking digital transformation.&rdquo;
           </blockquote>
-          <Button variant="outline" asChild>
-            <Link href="/contact">
+          <Link href="/contact" className="inline-flex">
+            <Button variant="outline">
               Discuss Your Industry Needs
-            </Link>
-          </Button>
+            </Button>
+          </Link>
+
         </div>
       </div>
     </section>

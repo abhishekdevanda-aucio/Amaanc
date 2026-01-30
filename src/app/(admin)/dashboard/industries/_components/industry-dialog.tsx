@@ -3,7 +3,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { IconPlus } from "@tabler/icons-react"
 import {
     Dialog,
     DialogContent,
@@ -12,16 +11,16 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { IndustryForm } from "./industry-form"
+import { Plus } from "lucide-react"
 
 export function IndustryDialog() {
     const [open, setOpen] = useState(false)
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
+            <DialogTrigger>
                 <Button>
-                    <IconPlus className="mr-2 size-4" /> Add Industry
+                    <Plus className="mr-2 size-4" /> Add Industry
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
@@ -31,7 +30,6 @@ export function IndustryDialog() {
                         Create a new industry vertical.
                     </DialogDescription>
                 </DialogHeader>
-                <IndustryForm setOpen={setOpen} />
             </DialogContent>
         </Dialog>
     )

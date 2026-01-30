@@ -29,24 +29,29 @@ export function CTASection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">
-                  <Calendar className="mr-2 h-5 w-5" />
+              <Link href="/contact" className="inline-flex">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Calendar className="h-5 w-5" />
                   Schedule Consultation
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10"
-                asChild
-              >
-                <Link href="/services">
+                </Button>
+              </Link>
+
+              <Link href="/services" className="inline-flex">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 inline-flex items-center gap-2"
+                >
                   Explore Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
             </div>
+
           </div>
 
           {/* Decorative Elements */}

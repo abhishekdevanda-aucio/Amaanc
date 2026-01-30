@@ -1,6 +1,6 @@
 
 import { createClient } from "@/lib/supabase/server"
-import { CaseStudyDialog } from "./_components/case-study-dialog"
+// import { CaseStudyDialog } from "./_components/case-study-dialog"
 import { CaseStudyList } from "./_components/case-study-list"
 
 export default async function CaseStudiesPage() {
@@ -11,7 +11,7 @@ export default async function CaseStudiesPage() {
         <div className="flex flex-col gap-4 p-4 lg:p-6">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold tracking-tight">Case Studies</h1>
-                <CaseStudyDialog />
+                {/* <CaseStudyDialog /> */}
             </div>
 
             {items && items.length > 0 ? (
@@ -26,7 +26,7 @@ export default async function CaseStudiesPage() {
                             Showcase your success stories.
                         </p>
                         <div className="mt-4">
-                            <CaseStudyDialog />
+                            {/* <CaseStudyDialog /> */}
                         </div>
                     </div>
                 </div>

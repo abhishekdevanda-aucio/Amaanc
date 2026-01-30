@@ -1,4 +1,3 @@
-
 "use client"
 
 import {
@@ -10,10 +9,10 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-import { IconTrash } from "@tabler/icons-react"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
+import { Trash2 } from "lucide-react"
 
 interface CaseStudy {
     id: string
@@ -58,7 +57,7 @@ export function CaseStudyList({ items }: { items: CaseStudy[] }) {
                             <TableCell>{item.slug}</TableCell>
                             <TableCell>
                                 <Button variant="ghost" size="icon" onClick={() => handleDelete(item.id)}>
-                                    <IconTrash className="size-4 text-destructive" />
+                                    <Trash2 className="size-4 text-destructive" />
                                 </Button>
                             </TableCell>
                         </TableRow>

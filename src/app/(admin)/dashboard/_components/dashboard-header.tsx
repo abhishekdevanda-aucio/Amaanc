@@ -46,9 +46,11 @@ export function DashboardHeader() {
                       {isLast ? (
                         <BreadcrumbPage>{title}</BreadcrumbPage>
                       ) : (
-                        <BreadcrumbLink asChild>
-                          <Link href={href}>{title}</Link>
-                        </BreadcrumbLink>
+                        <Link href={href}>
+                          <BreadcrumbLink>
+                            {title}
+                          </BreadcrumbLink>
+                        </Link>
                       )}
                     </BreadcrumbItem>
                     {!isLast && <BreadcrumbSeparator className="hidden md:block" />}

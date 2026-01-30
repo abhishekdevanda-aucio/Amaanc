@@ -10,10 +10,10 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-import { IconTrash } from "@tabler/icons-react"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
+import { Trash2 } from "lucide-react"
 
 interface Service {
     id: string
@@ -59,7 +59,7 @@ export function ServiceList({ services }: { services: Service[] }) {
                             <TableCell>{service.description}</TableCell>
                             <TableCell>
                                 <Button variant="ghost" size="icon" onClick={() => handleDelete(service.id)}>
-                                    <IconTrash className="size-4 text-destructive" />
+                                    <Trash2 className="size-4 text-destructive" />
                                 </Button>
                             </TableCell>
                         </TableRow>

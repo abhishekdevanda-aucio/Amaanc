@@ -16,7 +16,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
 import { toast } from "sonner"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
@@ -82,7 +81,7 @@ export function LeadsList({ leads }: { leads: Lead[] }) {
                                 {lead.message}
                             </TableCell>
                             <TableCell>
-                                <Select defaultValue={lead.status} onValueChange={(val) => handleStatusChange(lead.id, val)}>
+                                <Select defaultValue={lead.status} onValueChange={(val) => handleStatusChange(lead.id, (val || ""))}>
                                     <SelectTrigger className={`w-[130px] h-8 ${getStatusColor(lead.status)}`}>
                                         <SelectValue />
                                     </SelectTrigger>

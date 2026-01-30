@@ -48,7 +48,7 @@ export function WhyAmaancSection() {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
+                    <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
                         Why Choose Us
                     </Badge>
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">

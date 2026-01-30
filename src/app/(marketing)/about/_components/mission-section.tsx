@@ -9,7 +9,7 @@ export function MissionSection() {
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
                     <div className="space-y-8 animate-in slide-in-from-left duration-700 delay-200">
                         <div className="space-y-4">
-                            <Badge variant="secondary" className="text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
+                            <Badge variant="outline" className="p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm animate-in fade-in zoom-in duration-500">
                                 Who We Are
                             </Badge>
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

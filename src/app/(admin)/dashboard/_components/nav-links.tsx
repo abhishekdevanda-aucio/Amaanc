@@ -1,11 +1,4 @@
 "use client"
-
-import {
-  IconDashboard,
-  IconFileDescription,
-  IconFolder,
-  IconUsers,
-} from "@tabler/icons-react"
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -13,6 +6,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { File, Folder, LayoutDashboard, Users } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -20,27 +14,27 @@ const navLinks = [
   {
     title: "Overview",
     url: "/dashboard",
-    icon: IconDashboard,
+    icon: LayoutDashboard,
   },
   {
     title: "Services",
     url: "/dashboard/services",
-    icon: IconFileDescription,
+    icon: File,
   },
   {
     title: "Industries",
     url: "/dashboard/industries",
-    icon: IconFolder,
+    icon: Folder,
   },
   {
     title: "Case Studies",
     url: "/dashboard/case-studies",
-    icon: IconFolder,
+    icon: Folder,
   },
   {
     title: "Leads",
     url: "/dashboard/leads",
-    icon: IconUsers,
+    icon: Users,
   },
 ]
 export function NavLinks() {
@@ -52,12 +46,15 @@ export function NavLinks() {
         <SidebarMenu>
           {navLinks.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title} asChild isActive={pathname === item.url}>
-                <Link href={item.url}>
+              <Link href={item.url} className="block">
+                <SidebarMenuButton
+                  tooltip={item.title}
+                  isActive={pathname === item.url}
+                >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
-                </Link>
-              </SidebarMenuButton>
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>

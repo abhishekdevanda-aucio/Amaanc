@@ -16,12 +16,12 @@ export default function NotFound() {
                 removed, renamed, or doesn&apos;t exist.
             </p>
             <div className="flex gap-2">
-                <Button asChild variant="default" size="lg">
-                    <Link href="/">
+                <Link href="/" className="inline-flex">
+                    <Button size="lg">
                         <MoveLeft className="mr-2 h-4 w-4" />
                         Back to Home
-                    </Link>
-                </Button>
+                    </Button>
+                </Link>
             </div>
         </div>
     );

@@ -36,7 +36,7 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-background/20 bg-background/10 text-background backdrop-blur-sm">
+          <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-background/20 bg-background/10 text-background backdrop-blur-sm">
             Testimonials
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-background">

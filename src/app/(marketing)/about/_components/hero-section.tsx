@@ -7,7 +7,7 @@ export function HeroSection() {
             <div className="container relative z-10 mx-auto px-4 pt-20 pb-16">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
 
-                    <Badge variant="outline" className="px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm animate-in fade-in zoom-in duration-500">
+                    <Badge variant="outline" className="p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm animate-in fade-in zoom-in duration-500">
                         Our Story
                     </Badge>
 

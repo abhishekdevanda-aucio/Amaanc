@@ -22,11 +22,17 @@ export function CTASection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
-                    <Button size="lg" variant="secondary" className="h-14 px-8 text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300" asChild>
-                        <Link href="/contact" className="gap-2">
-                            Get in Touch <ArrowRight className="h-4 w-4" />
-                        </Link>
-                    </Button>
+                    <Link href="/contact" className="inline-flex">
+                        <Button
+                            size="lg"
+                            variant="secondary"
+                            className="h-14 px-8 text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                        >
+                            Get in Touch
+                            <ArrowRight className="h-4 w-4" />
+                        </Button>
+                    </Link>
+
                     <Button
                         size="lg"
                         variant="outline"
@@ -35,6 +41,7 @@ export function CTASection() {
                         View Case Studies
                     </Button>
                 </div>
+
 
                 <p className="text-sm text-primary-foreground/60 pt-8">
                     No credit card required for initial consultation.

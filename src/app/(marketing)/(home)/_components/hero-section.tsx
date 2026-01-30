@@ -18,7 +18,7 @@ export function HeroSection() {
 
           {/* Left Column: Content */}
           <div className="max-w-3xl">
-            <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
+            <Badge variant="outline" className="mb-6 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
               Trusted Salesforce Partner Since 2012
             </Badge>
 
@@ -34,34 +34,42 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Button size="lg" className="h-12 px-8 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105" asChild>
-                <Link href="/contact">
+              <Link href="/contact" className="inline-flex">
+                <Button
+                  size="lg"
+                  className="h-12 px-8 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105 inline-flex items-center gap-2"
+                >
                   Start Transformation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8 text-base border-primary/20 hover:bg-primary/5 transition-all" asChild>
-                <Link href="/case-studies">
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+
+              <Link href="/case-studies" className="inline-flex">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 px-8 text-base border-primary/20 hover:bg-primary/5 transition-all"
+                >
                   View Success Stories
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm font-medium text-muted-foreground mb-4">Trusted by industry leaders in:</p>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Finance & Banking</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Insurance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Utilities & Retail</span>
-                </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <span>Finance & Banking</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <span>Insurance</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <span>Utilities & Retail</span>
+              </div>
             </div>
           </div>
 

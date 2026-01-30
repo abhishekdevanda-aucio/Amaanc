@@ -41,7 +41,7 @@ export function CaseStudiesTeaser() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
+            <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
               Success Stories
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
@@ -51,12 +51,16 @@ export function CaseStudiesTeaser() {
               Discover how we&apos;ve helped enterprises transform their operations and achieve measurable outcomes.
             </p>
           </div>
-          <Button variant="outline" asChild className="shrink-0 hidden md:inline-flex group">
-            <Link href="/case-studies">
+          <Link href="/case-studies" className="shrink-0 hidden md:inline-flex">
+            <Button
+              variant="outline"
+              className="group inline-flex items-center"
+            >
               View All Case Studies
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
+
         </div>
 
         {/* Balanced Grid Layout */}
@@ -118,12 +122,15 @@ export function CaseStudiesTeaser() {
 
         {/* Mobile View All Button */}
         <div className="mt-10 md:hidden text-center">
-          <Button variant="outline" asChild className="w-full">
-            <Link href="/case-studies">
+          <Link href="/case-studies" className="w-full inline-flex">
+            <Button
+              variant="outline"
+              className="w-full inline-flex items-center justify-center gap-2"
+            >
               View All Case Studies
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
       </div>

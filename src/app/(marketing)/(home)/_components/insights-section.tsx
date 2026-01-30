@@ -37,19 +37,19 @@ export function InsightsSection() {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div className="max-w-2xl">
-                        <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
+                        <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
                             Thought Leadership
                         </Badge>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
                             Ideas & Insights
                         </h2>
                     </div>
-                    <Button variant="outline" className="group" asChild>
-                        <Link href="/insights">
+                    <Link href="/insights" className="inline-flex">
+                        <Button variant="outline" className="group inline-flex items-center">
                             View All Articles
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">

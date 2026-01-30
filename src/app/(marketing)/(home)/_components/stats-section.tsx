@@ -43,17 +43,17 @@ export function StatsSection() {
             <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
               Partner with a team that has delivered excellence for over a decade. We transform complex requirements into scalable solutions.
             </p>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="h-14 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 group"
-              asChild
-            >
-              <Link href="/contact">
+            <Link href="/contact" className="inline-flex">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="h-14 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 group inline-flex items-center gap-2"
+              >
                 Book a Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+
           </div>
 
           {/* Right Column: Stats Display */}

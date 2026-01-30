@@ -78,22 +78,23 @@ export function Header() {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent">
+                  Services
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
                     {services.map((service) => (
                       <li key={service.title}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href={service.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                          >
-                            <p className="text-sm font-medium leading-none">{service.title}</p>
+                        <Link href={service.href} className="block">
+                          <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                            <p className="text-sm font-medium leading-none">
+                              {service.title}
+                            </p>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground hover:text-muted">
                               {service.description}
                             </p>
-                          </Link>
-                        </NavigationMenuLink>
+                          </NavigationMenuLink>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -101,19 +102,18 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Industries</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent">
+                  Industries
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-50 gap-2 p-4">
                     {industries.map((industry) => (
                       <li key={industry.title}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href={industry.href}
-                            className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                          >
+                        <Link href={industry.href} className="block">
+                          <NavigationMenuLink className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                             {industry.title}
-                          </Link>
-                        </NavigationMenuLink>
+                          </NavigationMenuLink>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -121,44 +121,45 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/case-studies" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+                <Link href="/case-studies" className="block">
+                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                     Case Studies
-                  </Link>
-                </NavigationMenuLink>
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/about" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+                <Link href="/about" className="block">
+                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                     About
-                  </Link>
-                </NavigationMenuLink>
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link href="/blogs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+                <Link href="/blogs" className="block">
+                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                     Insights
-                  </Link>
-                </NavigationMenuLink>
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
+
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* <Button variant="ghost" asChild>
-              <Link href="/contact">Contact</Link>
-            </Button> */}
-            <Button asChild>
-              <Link href="/contact">Get Started</Link>
-            </Button>
+            <Link href="/contact" className="inline-flex">
+              <Button>
+                Get Started
+              </Button>
+            </Link>
+
           </div>
 
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
+            <SheetTrigger className="lg:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
@@ -166,7 +167,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-75 sm:w-100">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <nav className="flex flex-col gap-4 mt-8">
+              <nav className="flex flex-col gap-4 mt-8 px-6">
                 <MobileNavSection title="Services" items={services} setOpen={setMobileMenuOpen} />
                 <MobileNavSection title="Industries" items={industries} setOpen={setMobileMenuOpen} />
                 <Link
@@ -183,16 +184,15 @@ export function Header() {
                   Insights
                 </Link>
                 <div className="flex flex-col gap-2 mt-4">
-                  {/* <Button variant="outline" asChild>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      Contact
-                    </Link>
-                  </Button> */}
-                  <Button asChild>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="inline-flex"
+                  >
+                    <Button>
                       Get Started
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 </div>
               </nav>
             </SheetContent>

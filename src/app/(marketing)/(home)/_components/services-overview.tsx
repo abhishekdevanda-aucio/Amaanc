@@ -46,7 +46,7 @@ export function ServicesOverview() {
         {/* Section Header */}
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
+          <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
             Our Services
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
@@ -97,12 +97,12 @@ export function ServicesOverview() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild>
-            <Link href="/services">
+          <Link href="/services" className="inline-flex">
+            <Button variant="outline" size="lg" className="inline-flex items-center gap-2">
               View All Services
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
