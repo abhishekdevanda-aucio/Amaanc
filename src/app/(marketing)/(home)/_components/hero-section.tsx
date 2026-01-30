@@ -50,20 +50,18 @@ export function HeroSection() {
             {/* Trust Indicators */}
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm font-medium text-muted-foreground mb-4">Trusted by industry leaders in:</p>
-              <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-foreground/80">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Financial Services</span>
+                  <span>Finance & Banking</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Healthcare</span>
+                  <span>Insurance</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>Manufacturing</span>
+                  <span>Utilities & Retail</span>
                 </div>
-              </div>
             </div>
           </div>
 

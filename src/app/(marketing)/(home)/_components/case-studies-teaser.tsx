@@ -7,30 +7,30 @@ import { ArrowRight, ArrowUpRight } from "lucide-react"
 const caseStudies = [
   {
     title: "Global Bank Digital Transformation",
-    client: "Fortune 500 Bank",
-    industry: "Financial Services",
-    description: "Modernized legacy systems to enable real-time personalized banking experiences.",
-    results: ["40% sales efficiency", "60% faster onboarding"],
+    client: "Major Int'l Bank",
+    industry: "Banking & Finance",
+    description: "Modernized legacy banking systems to enable real-time personalized customer experiences.",
+    results: ["40% efficiency boost", "Faster onboarding"],
     image: "/images/home/case-study-global-bank-digital-transformation.png",
     href: "/case-studies/global-bank-transformation",
   },
   {
-    title: "Healthcare System Integration",
-    client: "Regional Network",
-    industry: "Healthcare",
-    description: "Unified patient data across 15 hospitals for seamless care delivery.",
-    results: ["Real-time data access", "30% admin reduction"],
-    image: "/images/home/case-study-healthcare-system-integration.webp",
-    href: "/case-studies/healthcare-integration",
+    title: "Insurance Claims Automation",
+    client: "National Insurer",
+    industry: "Insurance",
+    description: "Implemented AI-driven claims processing to reduce settlement time and improve fraud detection.",
+    results: ["60% faster claims", "99.9% accuracy"],
+    image: "/images/home/case-study-healthcare-system-integration.webp", // keeping image filename for now to avoid breaking build, ideally rename asset too but out of scope
+    href: "/case-studies/insurance-automation",
   },
   {
-    title: "Manufacturing AI Implementation",
-    client: "Global Manufacturer",
-    industry: "Manufacturing",
-    description: "Predictive maintenance powered by AI to reduce costly downtime.",
-    results: ["25% less downtime", "$2M annual savings"],
-    image: "/images/home/case-study-manufacturing-ai-implementation.webp",
-    href: "/case-studies/manufacturing-ai",
+    title: "Smart Grid Data Management",
+    client: "Regional Utility",
+    industry: "Utilities",
+    description: "Unified data platform for smart meter analytics and predictive grid maintenance.",
+    results: ["25% less outages", "$2M annual savings"],
+    image: "/images/home/case-study-manufacturing-ai-implementation.webp", // keeping image filename for now
+    href: "/case-studies/utilities-grid",
   },
 ]
 

@@ -7,35 +7,35 @@ import { ArrowRight, Cloud, Brain, Workflow, Code2 } from "lucide-react"
 const services = [
   {
     icon: Cloud,
-    title: "Salesforce Solutions",
+    title: "Salesforce Consultancy",
     description:
-      "End-to-end Salesforce implementations including Sales Cloud, Service Cloud, Marketing Cloud, and custom app development.",
+      "Strategic implementation and optimization of Sales Cloud, Service Cloud, and Marketing Cloud to drive customer success.",
     href: "/services/salesforce",
-    features: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "CPQ"],
+    features: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "Einstein AI"],
   },
   {
     icon: Brain,
-    title: "AI & Analytics",
+    title: "Artificial Intelligence",
     description:
-      "Harness the power of artificial intelligence with predictive analytics, machine learning models, and intelligent automation.",
+      "Transforming business operations with predictive analytics, machine learning models, and intelligent automation.",
     href: "/services/ai-analytics",
-    features: ["Predictive Analytics", "ML Models", "Einstein AI", "Data Intelligence"],
+    features: ["Predictive Analytics", "Machine Learning", "Process Automation", "Data Insights"],
   },
   {
     icon: Workflow,
     title: "System Integration",
     description:
-      "Connect your enterprise systems seamlessly with robust API development, middleware solutions, and real-time data sync.",
+      "Seamlessly connecting your enterprise ecosystem with robust API strategies and middleware solutions.",
     href: "/services/integration",
-    features: ["API Development", "MuleSoft", "Data Sync", "Middleware"],
+    features: ["API Development", "MuleSoft", "Legacy Modernization", "Real-time Sync"],
   },
   {
     icon: Code2,
-    title: "Custom Development",
+    title: "Enterprise Solutions",
     description:
-      "Bespoke solutions tailored to your unique business requirements, built with modern technologies and best practices.",
-    href: "/services/custom-development",
-    features: ["Web Apps", "Mobile Apps", "Portals", "Automation"],
+      "End-to-end digital engineering including .NET, SAP consultancy, and custom mobile application development.",
+    href: "/services/enterprise",
+    features: [".NET Consultancy", "SAP Solutions", "Mobile Apps", "UI/UX Design"],
   },
 ]
 
