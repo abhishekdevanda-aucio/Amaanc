@@ -9,6 +9,7 @@ import { StatsSection } from "./_components/stats-section";
 import { TestimonialsSection } from "./_components/testimonials-section";
 import { WhyAmaancSection } from "./_components/why-amaanc-section";
 import { InsightsSection } from "./_components/insights-section";
+import { TechExpertiseSection } from "./_components/tech-expertise-section";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <HowWeAreDifferentSection />
       <HowWeWorkSection />
       <CaseStudiesTeaser />
+      <TechExpertiseSection />
       <InsightsSection />
       <TestimonialsSection />
       <CTASection />

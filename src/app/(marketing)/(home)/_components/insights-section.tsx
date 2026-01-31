@@ -33,7 +33,7 @@ const insights = [
 
 export function InsightsSection() {
     return (
-        <section className="py-24 bg-background">
+        <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6 text-center md:text-left">
                     <div className="max-w-2xl">

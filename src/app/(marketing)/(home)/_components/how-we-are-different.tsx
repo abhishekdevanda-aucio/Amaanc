@@ -55,6 +55,7 @@ export function HowWeAreDifferentSection() {
             return
         }
 
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCurrent(api.selectedScrollSnap())
 
         api.on("select", () => {
@@ -74,7 +75,7 @@ export function HowWeAreDifferentSection() {
     const activeFeature = features[current] || features[0]
 
     return (
-        <section className="py-16 lg:py-24 bg-primary text-primary-foreground overflow-hidden relative">
+        <section className="py-20 bg-primary text-primary-foreground overflow-hidden relative">
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center max-w-7xl mx-auto px-4 lg:px-8">
 
@@ -141,7 +142,7 @@ export function HowWeAreDifferentSection() {
                     {/* Right Column */}
                     <div className="flex flex-col justify-center space-y-6 lg:pr-12 min-h-[350px]">
                         <Badge variant="outline" className="w-fit p-4 border-white/20 bg-white/5 text-primary-foreground/90 font-medium tracking-wide mb-6">
-                            We're Different
+                            We&apos;re Different
                         </Badge>
 
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" key={current}>

@@ -51,7 +51,7 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-secondary/30">
+    <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -92,12 +92,14 @@ export function IndustriesSection() {
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <industry.icon className="h-5 w-5 text-primary" />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <industry.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                    {industry.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {industry.title}
-                </h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed text-sm flex-1">{industry.description}</p>
                 <span className="inline-flex items-center text-sm font-medium text-primary mt-auto">
                   Explore Solutions

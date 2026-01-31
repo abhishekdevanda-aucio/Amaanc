@@ -4,7 +4,7 @@ import { ArrowRight, Calendar } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="relative overflow-hidden rounded-2xl bg-primary p-8 md:p-12 lg:p-16">
           {/* Background Pattern */}

@@ -22,7 +22,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-12 container mx-auto px-4">
+    <section className="py-20 container mx-auto px-4">
       <div className="relative rounded-[2.5rem] overflow-hidden bg-primary text-primary-foreground shadow-2xl">
         {/* Background Patterns */}
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%,transparent_100%)] bg-size-[250%_250%] animate-gradient-slow" />

@@ -5,12 +5,10 @@ import {
     Briefcase,
     Layers,
     History,
-    ArrowUpRight,
     TrendingUp,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 const features = [
     {
@@ -97,7 +95,7 @@ const features = [
 
 export function WhyAmaancSection() {
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="py-20 bg-background relative overflow-hidden">
             {/* Background Decorators */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/3 rounded-full blur-[120px] -z-10" />
 
@@ -111,7 +109,7 @@ export function WhyAmaancSection() {
                         The Amaanc <span className="text-primary">Advantage</span>
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        We don't just implement software; we transform businesses. Here is why industry leaders trust us with their critical digital infrastructure.
+                        We don&apos;t just implement software; we transform businesses. Here is why industry leaders trust us with their critical digital infrastructure.
                     </p>
                 </div>
 
@@ -129,10 +127,13 @@ export function WhyAmaancSection() {
 
                             <div className="relative z-10 flex flex-col h-full w-full">
                                 {/* Header: Icon + Action */}
-                                <div className="flex justify-between items-start mb-6">
-                                    <div className="p-3.5 rounded-2xl bg-muted/50 border border-border/50 group-hover:bg-background group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="p-3.5 rounded-2xl bg-muted/50 border border-border/50 group-hover:bg-background group-hover:scale-110 group-hover:shadow-md transition-all duration-300 shrink-0">
                                         {feature.icon}
                                     </div>
+                                    <h3 className="text-xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
+                                        {feature.title}
+                                    </h3>
                                 </div>
 
                                 {/* Content */}
@@ -141,9 +142,7 @@ export function WhyAmaancSection() {
                                         {feature.subtitle}
                                     </Badge>
 
-                                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
-                                        {feature.title}
-                                    </h3>
+
 
                                     <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl">
                                         {feature.description}
