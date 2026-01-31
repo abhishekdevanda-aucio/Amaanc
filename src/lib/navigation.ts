@@ -11,6 +11,10 @@ export type NavigationItem = {
 
 export const navigationData: NavigationItem[] = [
     {
+        title: "Home",
+        href: "/",
+    },
+    {
         title: "Services",
         href: "/services",
         description: "Explore our complete service portfolio and detailed solutions.",
