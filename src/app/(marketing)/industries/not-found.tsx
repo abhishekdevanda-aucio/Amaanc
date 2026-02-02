@@ -16,8 +16,8 @@ export default function NotFound() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/industries" className="inline-flex">
-                    <Button size="lg" className="shadow-lg hover:scale-105 transition-transform">
-                        <ArrowLeft className="mr-2 h-4 w-4" />
+                    <Button size="lg" className="shadow-lg hover:scale-105 transition-transform gap-1">
+                        <ArrowLeft className="h-4 w-4" />
                         View All Industries
                     </Button>
                 </Link>

@@ -15,9 +15,9 @@ export default function NotFound() {
                 Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
             <div className="flex gap-2">
-                <Link href="/" className="inline-flex">
+                <Link href="/" className="inline-flex gap-1">
                     <Button size="lg">
-                        <MoveLeft className="mr-2 h-4 w-4" />
+                        <MoveLeft className="h-4 w-4" />
                         Back to Home
                     </Button>
                 </Link>

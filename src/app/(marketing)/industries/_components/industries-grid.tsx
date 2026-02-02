@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { industries } from "@/lib/data/industries";
 import { ArrowRight } from "lucide-react";
+import { Industry, resolveIcon } from "@/lib/data/industries";
 
-export function IndustriesGrid() {
+interface IndustriesGridProps {
+    industries: Industry[];
+}
+
+export function IndustriesGrid({ industries }: IndustriesGridProps) {
     return (
         <section className="py-20 bg-secondary/30">
             <div className="container px-4 md:px-6 mx-auto">
@@ -17,8 +21,8 @@ export function IndustriesGrid() {
                             {/* Image Header */}
                             <div className="h-48 relative overflow-hidden shrink-0">
                                 <Image
-                                    src={industry.image || "/placeholder.svg"}
-                                    alt={industry.title}
+                                    src={industry.imageUrl || "/placeholder.svg"}
+                                    alt={industry.name}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 33vw"
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -30,10 +34,12 @@ export function IndustriesGrid() {
                             <div className="p-6 flex flex-col flex-1 relative">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                        <industry.icon className="h-5 w-5 text-primary" />
-                                    </div>
+                                        {(() => {
+                                            const Icon = resolveIcon(industry.icon);
+                                            return <Icon className="h-5 w-5 text-primary" />;
+                                        })()}                                    </div>
                                     <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                                        {industry.title}
+                                        {industry.name}
                                     </h3>
                                 </div>
 

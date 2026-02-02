@@ -30,7 +30,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
-                            {industry.title} <br className="hidden md:block" />
+                            {industry.name} <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
                                 Transformation
                             </span>
@@ -77,8 +77,8 @@ export function DetailHero({ industry }: DetailHeroProps) {
                             <div className="relative z-10 rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
                                 <div className="aspect-square md:aspect-4/3 relative">
                                     <Image
-                                        src={industry.image || "/placeholder.svg"}
-                                        alt={industry.title}
+                                        src={industry.imageUrl || "/placeholder.svg"}
+                                        alt={industry.name}
                                         fill
                                         className="object-cover hover:scale-105 transition-transform duration-1000"
                                         priority

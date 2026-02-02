@@ -26,7 +26,7 @@ export function DetailChallenges({ industry }: DetailChallengesProps) {
                     </h2>
 
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        We don&apos;t just identify problems; we architect the definitive solutions that move {industry.title} leaders forward.
+                        We don&apos;t just identify problems; we architect the definitive solutions that move {industry.name} leaders forward.
                     </p>
                 </div>
 

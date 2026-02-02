@@ -6,7 +6,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { File, Folder, LayoutDashboard, Users } from "lucide-react"
+import { BookOpenText, Briefcase, Factory, Image, LayoutDashboard, Users } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -17,19 +17,24 @@ const navLinks = [
     icon: LayoutDashboard,
   },
   {
-    title: "Services",
-    url: "/dashboard/services",
-    icon: File,
+    title: "Assets",
+    url: "/dashboard/assets",
+    icon: Image,
   },
   {
     title: "Industries",
     url: "/dashboard/industries",
-    icon: Folder,
+    icon: Factory,
+  },
+  {
+    title: "Services",
+    url: "/dashboard/services",
+    icon: Briefcase,
   },
   {
     title: "Case Studies",
     url: "/dashboard/case-studies",
-    icon: Folder,
+    icon: BookOpenText,
   },
   {
     title: "Leads",

@@ -9,7 +9,7 @@ interface DetailTestimonialProps {
 
 export function DetailTestimonial({ industry }: DetailTestimonialProps) {
     const testimonials = industry.testimonials
-    if (testimonials.length === 0) return null;
+    if (!testimonials || testimonials.length === 0) return null;
 
     return (
         <section className="py-24 bg-background relative overflow-hidden">
@@ -22,7 +22,7 @@ export function DetailTestimonial({ industry }: DetailTestimonialProps) {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
                         Trusted by Leaders in <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            {industry.title}
+                            {industry.name}
                         </span>
                     </h2>
                 </div>

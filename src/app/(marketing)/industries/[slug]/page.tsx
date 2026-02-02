@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { industries } from "@/lib/data/industries";
+import { getIndustries, getIndustryBySlug } from "@/lib/data/industries";
 import { DetailHero } from "./_components/detail-hero";
 import { DetailOverview } from "./_components/detail-overview";
 import { DetailStats } from "./_components/detail-stats";
@@ -14,7 +14,9 @@ interface PageProps {
     }>;
 }
 
+// Generate params for all published industries at build time
 export async function generateStaticParams() {
+    const industries = await getIndustries();
     return industries.map((industry) => ({
         slug: industry.slug,
     }));
@@ -22,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params;
-    const industry = industries.find((i) => i.slug === slug);
+    const industry = await getIndustryBySlug(slug);
 
     if (!industry) {
         return {
@@ -31,14 +33,14 @@ export async function generateMetadata({ params }: PageProps) {
     }
 
     return {
-        title: `${industry.title} | Amaanc`,
+        title: `${industry.name} | Amaanc`,
         description: industry.description,
     };
 }
 
 export default async function IndustryPage({ params }: PageProps) {
     const { slug } = await params;
-    const industry = industries.find((i) => i.slug === slug);
+    const industry = await getIndustryBySlug(slug);
 
     if (!industry) {
         notFound();

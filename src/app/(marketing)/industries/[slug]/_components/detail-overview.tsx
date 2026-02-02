@@ -25,7 +25,7 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight mb-6">
                         Navigating the<br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            {industry.title} Landscape
+                            {industry.name} Landscape
                         </span>
                     </h2>
 
@@ -45,7 +45,7 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                                 &quot;{industry.description}&quot;
                             </p>
                             <p className="text-muted-foreground leading-loose">
-                                {industry.fullDescription}
+                                {industry.content}
                             </p>
                         </div>
 

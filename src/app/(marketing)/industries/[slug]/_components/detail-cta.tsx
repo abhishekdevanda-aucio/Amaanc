@@ -22,10 +22,10 @@ export function DetailCTA({ industry }: DetailCTAProps) {
                         <div className="max-w-3xl flex-1">
                             <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6 text-balance leading-tight">
                                 Ready to Transform Your <br className="hidden lg:block" />
-                                {industry.title} Operations?
+                                {industry.name} Operations?
                             </h2>
                             <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed mb-8">
-                                Leverage our deep expertise in {industry.title.toLowerCase()} to drive efficiency, innovation, and growth. Let&apos;s build a future-proof roadmap together.
+                                Leverage our deep expertise in {industry.name.toLowerCase()} to drive efficiency, innovation, and growth. Let&apos;s build a future-proof roadmap together.
                             </p>
 
                             {/* Trust Indicators */}
@@ -71,7 +71,7 @@ export function DetailCTA({ industry }: DetailCTAProps) {
                 {/* Bottom Trust Line */}
                 <div className="mt-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
                     <p className="text-sm text-muted-foreground font-medium">
-                        Trusted by leading {industry.title.toLowerCase()} enterprises worldwide
+                        Trusted by leading {industry.name.toLowerCase()} enterprises worldwide
                     </p>
                 </div>
             </div>

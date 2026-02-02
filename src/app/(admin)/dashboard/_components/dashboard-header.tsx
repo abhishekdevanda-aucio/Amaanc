@@ -5,7 +5,6 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -47,9 +46,7 @@ export function DashboardHeader() {
                         <BreadcrumbPage>{title}</BreadcrumbPage>
                       ) : (
                         <Link href={href}>
-                          <BreadcrumbLink>
-                            {title}
-                          </BreadcrumbLink>
+                          {title}
                         </Link>
                       )}
                     </BreadcrumbItem>
