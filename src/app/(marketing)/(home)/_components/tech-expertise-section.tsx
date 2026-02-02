@@ -45,7 +45,7 @@ export function TechExpertiseSection() {
                         Technology Stack
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
-                        Platforms We <span className="text-primary">Master</span>
+                        Platforms We <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">Master</span>
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                         We leverage best-in-class technologies to build robust, scalable, and future-proof solutions for your enterprise.

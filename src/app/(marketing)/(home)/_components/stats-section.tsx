@@ -32,7 +32,7 @@ export function StatsSection() {
         {/* Grid Pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[32px_32px] mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-        <div className="relative z-10 grid lg:grid-cols-2 gap-12 p-8 md:p-16 items-center">
+        <div className="relative z-10 grid md:grid-cols-2 gap-12 p-8 md:p-16 items-center">
 
           {/* Left Column: CTA */}
           <div className="max-w-xl">

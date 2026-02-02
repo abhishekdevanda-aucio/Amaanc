@@ -41,7 +41,7 @@ export function InsightsSection() {
                             Thought Leadership
                         </Badge>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-                            Ideas & Insights
+                            Ideas & <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">Insights</span>
                         </h2>
                     </div>
                     <Link href="/blogs" className="hidden md:inline-flex">
@@ -52,7 +52,7 @@ export function InsightsSection() {
                     </Link>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {insights.map((insight, index) => (
                         <article
                             key={index}

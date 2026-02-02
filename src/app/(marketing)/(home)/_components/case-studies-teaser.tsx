@@ -45,7 +45,10 @@ export function CaseStudiesTeaser() {
               Success Stories
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
-              Real Results for Real Businesses
+              Real Results for <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
+                Real Businesses
+              </span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
               Discover how we&apos;ve helped enterprises transform their operations and achieve measurable outcomes.
@@ -64,7 +67,7 @@ export function CaseStudiesTeaser() {
         </div>
 
         {/* Balanced Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {caseStudies.map((study) => (
             <Link
               key={study.title}

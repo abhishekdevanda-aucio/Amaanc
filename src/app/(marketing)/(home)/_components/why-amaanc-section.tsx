@@ -106,7 +106,9 @@ export function WhyAmaancSection() {
                         Why Partner With Us
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
-                        The Amaanc <span className="text-primary">Advantage</span>
+                        The Amaanc <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
+                            Advantage
+                        </span>
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                         We don&apos;t just implement software; we transform businesses. Here is why industry leaders trust us with their critical digital infrastructure.
