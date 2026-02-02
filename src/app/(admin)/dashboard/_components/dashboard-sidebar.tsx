@@ -5,6 +5,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
@@ -18,9 +19,9 @@ export function DashboardSidebar({ user }: { user: User }) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <Link href="/" className="flex items-center gap-2">
+            <SidebarMenuButton render={<Link href="/" />}>
               <Logo subtext="Admin" />
-            </Link>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
