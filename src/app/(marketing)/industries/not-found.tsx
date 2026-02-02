@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MoveLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
     return (
@@ -14,10 +14,15 @@ export default function NotFound() {
             <p className="text-muted-foreground mb-8 max-w-[500px] text-lg">
                 Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/industries" className="inline-flex">
+                    <Button size="lg" className="shadow-lg hover:scale-105 transition-transform">
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        View All Industries
+                    </Button>
+                </Link>
                 <Link href="/" className="inline-flex">
-                    <Button size="lg">
-                        <MoveLeft className="mr-2 h-4 w-4" />
+                    <Button size="lg" variant="outline">
                         Back to Home
                     </Button>
                 </Link>
