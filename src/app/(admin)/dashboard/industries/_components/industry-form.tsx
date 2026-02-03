@@ -34,6 +34,7 @@ import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { createIndustry, updateIndustry } from "../_actions/actions"
 import { Industry, iconMap } from "@/lib/data/industries"
+import { AssetPickerDialog } from "@/components/asset-picker-dialog"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -470,26 +471,15 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                                 <FieldLabel
                                                     htmlFor={field.name}
                                                 >
-                                                    Hero Image URL
+                                                    Hero Image
                                                 </FieldLabel>
-                                                <Input
-                                                    id={field.name}
-                                                    name={field.name}
-                                                    value={field.state.value}
-                                                    onBlur={field.handleBlur}
-                                                    onChange={(e) =>
-                                                        field.handleChange(
-                                                            e.target.value
-                                                        )
-                                                    }
-                                                    aria-invalid={isInvalid}
-                                                    placeholder="/images/industries/..."
-                                                    autoComplete="off"
+                                                <AssetPickerDialog
+                                                    value={field.state.value || ""}
+                                                    onSelect={(url) => field.handleChange(url)}
+                                                    folder="industries"
                                                 />
                                                 <FieldDescription>
-                                                    URL for the hero image
-                                                    displayed on the industry
-                                                    page
+                                                    Select or upload a hero image for the industry page
                                                 </FieldDescription>
                                                 {isInvalid && (
                                                     <FieldError
