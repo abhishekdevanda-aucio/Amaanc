@@ -1,3 +1,5 @@
+import { Toaster } from "@/components/ui/sonner"
+
 export default function AdminLayout({
     children,
 }: {
@@ -6,6 +8,7 @@ export default function AdminLayout({
     return (
         <main className="min-h-screen bg-background">
             {children}
+            <Toaster />
         </main>
     );
 }
