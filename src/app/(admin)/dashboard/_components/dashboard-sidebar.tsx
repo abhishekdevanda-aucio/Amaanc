@@ -1,4 +1,3 @@
-import { NavUser } from "@/app/(admin)/dashboard/_components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -9,13 +8,12 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
-import { User } from "@supabase/supabase-js"
 import { NavLinks } from "./nav-links"
 import { Logo } from "@/components/layout/logo"
 
-export function DashboardSidebar({ user }: { user: User }) {
+export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="offcanvas" >
+    <Sidebar variant="inset" collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -29,7 +27,6 @@ export function DashboardSidebar({ user }: { user: User }) {
         <NavLinks />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   )

@@ -14,7 +14,10 @@ import React from "react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 
-export function DashboardHeader() {
+import { User } from "@supabase/supabase-js"
+import { NavUser } from "./nav-user"
+
+export function DashboardHeader({ user }: { user: User }) {
   const pathname = usePathname()
 
   // Split pathname into segments
@@ -24,7 +27,7 @@ export function DashboardHeader() {
   const cleanSegments = segments.filter(s => s !== '(admin)')
 
   return (
-    <header className="sticky top-0 z-50 flex h-16 shrink-0 items-center gap-2 border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-16">
+    <header className="sticky top-0 z-50 flex h-14 shrink-0 items-center gap-2 border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-16">
       <div className="flex w-full items-center gap-2 px-4">
         <div className="flex items-center gap-2">
           <SidebarTrigger className="-ml-1" />
@@ -60,6 +63,7 @@ export function DashboardHeader() {
 
         <div className="ml-auto flex items-center gap-2">
           <ThemeToggle />
+          <NavUser user={user} />
         </div>
       </div>
     </header>

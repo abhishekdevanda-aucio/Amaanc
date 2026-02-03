@@ -28,9 +28,9 @@ export default async function DashboardLayout({
       disableTransitionOnChange
     >
       <SidebarProvider>
-        <DashboardSidebar user={user} />
+        <DashboardSidebar />
         <SidebarInset>
-          <DashboardHeader />
+          <DashboardHeader user={user} />
           <div className="flex flex-1 flex-col">
             {children}
           </div>
