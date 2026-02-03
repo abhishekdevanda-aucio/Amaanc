@@ -1,7 +1,6 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 
 // Create Industry
@@ -11,8 +10,8 @@ export async function createIndustry(prevState: unknown, formData: FormData) {
     const rawData = {
         name: formData.get("name") as string,
         slug: formData.get("slug") as string,
-        overview: formData.get("overview") as string,
-        full_description: formData.get("full_description") as string,
+        description: formData.get("overview") as string,
+        content: formData.get("full_description") as string,
         icon_name: formData.get("icon_name") as string,
         image_url: formData.get("image_url") as string,
         is_published: formData.get("is_published") === "on",
@@ -27,12 +26,12 @@ export async function createIndustry(prevState: unknown, formData: FormData) {
     const { error } = await supabase.from("industries").insert(rawData)
 
     if (error) {
-        return { message: error.message, error: true }
+        throw new Error(error.message)
     }
 
     revalidatePath("/dashboard/industries")
     revalidatePath("/industries")
-    redirect("/dashboard/industries")
+    return { success: true }
 }
 
 // Update Industry
@@ -42,8 +41,8 @@ export async function updateIndustry(id: string, prevState: unknown, formData: F
     const rawData = {
         name: formData.get("name") as string,
         slug: formData.get("slug") as string,
-        overview: formData.get("overview") as string,
-        full_description: formData.get("full_description") as string,
+        description: formData.get("overview") as string,
+        content: formData.get("full_description") as string,
         icon_name: formData.get("icon_name") as string,
         image_url: formData.get("image_url") as string,
         is_published: formData.get("is_published") === "on",
@@ -57,13 +56,13 @@ export async function updateIndustry(id: string, prevState: unknown, formData: F
     const { error } = await supabase.from("industries").update(rawData).eq("id", id)
 
     if (error) {
-        return { message: error.message, error: true }
+        throw new Error(error.message)
     }
 
     revalidatePath("/dashboard/industries")
     revalidatePath("/industries")
     revalidatePath(`/industries/${rawData.slug}`)
-    redirect("/dashboard/industries")
+    return { success: true }
 }
 
 // Delete Industry
@@ -78,4 +77,37 @@ export async function deleteIndustry(id: string) {
 
     revalidatePath("/dashboard/industries")
     revalidatePath("/industries")
+}
+
+// Get Industry by Slug for Admin (includes unpublished)
+export async function getIndustryBySlug(slug: string) {
+    const supabase = await createClient()
+
+    const { data, error } = await supabase
+        .from("industries")
+        .select("*")
+        .eq("slug", slug)
+        .single()
+
+    if (error) {
+        console.error(`Error fetching industry with slug ${slug}:`, error)
+        return null
+    }
+
+    return {
+        id: data.id,
+        createdAt: data.created_at,
+        name: data.name,
+        slug: data.slug,
+        description: data.description,
+        content: data.content,
+        icon: data.icon_name,
+        imageUrl: data.image_url,
+        features: data.features,
+        stats: data.stats,
+        challenges: data.challenges,
+        techStack: data.tech_stack,
+        testimonials: data.testimonials,
+        isPublished: data.is_published
+    }
 }

@@ -1539,37 +1539,11 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                                                                 }
                                                                             >
                                                                                 Avatar
-                                                                                URL
                                                                             </FieldLabel>
-                                                                            <Input
-                                                                                id={
-                                                                                    subField.name
-                                                                                }
-                                                                                name={
-                                                                                    subField.name
-                                                                                }
-                                                                                value={
-                                                                                    subField
-                                                                                        .state
-                                                                                        .value ||
-                                                                                    ""
-                                                                                }
-                                                                                onBlur={
-                                                                                    subField.handleBlur
-                                                                                }
-                                                                                onChange={(
-                                                                                    e
-                                                                                ) =>
-                                                                                    subField.handleChange(
-                                                                                        e
-                                                                                            .target
-                                                                                            .value
-                                                                                    )
-                                                                                }
-                                                                                aria-invalid={
-                                                                                    isInvalid
-                                                                                }
-                                                                                placeholder="/images/avatars/..."
+                                                                            <AssetPickerDialog
+                                                                                value={subField.state.value || ""}
+                                                                                onSelect={(url) => subField.handleChange(url)}
+                                                                                folder="industries/testimonials"
                                                                             />
                                                                             {isInvalid && (
                                                                                 <FieldError
