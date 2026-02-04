@@ -96,10 +96,10 @@ function parseIndustry(row: IndustryRow): Industry {
         icon: row.icon_name,
         imageUrl: row.image_url,
         features: row.features,
-        stats: row.stats,
-        challenges: row.challenges,
+        stats: Array.isArray(row.stats) ? row.stats.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
+        challenges: Array.isArray(row.challenges) ? row.challenges.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         techStack: row.tech_stack,
-        testimonials: row.testimonials,
+        testimonials: Array.isArray(row.testimonials) ? row.testimonials.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         isPublished: row.is_published
     };
 }

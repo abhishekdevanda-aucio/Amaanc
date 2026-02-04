@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import type { IndustryNavItem } from "@/lib/data/get-industries-nav"
 
 const footerLinks = {
   services: [
@@ -8,15 +9,6 @@ const footerLinks = {
     { label: "Design & Development", href: "/services/design-development" },
     { label: "Implementation & Support", href: "/services/implementation-support" },
     { label: "Talent & Growth", href: "/services/talent-growth" },
-  ],
-  industries: [
-    { label: "Financial", href: "/industries/financial" },
-    { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "Banking", href: "/industries/banking" },
-    { label: "Utilities", href: "/industries/utilities" },
-    { label: "Railway", href: "/industries/railway" },
-    { label: "Insurance", href: "/industries/insurance" },
-    { label: "Retail", href: "/industries/retail" },
   ],
   company: [
     { label: "Case Studies", href: "/case-studies" },
@@ -32,7 +24,11 @@ const footerLinks = {
   ],
 }
 
-export function Footer() {
+interface FooterProps {
+  industries: IndustryNavItem[]
+}
+
+export function Footer({ industries }: FooterProps) {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12 lg:py-16">
@@ -90,18 +86,20 @@ export function Footer() {
           </div>
 
           {/* Industries */}
-          <div>
-            <h3 className="font-semibold mb-4">Industries</h3>
-            <ul className="space-y-2">
-              {footerLinks.industries.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {industries.length > 0 && (
+            <div>
+              <h3 className="font-semibold mb-4">Industries</h3>
+              <ul className="space-y-2">
+                {industries.map((industry) => (
+                  <li key={industry.slug}>
+                    <Link href={`/industries/${industry.slug}`} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
+                      {industry.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Company */}
           <div>

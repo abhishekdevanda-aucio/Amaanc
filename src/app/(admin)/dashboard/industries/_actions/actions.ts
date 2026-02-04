@@ -104,10 +104,10 @@ export async function getIndustryBySlug(slug: string) {
         icon: data.icon_name,
         imageUrl: data.image_url,
         features: data.features,
-        stats: data.stats,
-        challenges: data.challenges,
+        stats: Array.isArray(data.stats) ? data.stats.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
+        challenges: Array.isArray(data.challenges) ? data.challenges.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         techStack: data.tech_stack,
-        testimonials: data.testimonials,
+        testimonials: Array.isArray(data.testimonials) ? data.testimonials.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         isPublished: data.is_published
     }
 }

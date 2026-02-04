@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,10 +18,32 @@ import { cn } from "@/lib/utils"
 import { Logo } from "@/components/layout/logo"
 import { navigationData } from "@/lib/navigation"
 import type { NavigationItem } from "@/lib/navigation"
+import type { IndustryNavItem } from "@/lib/data/get-industries-nav"
 
-export function Header() {
+interface HeaderProps {
+  industries: IndustryNavItem[]
+}
+
+export function Header({ industries }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Build navigation with dynamic industries
+  const navData = useMemo(() => {
+    return navigationData.map((item) => {
+      if (item.title === "Industries") {
+        return {
+          ...item,
+          items: industries.map((ind) => ({
+            title: ind.name,
+            href: `/industries/${ind.slug}`,
+            description: ind.description
+          }))
+        }
+      }
+      return item
+    })
+  }, [industries])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +72,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
-              {navigationData.map((item) => {
+              {navData.map((item) => {
                 // Mega Menu for grouped items (Services)
                 if (item.groupedItems) {
                   return (
@@ -143,7 +165,7 @@ export function Header() {
 
               <div className="flex-1 overflow-y-auto px-6 py-4">
                 <nav className="flex flex-col gap-0">
-                  {navigationData.map((item) => (
+                  {navData.map((item) => (
                     <MobileNavSection key={item.title} item={item} setOpen={setMobileMenuOpen} />
                   ))}
                 </nav>

@@ -1,16 +1,19 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { getIndustriesForNav } from "@/lib/data/get-industries-nav";
 
-export default function MarketingLayout({
+export default async function MarketingLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    const industries = await getIndustriesForNav();
+
     return (
         <>
-            <Header />
+            <Header industries={industries} />
             <main className="flex-1 relative">{children}</main>
-            <Footer />
+            <Footer industries={industries} />
         </>
     );
 }
