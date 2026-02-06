@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Upload, Image as ImageIcon, Check, Search, X } from "lucide-react"
 import { AssetUploader } from "@/app/(admin)/dashboard/assets/_components/asset-uploader"
-import { getAssets, type Asset } from "@/lib/data/assets"
+import { getAssets, type Asset } from "@/data/assets"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 

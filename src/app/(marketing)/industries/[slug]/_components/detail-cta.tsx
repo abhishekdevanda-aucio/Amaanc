@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, CheckCircle2 } from "lucide-react";
-import { Industry } from "@/lib/data/industries";
+import { Industry } from "@/data/industries";
 
 interface DetailCTAProps {
     industry: Industry;

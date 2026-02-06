@@ -1,4 +1,4 @@
-import { Service } from "@/lib/data/services";
+import { Service } from "@/data/services";
 import { Badge } from "@/components/ui/badge";
 import { Check, Code2, Cpu, Layers } from "lucide-react";
 

@@ -1,14 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbPage,
-    BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { ServiceForm } from "../_components/service-form"
 
 interface PageProps {
@@ -81,34 +72,7 @@ export default async function EditServicePage({ params }: PageProps) {
     }
 
     return (
-        <div className="flex flex-col gap-6 p-4 md:p-6 max-w-5xl mx-auto w-full">
-            {/* Breadcrumbs */}
-            <Breadcrumb>
-                <BreadcrumbList>
-                    <BreadcrumbItem>
-                        <Link href="/dashboard" className="transition-colors hover:text-foreground">
-                            Dashboard
-                        </Link>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <Link href="/dashboard/services" className="transition-colors hover:text-foreground">
-                            Services
-                        </Link>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <Link href={`/dashboard/services/${category.slug}`} className="transition-colors hover:text-foreground">
-                            {category.name}
-                        </Link>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                        <BreadcrumbPage>Edit {service.name}</BreadcrumbPage>
-                    </BreadcrumbItem>
-                </BreadcrumbList>
-            </Breadcrumb>
-
+        <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">
             <ServiceForm initialData={serviceForForm} category={categoryForForm} />
         </div>
     )

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Settings } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { getFeaturedServices } from "@/lib/data/services";
+import { getFeaturedServices } from "@/data/services";
 
 export async function FeaturedServices() {
     const featuredServices = await getFeaturedServices();

@@ -15,7 +15,7 @@ import { toast } from "sonner"
 import Link from "next/link"
 import { Trash2, Edit, MoreHorizontal, Briefcase } from "lucide-react"
 import { deleteIndustry } from "../_actions/actions"
-import { IndustryRow, iconMap } from "@/lib/data/industries"
+import { IndustryRow, iconMap } from "@/data/industries"
 import {
     DropdownMenu,
     DropdownMenuContent,

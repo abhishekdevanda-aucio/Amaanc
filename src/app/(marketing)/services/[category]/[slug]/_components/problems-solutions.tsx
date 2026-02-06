@@ -1,4 +1,4 @@
-import { Service } from "@/lib/data/services";
+import { Service } from "@/data/services";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle, CheckCircle2, ArrowRight } from "lucide-react";
 

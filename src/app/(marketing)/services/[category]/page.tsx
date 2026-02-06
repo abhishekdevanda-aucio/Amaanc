@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getServiceCategories, getCategoryBySlug, getServicesByCategory } from "@/lib/data/services";
+import { getServiceCategories, getCategoryBySlug, getServicesByCategory } from "@/data/services";
 import { CategoryHero } from "./_components/category-hero";
 import { ServicesGrid } from "./_components/services-grid";
 import { CategoryCTA } from "./_components/category-cta";

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useRef, useCallback } from "react"
-import { uploadAsset, type Asset } from "@/lib/data/assets"
+import { uploadAsset, type Asset } from "@/data/assets"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"

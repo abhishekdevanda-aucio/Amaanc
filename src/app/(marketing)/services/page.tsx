@@ -2,7 +2,7 @@ import { HeroSection } from "./_components/hero-section";
 import { CategoriesGrid } from "./_components/categories-grid";
 import { FeaturedServices } from "./_components/featured-services";
 import { ServicesCTA } from "./_components/services-cta";
-import { getServiceCategories } from "@/lib/data/services";
+import { getServiceCategories } from "@/data/services";
 
 export const metadata = {
     title: "Services | Amaanc",

@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { AssetManager } from "./_components/asset-manager";
-import { mapDbAssetToAsset } from "@/lib/data/assets";
+import { mapDbAssetToAsset } from "@/data/assets";
 import { AssetUploadDialog } from "./_components/asset-dialog";
 
 export default async function AssetsPage() {

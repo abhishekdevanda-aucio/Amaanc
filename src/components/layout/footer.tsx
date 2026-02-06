@@ -1,15 +1,8 @@
 import Link from "next/link"
 import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react"
-import type { IndustryNavItem } from "@/lib/data/get-industries-nav"
+import { IndustryNavItem, ServiceNavItem } from "@/data/navigation"
 
 const footerLinks = {
-  services: [
-    { label: "Core Expertise", href: "/services/core-expertise" },
-    { label: "Enterprise Solutions", href: "/services/enterprise-solutions" },
-    { label: "Design & Development", href: "/services/design-development" },
-    { label: "Implementation & Support", href: "/services/implementation-support" },
-    { label: "Talent & Growth", href: "/services/talent-growth" },
-  ],
   company: [
     { label: "Case Studies", href: "/case-studies" },
     { label: "Blogs", href: "/blogs" },
@@ -26,9 +19,10 @@ const footerLinks = {
 
 interface FooterProps {
   industries: IndustryNavItem[]
+  services: ServiceNavItem[]
 }
 
-export function Footer({ industries }: FooterProps) {
+export function Footer({ industries, services }: FooterProps) {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-4 py-12 lg:py-16">
@@ -72,23 +66,32 @@ export function Footer({ industries }: FooterProps) {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          {services.length > 0 && (
+            <div>
+              <h3 className="font-semibold mb-4">
+                <Link href="/services">
+                  Services
+                </Link>
+              </h3>
+              <ul className="space-y-2">
+                {services.map((service) => (
+                  <li key={service.href}>
+                    <Link href={service.href} className="text-background/70 hover:text-background transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:rounded-sm">
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {/* Industries */}
           {industries.length > 0 && (
             <div>
-              <h3 className="font-semibold mb-4">Industries</h3>
+              <h3 className="font-semibold mb-4">
+                <Link href="/industries">
+                  Industries
+                </Link>
+              </h3>
               <ul className="space-y-2">
                 {industries.map((industry) => (
                   <li key={industry.slug}>

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getIndustries, getIndustryBySlug } from "@/lib/data/industries";
+import { getIndustries, getIndustryBySlug } from "@/data/industries";
 import { DetailHero } from "./_components/detail-hero";
 import { DetailOverview } from "./_components/detail-overview";
 import { DetailStats } from "./_components/detail-stats";

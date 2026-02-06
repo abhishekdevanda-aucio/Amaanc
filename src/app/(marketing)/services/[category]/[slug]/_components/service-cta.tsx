@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, ArrowLeft } from "lucide-react";
-import { Service } from "@/lib/data/services";
+import { Service } from "@/data/services";
 
 interface ServiceCTAProps {
     service: Service;

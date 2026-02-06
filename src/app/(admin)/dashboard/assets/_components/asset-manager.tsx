@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { deleteAsset, type Asset } from "@/lib/data/assets"
+import { deleteAsset, type Asset } from "@/data/assets"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import {

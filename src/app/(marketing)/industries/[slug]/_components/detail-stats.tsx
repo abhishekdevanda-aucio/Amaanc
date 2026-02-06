@@ -1,4 +1,4 @@
-import { Industry } from "@/lib/data/industries";
+import { Industry } from "@/data/industries";
 
 interface DetailStatsProps {
     industry: Industry;

@@ -6,7 +6,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { BookOpenText, Briefcase, Factory, Image, LayoutDashboard, Users } from "lucide-react"
+import { BookOpenText, Factory, Image, LayoutDashboard, Settings, Users } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -22,14 +22,14 @@ const navLinks = [
     icon: Image,
   },
   {
+    title: "Services",
+    url: "/dashboard/services",
+    icon: Settings,
+  },
+  {
     title: "Industries",
     url: "/dashboard/industries",
     icon: Factory,
-  },
-  {
-    title: "Services",
-    url: "/dashboard/services",
-    icon: Briefcase,
   },
   {
     title: "Case Studies",
@@ -54,7 +54,11 @@ export function NavLinks() {
               <Link href={item.url} className="block">
                 <SidebarMenuButton
                   tooltip={item.title}
-                  isActive={pathname === item.url}
+                  isActive={
+                    item.url === "/dashboard"
+                      ? pathname === "/dashboard"
+                      : pathname.startsWith(item.url)
+                  }
                 >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>

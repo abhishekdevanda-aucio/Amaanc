@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Settings } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Service } from "@/lib/data/services";
+import { Service } from "@/data/services";
 import { Badge } from "@/components/ui/badge";
 
 interface ServicesGridProps {

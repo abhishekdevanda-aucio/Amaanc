@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,34 +16,15 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from 
 import { Menu, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/layout/logo"
-import { navigationData } from "@/lib/navigation"
 import type { NavigationItem } from "@/lib/navigation"
-import type { IndustryNavItem } from "@/lib/data/get-industries-nav"
 
 interface HeaderProps {
-  industries: IndustryNavItem[]
+  navData: NavigationItem[]
 }
 
-export function Header({ industries }: HeaderProps) {
+export function Header({ navData }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  // Build navigation with dynamic industries
-  const navData = useMemo(() => {
-    return navigationData.map((item) => {
-      if (item.title === "Industries") {
-        return {
-          ...item,
-          items: industries.map((ind) => ({
-            title: ind.name,
-            href: `/industries/${ind.slug}`,
-            description: ind.description
-          }))
-        }
-      }
-      return item
-    })
-  }, [industries])
 
   useEffect(() => {
     const handleScroll = () => {

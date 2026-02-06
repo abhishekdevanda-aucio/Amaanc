@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { ServiceCategory } from "@/lib/data/services";
+import { ServiceCategory } from "@/data/services";
 import { Badge } from "@/components/ui/badge";
 
 interface CategoriesGridProps {

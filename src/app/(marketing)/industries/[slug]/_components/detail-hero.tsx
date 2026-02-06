@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Zap } from "lucide-react";
-import { Industry } from "@/lib/data/industries";
+import { Industry } from "@/data/industries";
 
 interface DetailHeroProps {
     industry: Industry;

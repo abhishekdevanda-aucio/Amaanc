@@ -28,19 +28,3 @@ export const createClient = async () => {
         },
     );
 };
-
-export const createStaticClient = async () => {
-    return createServerClient(
-        supabaseUrl,
-        supabaseKey,
-        {
-            cookies: {
-                getAll() {
-                    return []
-                },
-                setAll(cookiesToSet) {
-                },
-            },
-        },
-    );
-};

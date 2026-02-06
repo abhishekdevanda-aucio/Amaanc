@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Service } from "@/lib/data/services";
-import { getCategoryBySlug } from "@/lib/data/service-categories";
+import { Service } from "@/data/services";
+import { getCategoryBySlug } from "@/data/service-categories";
 import {
     Breadcrumb,
     BreadcrumbItem,

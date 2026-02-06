@@ -4,7 +4,7 @@ import {
     getServiceBySlug,
     getCategoryBySlug,
     getServicesByCategory
-} from "@/lib/data/services";
+} from "@/data/services";
 import { ServiceHero } from "./_components/service-hero";
 import { ServiceOverview } from "./_components/service-overview";
 import { ProblemsSolutions } from "./_components/problems-solutions";

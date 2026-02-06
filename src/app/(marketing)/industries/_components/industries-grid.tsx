@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Industry, resolveIcon } from "@/lib/data/industries";
+import { Industry, resolveIcon } from "@/data/industries";
 
 interface IndustriesGridProps {
     industries: Industry[];

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MessageSquare } from "lucide-react";
-import { ServiceCategory } from "@/lib/data/service-categories";
+import { ServiceCategory } from "@/data/service-categories";
 
 interface CategoryCTAProps {
     category: ServiceCategory;

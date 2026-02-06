@@ -3,7 +3,7 @@ import { IndustryTicker } from "./_components/industry-ticker";
 import { IndustriesGrid } from "./_components/industries-grid";
 import { OtherIndustries } from "./_components/other-industries";
 import { OurApproach } from "./_components/our-approach";
-import { getIndustries } from "@/lib/data/industries";
+import { getIndustries } from "@/data/industries";
 
 export const metadata = {
     title: "Industries | Amaanc",

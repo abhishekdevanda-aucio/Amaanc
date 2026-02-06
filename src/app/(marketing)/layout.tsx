@@ -1,19 +1,26 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { getIndustriesForNav } from "@/lib/data/get-industries-nav";
+import { getNavData } from "@/lib/navigation";
+import { getIndustriesForNav, getServicesForNav } from "@/data/navigation";
 
 export default async function MarketingLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const industries = await getIndustriesForNav();
+    // Parallel fetch for better performance
+    const [industries, services] = await Promise.all([
+        getIndustriesForNav(),
+        getServicesForNav()
+    ]);
+
+    const navData = getNavData(industries, services);
 
     return (
         <>
-            <Header industries={industries} />
+            <Header navData={navData} />
             <main className="flex-1 relative">{children}</main>
-            <Footer industries={industries} />
+            <Footer industries={industries} services={services} />
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { Industry } from "@/lib/data/industries";
+import { Industry } from "@/data/industries";
 import { Badge } from "@/components/ui/badge";
 
 interface DetailChallengesProps {

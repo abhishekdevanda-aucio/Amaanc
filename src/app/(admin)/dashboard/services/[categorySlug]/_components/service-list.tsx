@@ -28,7 +28,7 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { Trash2, Eye, EyeOff, Star, EllipsisVertical, FileStack, Edit } from "lucide-react"
+import { Trash2, Star, EllipsisVertical, FileStack, Edit } from "lucide-react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import { deleteService } from "../_actions/delete-service"
@@ -118,12 +118,10 @@ export function ServiceList({ services, categorySlug }: ServiceListProps) {
                             <TableCell className="text-center">
                                 {service.isPublished ? (
                                     <Badge variant="default" className="bg-green-600 hover:bg-green-700">
-                                        <Eye className="size-3 mr-1" />
                                         Published
                                     </Badge>
                                 ) : (
                                     <Badge variant="secondary">
-                                        <EyeOff className="size-3 mr-1" />
                                         Draft
                                     </Badge>
                                 )}

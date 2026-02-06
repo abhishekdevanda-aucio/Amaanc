@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Settings } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Service } from "@/lib/data/services";
+import { Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
 interface RelatedServicesProps {

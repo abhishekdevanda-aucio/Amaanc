@@ -1,4 +1,4 @@
-import { Industry } from "@/lib/data/industries";
+import { Industry } from "@/data/industries";
 import { Quote, Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
