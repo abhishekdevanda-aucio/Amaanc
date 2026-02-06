@@ -40,7 +40,7 @@ export interface Service {
 
 // Get all published categories with service count
 export async function getServiceCategories(): Promise<ServiceCategory[]> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("service_categories")
@@ -68,7 +68,7 @@ export async function getServiceCategories(): Promise<ServiceCategory[]> {
 
 // Get category by slug
 export async function getCategoryBySlug(slug: string): Promise<ServiceCategory | null> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("service_categories")
@@ -97,7 +97,7 @@ export async function getCategoryBySlug(slug: string): Promise<ServiceCategory |
 
 // Get all published services
 export async function getServices(): Promise<Service[]> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("services")
@@ -136,7 +136,7 @@ export async function getServices(): Promise<Service[]> {
 
 // Get featured services
 export async function getFeaturedServices(): Promise<Service[]> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("services")
@@ -176,7 +176,7 @@ export async function getFeaturedServices(): Promise<Service[]> {
 
 // Get services by category slug
 export async function getServicesByCategory(categorySlug: string): Promise<Service[]> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     // First get the category ID
     const { data: category } = await supabase
@@ -224,7 +224,7 @@ export async function getServicesByCategory(categorySlug: string): Promise<Servi
 
 // Get service by slug (for service detail page)
 export async function getServiceBySlug(slug: string): Promise<Service | null> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("services")
@@ -264,7 +264,7 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
 
 // Get all services with categories for static generation
 export async function getAllServicesForStaticGeneration(): Promise<{ categorySlug: string; serviceSlug: string }[]> {
-    const supabase = await createClient()
+    const supabase = createClient()
 
     const { data, error } = await supabase
         .from("services")

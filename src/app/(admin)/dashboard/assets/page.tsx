@@ -1,17 +1,9 @@
-import { createClient } from "@/lib/supabase/server";
 import { AssetManager } from "./_components/asset-manager";
-import { mapDbAssetToAsset } from "@/data/assets";
 import { AssetUploadDialog } from "./_components/asset-dialog";
+import { getAssets } from "./_actions/get-assets";
 
 export default async function AssetsPage() {
-  const supabase = await createClient();
-
-  const { data } = await supabase
-    .from("assets")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  const assets = (data || []).map(mapDbAssetToAsset);
+  const assets = await getAssets();
 
   return (
     <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">

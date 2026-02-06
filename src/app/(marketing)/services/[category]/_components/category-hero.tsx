@@ -11,7 +11,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ArrowRight } from "lucide-react";
-import { ServiceCategory } from "@/data/service-categories";
+import { ServiceCategory } from "@/data/services";
 
 interface CategoryHeroProps {
     category: ServiceCategory;

@@ -2,7 +2,8 @@
 
 import type React from "react"
 import { useState, useRef, useCallback } from "react"
-import { uploadAsset, type Asset } from "@/data/assets"
+import { uploadAsset} from "../_actions/upload-assets"
+import { type Asset } from "@/types/assets-types"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -17,7 +18,7 @@ interface AssetUploaderProps {
   className?: string
 }
 
-export function AssetUploader({ onAssetUpload, folder = "services", className }: AssetUploaderProps) {
+export function AssetUploader({ onAssetUpload, folder = "uploads", className }: AssetUploaderProps) {
   const [isUploading, setIsUploading] = useState(false)
   const [file, setFile] = useState<File | null>(null)
   const [preview, setPreview] = useState<string | null>(null)

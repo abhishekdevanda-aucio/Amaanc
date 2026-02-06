@@ -147,7 +147,7 @@ export function CategoryTable({ categories }: CategoryTableProps) {
             <AlertDialog open={!!deleteId} onOpenChange={(open) => !open && setDeleteId(null)}>
                 <AlertDialogContent>
                     <AlertDialogHeader>
-                        <AlertDialogTitle>Delete "{categoryToDelete?.name}"?</AlertDialogTitle>
+                        <AlertDialogTitle>Delete &quot;{categoryToDelete?.name}&quot;?</AlertDialogTitle>
                         <AlertDialogDescription>
                             {categoryToDelete && categoryToDelete.serviceCount > 0 ? (
                                 <>

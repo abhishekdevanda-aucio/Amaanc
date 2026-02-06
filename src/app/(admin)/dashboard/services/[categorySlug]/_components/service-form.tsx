@@ -20,7 +20,6 @@ import { Badge } from "@/components/ui/badge"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import {
-    ArrowLeft,
     Loader2,
     Plus,
     X,
@@ -32,7 +31,6 @@ import {
 import { createService } from "../_actions/create-service"
 import { updateService } from "../_actions/update-service"
 import { AssetPickerDialog } from "@/components/asset-picker-dialog"
-import Link from "next/link"
 import { useState } from "react"
 
 // Zod Schema
@@ -196,11 +194,6 @@ export function ServiceForm({ initialData, category }: ServiceFormProps) {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex items-center gap-4">
-                        <Link href={`/dashboard/services/${category.slug}`}>
-                            <Button variant="ghost" size="icon" type="button">
-                                <ArrowLeft className="w-4 h-4" />
-                            </Button>
-                        </Link>
                         <div>
                             <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
                                 {initialData

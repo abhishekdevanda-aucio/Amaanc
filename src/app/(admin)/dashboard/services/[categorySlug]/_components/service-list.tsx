@@ -164,7 +164,7 @@ export function ServiceList({ services, categorySlug }: ServiceListProps) {
                 <AlertDialogContent>
                     <AlertDialogHeader>
                         <AlertDialogTitle>
-                            Delete "{serviceToDelete?.name}"?
+                            Delete &quot;{serviceToDelete?.name}&quot;?
                         </AlertDialogTitle>
                         <AlertDialogDescription>
                             This action cannot be undone. The service will be permanently deleted.

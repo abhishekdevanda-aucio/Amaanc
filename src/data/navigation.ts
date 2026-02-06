@@ -1,3 +1,5 @@
+"use server";
+
 import { NavigationItem } from "@/lib/navigation"
 import { createClient } from "@/lib/supabase/server"
 
