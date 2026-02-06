@@ -18,8 +18,8 @@ interface ServiceHeroProps {
     service: Service;
 }
 
-export function ServiceHero({ service }: ServiceHeroProps) {
-    const category = getCategoryBySlug(service.categorySlug);
+export async function ServiceHero({ service }: ServiceHeroProps) {
+    const category = await getCategoryBySlug(service.categorySlug);
 
     return (
         <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-background">

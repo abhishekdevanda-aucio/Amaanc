@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Settings } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Service, resolveServiceIcon } from "@/lib/data/services";
+import { Service } from "@/lib/data/services";
 import { cn } from "@/lib/utils";
 
 interface RelatedServicesProps {
@@ -34,44 +34,40 @@ export function RelatedServices({ services, categorySlug }: RelatedServicesProps
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {services.map((service, idx) => {
-                        const Icon = resolveServiceIcon(service.icon);
+                    {services.map((service, idx) => (
+                        <Link
+                            key={service.slug}
+                            href={`/services/${categorySlug}/${service.slug}`}
+                            className={cn(
+                                "group relative flex flex-col p-8 rounded-3xl border border-border/50 bg-background/50 backdrop-blur-sm",
+                                "hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20",
+                                "transition-all duration-500 animate-in slide-in-from-bottom-5 fade-in"
+                            )}
+                            style={{ animationDelay: `${idx * 100}ms` }}
+                        >
+                            <div className="absolute top-8 right-8 text-muted-foreground/10 group-hover:text-primary/10 transition-colors duration-500">
+                                <Settings className="w-24 h-24" />
+                            </div>
 
-                        return (
-                            <Link
-                                key={service.slug}
-                                href={`/services/${categorySlug}/${service.slug}`}
-                                className={cn(
-                                    "group relative flex flex-col p-8 rounded-3xl border border-border/50 bg-background/50 backdrop-blur-sm",
-                                    "hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20",
-                                    "transition-all duration-500 animate-in slide-in-from-bottom-5 fade-in"
-                                )}
-                                style={{ animationDelay: `${idx * 100}ms` }}
-                            >
-                                <div className="absolute top-8 right-8 text-muted-foreground/10 group-hover:text-primary/10 transition-colors duration-500">
-                                    <Icon className="w-24 h-24" />
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
+                                    <Settings className="h-6 w-6 text-primary" />
                                 </div>
 
-                                <div className="relative z-10 flex flex-col h-full">
-                                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mb-6 group-hover:scale-110 transition-transform duration-500">
-                                        <Icon className="h-6 w-6 text-primary" />
-                                    </div>
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+                                    {service.name}
+                                </h3>
+                                <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
+                                    {service.shortDescription}
+                                </p>
 
-                                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                                        {service.name}
-                                    </h3>
-                                    <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
-                                        {service.shortDescription}
-                                    </p>
-
-                                    <div className="flex items-center text-sm font-semibold text-primary">
-                                        Learn More
-                                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                                    </div>
+                                <div className="flex items-center text-sm font-semibold text-primary">
+                                    Learn More
+                                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                                 </div>
-                            </Link>
-                        );
-                    })}
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </section>

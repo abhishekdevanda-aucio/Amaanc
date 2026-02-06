@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { ServiceCategory } from "@/lib/data/service-categories";
-import { getServicesByCategory } from "@/lib/data/services";
 import { Badge } from "@/components/ui/badge";
 
 interface MoreCategoriesProps {
@@ -32,7 +31,7 @@ export function MoreCategories({ categories, currentCategorySlug }: MoreCategori
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {otherCategories.map((category, index) => {
-                        const serviceCount = getServicesByCategory(category.slug).length;
+                        const serviceCount = category.serviceCount || 0;
                         // Calculate staggered delay for animation
                         const delayClass = index === 0 ? "delay-0" :
                             index === 1 ? "delay-100" :

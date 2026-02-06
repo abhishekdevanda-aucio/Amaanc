@@ -1,11 +1,15 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Settings } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { getFeaturedServices, resolveServiceIcon } from "@/lib/data/services";
+import { getFeaturedServices } from "@/lib/data/services";
 
-export function FeaturedServices() {
-    const featuredServices = getFeaturedServices();
+export async function FeaturedServices() {
+    const featuredServices = await getFeaturedServices();
+
+    if (featuredServices.length === 0) {
+        return null;
+    }
 
     return (
         <section className="py-20">
@@ -25,42 +29,38 @@ export function FeaturedServices() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {featuredServices.map((service) => {
-                        const Icon = resolveServiceIcon(service.icon);
-
-                        return (
-                            <Card
-                                key={service.slug}
-                                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
-                            >
-                                <CardHeader>
-                                    <div className="flex items-center gap-4 mb-2">
-                                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
-                                            <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                                        </div>
-                                        <CardTitle className="text-lg leading-tight">{service.name}</CardTitle>
+                    {featuredServices.map((service) => (
+                        <Card
+                            key={service.slug}
+                            className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
+                        >
+                            <CardHeader>
+                                <div className="flex items-center gap-4 mb-2">
+                                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                                        <Settings className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
                                     </div>
-                                    <CardDescription className="leading-relaxed">{service.shortDescription}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {service.features.slice(0, 3).map((feature) => (
-                                            <span key={feature} className="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">
-                                                {feature}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <Link
-                                        href={`/services/${service.categorySlug}/${service.slug}`}
-                                        className="inline-flex items-center text-sm font-medium text-primary hover:gap-2 transition-all"
-                                    >
-                                        Learn More
-                                        <ArrowRight className="ml-1 h-4 w-4" />
-                                    </Link>
-                                </CardContent>
-                            </Card>
-                        );
-                    })}
+                                    <CardTitle className="text-lg leading-tight">{service.name}</CardTitle>
+                                </div>
+                                <CardDescription className="leading-relaxed">{service.shortDescription}</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {service.features.slice(0, 3).map((feature) => (
+                                        <span key={feature} className="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">
+                                            {feature}
+                                        </span>
+                                    ))}
+                                </div>
+                                <Link
+                                    href={`/services/${service.categorySlug}/${service.slug}`}
+                                    className="inline-flex items-center text-sm font-medium text-primary hover:gap-2 transition-all"
+                                >
+                                    Learn More
+                                    <ArrowRight className="ml-1 h-4 w-4" />
+                                </Link>
+                            </CardContent>
+                        </Card>
+                    ))}
                 </div>
             </div>
         </section>

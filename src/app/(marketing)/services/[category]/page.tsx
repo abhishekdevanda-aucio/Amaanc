@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
-import { getCategories, getCategoryBySlug } from "@/lib/data/service-categories";
-import { getServicesByCategory } from "@/lib/data/services";
+import { getServiceCategories, getCategoryBySlug, getServicesByCategory } from "@/lib/data/services";
 import { CategoryHero } from "./_components/category-hero";
 import { ServicesGrid } from "./_components/services-grid";
 import { CategoryCTA } from "./_components/category-cta";
@@ -14,7 +13,7 @@ interface PageProps {
 
 // Generate params for all categories at build time
 export async function generateStaticParams() {
-    const categories = getCategories();
+    const categories = await getServiceCategories();
     return categories.map((category) => ({
         category: category.slug,
     }));
@@ -22,7 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
     const { category } = await params;
-    const categoryData = getCategoryBySlug(category);
+    const categoryData = await getCategoryBySlug(category);
 
     if (!categoryData) {
         return {
@@ -38,14 +37,14 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function CategoryPage({ params }: PageProps) {
     const { category } = await params;
-    const categoryData = getCategoryBySlug(category);
+    const categoryData = await getCategoryBySlug(category);
 
     if (!categoryData) {
         notFound();
     }
 
-    const services = getServicesByCategory(category);
-    const allCategories = getCategories();
+    const services = await getServicesByCategory(category);
+    const allCategories = await getServiceCategories();
 
     return (
         <>

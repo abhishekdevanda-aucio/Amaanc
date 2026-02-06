@@ -1,36 +1,29 @@
+import { CategoryDialog } from "./_components/category-dialog"
+import { CategoryList } from "./_components/category-list"
+import { CategoryListSkeleton } from "./_components/category-list-skeleton"
+import { Suspense } from "react"
 
-import { createClient } from "@/lib/supabase/server"
-import { ServiceDialog } from "./_components/service-dialog"
-import { ServiceList } from "./_components/service-list"
+export const metadata = {
+    title: "Services | Dashboard",
+    description: "Manage services by categories",
+}
 
-export default async function ServicesPage() {
-    const supabase = await createClient()
-    const { data: services } = await supabase.from("services").select("*").order("created_at", { ascending: false })
-
+export default function ServicesPage() {
     return (
-        <div className="flex flex-col gap-4 p-4 lg:p-6">
-            <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-bold tracking-tight">Services</h1>
-                <ServiceDialog />
+        <div className="flex flex-col gap-8 p-4 md:p-6 max-w-7xl mx-auto w-full">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Services</h1>
+                    <p className="text-muted-foreground mt-2">
+                        Organize services by categories. Click a category to manage its services.
+                    </p>
+                </div>
+                <CategoryDialog />
             </div>
 
-            {services && services.length > 0 ? (
-                <ServiceList services={services} />
-            ) : (
-                <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm h-[50vh]">
-                    <div className="flex flex-col items-center gap-1 text-center">
-                        <h3 className="text-2xl font-bold tracking-tight">
-                            No services added
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                            You can add services to be displayed on the website.
-                        </p>
-                        <div className="mt-4">
-                            <ServiceDialog />
-                        </div>
-                    </div>
-                </div>
-            )}
+            <Suspense fallback={<CategoryListSkeleton />}>
+                <CategoryList />
+            </Suspense>
         </div>
     )
 }

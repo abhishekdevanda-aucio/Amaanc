@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
-import { getServices, getServiceBySlug, getRelatedServices } from "@/lib/data/services";
-import { getCategoryBySlug } from "@/lib/data/service-categories";
+import {
+    getAllServicesForStaticGeneration,
+    getServiceBySlug,
+    getCategoryBySlug,
+    getServicesByCategory
+} from "@/lib/data/services";
 import { ServiceHero } from "./_components/service-hero";
 import { ServiceOverview } from "./_components/service-overview";
 import { ProblemsSolutions } from "./_components/problems-solutions";
@@ -16,17 +20,17 @@ interface PageProps {
 
 // Generate params for all services at build time
 export async function generateStaticParams() {
-    const services = getServices();
+    const services = await getAllServicesForStaticGeneration();
     return services.map((service) => ({
         category: service.categorySlug,
-        slug: service.slug,
+        slug: service.serviceSlug,
     }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug, category } = await params;
-    const service = getServiceBySlug(slug);
-    const categoryData = getCategoryBySlug(category);
+    const service = await getServiceBySlug(slug);
+    const categoryData = await getCategoryBySlug(category);
 
     if (!service || !categoryData || service.categorySlug !== category) {
         return {
@@ -44,18 +48,22 @@ export default async function ServicePage({ params }: PageProps) {
     const { category, slug } = await params;
 
     // Validate category exists
-    const categoryData = getCategoryBySlug(category);
+    const categoryData = await getCategoryBySlug(category);
     if (!categoryData) {
         notFound();
     }
 
     // Validate service exists and belongs to this category
-    const service = getServiceBySlug(slug);
+    const service = await getServiceBySlug(slug);
     if (!service || service.categorySlug !== category) {
         notFound();
     }
 
-    const relatedServices = getRelatedServices(slug, category, 3);
+    // Get related services (other services in same category, excluding current)
+    const allCategoryServices = await getServicesByCategory(category);
+    const relatedServices = allCategoryServices
+        .filter(s => s.slug !== slug)
+        .slice(0, 3);
 
     return (
         <>

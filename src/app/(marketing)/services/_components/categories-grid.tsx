@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { ServiceCategory } from "@/lib/data/service-categories";
-import { getServicesByCategory } from "@/lib/data/services";
+import { ServiceCategory } from "@/lib/data/services";
 import { Badge } from "@/components/ui/badge";
 
 interface CategoriesGridProps {
@@ -34,7 +33,8 @@ export function CategoriesGrid({ categories }: CategoriesGridProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {categories.map((category, index) => {
-                        const serviceCount = getServicesByCategory(category.slug).length;
+                        // Use serviceCount from category data
+                        const serviceCount = category.serviceCount || 0;
                         // Calculate staggered delay for animation
                         const delayClass = index === 0 ? "delay-0" :
                             index === 1 ? "delay-100" :
@@ -49,12 +49,16 @@ export function CategoriesGrid({ categories }: CategoriesGridProps) {
                             >
                                 {/* Image Header */}
                                 <div className="h-48 relative overflow-hidden">
-                                    <Image
-                                        src={category.imageUrl}
-                                        alt={category.name}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
+                                    {category.imageUrl ? (
+                                        <Image
+                                            src={category.imageUrl}
+                                            alt={category.name}
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                    ) : (
+                                        <div className="flex items-center justify-center h-full bg-muted" />
+                                    )}
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
 
