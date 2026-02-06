@@ -1,7 +1,6 @@
 import { Service } from "@/lib/data/services";
 import { Badge } from "@/components/ui/badge";
-import { Check, Code2, Cpu, Globe, Zap, ArrowRight, Layers, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Check, Code2, Cpu, Layers } from "lucide-react";
 
 interface ServiceOverviewProps {
     service: Service;

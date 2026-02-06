@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getFeaturedServices, resolveServiceIcon } from "@/lib/data/services";
-import { getCategoryBySlug } from "@/lib/data/service-categories";
 
 export function FeaturedServices() {
     const featuredServices = getFeaturedServices();
@@ -28,7 +27,6 @@ export function FeaturedServices() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredServices.map((service) => {
                         const Icon = resolveServiceIcon(service.icon);
-                        const category = getCategoryBySlug(service.categorySlug);
 
                         return (
                             <Card

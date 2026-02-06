@@ -3,7 +3,6 @@ import {
     Cloud,
     Brain,
     Workflow,
-    Code2,
     Laptop,
     Palette,
     Smartphone,
@@ -15,9 +14,7 @@ import {
     GraduationCap,
     UserSearch,
     Briefcase,
-    Settings,
     Layers,
-    Zap
 } from "lucide-react";
 
 // Icon mapping for services
