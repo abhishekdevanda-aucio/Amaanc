@@ -346,6 +346,7 @@ export function ServiceForm({ initialData, category }: ServiceFormProps) {
                                                     <AssetPickerDialog
                                                         value={field.state.value || ""}
                                                         onSelect={(url) => field.handleChange(url)}
+                                                        folder="services"
                                                     />
                                                 </div>
                                             </FieldContent>

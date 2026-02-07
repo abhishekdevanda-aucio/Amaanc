@@ -22,7 +22,7 @@ interface AssetPickerDialogProps {
 export function AssetPickerDialog({
     value,
     onSelect,
-    folder = "industries",
+    folder = "uploads",
     trigger
 }: AssetPickerDialogProps) {
     const [open, setOpen] = useState(false)

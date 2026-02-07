@@ -178,6 +178,7 @@ export function CategoryDialog({ category, open: controlledOpen, onOpenChange }:
                             <AssetPickerDialog
                                 value={imageUrl}
                                 onSelect={setImageUrl}
+                                folder="services"
                             />
                         </div>
                     </div>
