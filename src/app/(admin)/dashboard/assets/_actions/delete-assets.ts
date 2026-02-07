@@ -1,9 +1,14 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
 
 export async function deleteAsset(id: string, filePath: string): Promise<void> {
     const supabase = await createClient();
+    const { data: { user }, } = await supabase.auth.getUser()
+    if (!user) {
+        redirect("/login")
+    }
 
     // 1. Delete from Storage
     const { error: storageError } = await supabase.storage

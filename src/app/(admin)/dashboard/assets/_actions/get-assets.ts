@@ -3,10 +3,14 @@
 import { Asset } from "@/types/assets-types";
 import { createClient } from "@/lib/supabase/server";
 import { mapDbAssetToAsset } from "@/lib/helpers/assets-helper";
+import { redirect } from "next/navigation";
 
 export async function getAssets(limit = 50, offset = 0): Promise<Asset[]> {
     const supabase = await createClient();
-
+    const { data: { user }, } = await supabase.auth.getUser()
+    if (!user) {
+        redirect("/login")
+    }
     const { data, error } = await supabase
         .from('assets')
         .select('*')

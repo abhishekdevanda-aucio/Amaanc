@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge"
 import { toast } from "sonner"
 import Link from "next/link"
 import { Trash2, Edit, MoreHorizontal, Briefcase } from "lucide-react"
-import { deleteIndustry } from "../_actions/actions"
+import { deleteIndustry } from "../_actions/delete-industry"
 import { IndustryRow, iconMap } from "@/data/industries"
 import {
     DropdownMenu,

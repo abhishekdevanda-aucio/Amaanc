@@ -1,10 +1,10 @@
+import { Suspense } from "react";
 import { AssetManager } from "./_components/asset-manager";
 import { AssetUploadDialog } from "./_components/asset-dialog";
 import { getAssets } from "./_actions/get-assets";
+import { AssetsSkeleton } from "./_components/assets-skeleton";
 
-export default async function AssetsPage() {
-  const assets = await getAssets();
-
+export default function AssetsPage() {
   return (
     <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">
       <div className="flex items-center justify-between">
@@ -14,7 +14,14 @@ export default async function AssetsPage() {
         </div>
         <AssetUploadDialog />
       </div>
-      <AssetManager assets={assets} />
+      <Suspense fallback={<AssetsSkeleton />}>
+        <AssetsList />
+      </Suspense>
     </div>
   );
+}
+
+async function AssetsList() {
+  const assets = await getAssets();
+  return <AssetManager assets={assets} />;
 }

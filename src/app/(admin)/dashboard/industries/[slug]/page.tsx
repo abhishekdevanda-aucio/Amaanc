@@ -1,4 +1,4 @@
-import { getIndustryBySlug } from "../_actions/actions";
+import { getIndustryBySlug } from "../_actions/get-industry-by-slug";
 import { notFound } from "next/navigation";
 import { IndustryForm } from "../_components/industry-form";
 

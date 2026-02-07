@@ -2,10 +2,15 @@
 
 import { revalidatePath } from "next/cache"
 import { createClient } from "@/lib/supabase/server"
+import { redirect } from "next/navigation"
 
 // Create service
 export async function createService(prevState: unknown, formData: FormData) {
     const supabase = await createClient()
+    const { data: { user }, } = await supabase.auth.getUser()
+    if (!user) {
+        redirect("/login")
+    }
 
     const rawData = {
         name: formData.get("name") as string,

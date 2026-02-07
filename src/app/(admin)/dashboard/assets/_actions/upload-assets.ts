@@ -3,6 +3,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { Asset, AssetUploadParams } from "@/types/assets-types";
 import { mapDbAssetToAsset } from "@/lib/helpers/assets-helper";
+import { redirect } from "next/navigation";
 
 export async function uploadAsset({
     file,
@@ -11,6 +12,10 @@ export async function uploadAsset({
     title = ""
 }: AssetUploadParams): Promise<Asset> {
     const supabase = await createClient();
+    const { data: { user }, } = await supabase.auth.getUser()
+    if (!user) {
+        redirect("/login")
+    }
 
     // 1. Upload file to Supabase Storage
     const fileExt = file.name.split('.').pop();
@@ -30,10 +35,7 @@ export async function uploadAsset({
         .from('assets')
         .getPublicUrl(filePath);
 
-    // 3. Get current user
-    const { data: { user } } = await supabase.auth.getUser();
-
-    // 4. Save metadata to 'assets' table
+    // 3. Save metadata to 'assets' table
     const { data: assetData, error: dbError } = await supabase
         .from('assets')
         .insert({

@@ -36,6 +36,10 @@ export async function updateSession(request: NextRequest) {
     if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
         return NextResponse.redirect(new URL('/login', request.url))
     }
+    
+    if (request.nextUrl.pathname.startsWith('/login') && user) {
+        return NextResponse.redirect(new URL('/dashboard', request.url))
+    }
 
     return supabaseResponse
 };

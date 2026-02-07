@@ -13,8 +13,7 @@ import { usePathname } from "next/navigation"
 import React from "react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
-
-import { User } from "@supabase/supabase-js"
+import { type User } from "@supabase/supabase-js"
 import { NavUser } from "./nav-user"
 
 export function DashboardHeader({ user }: { user: User }) {

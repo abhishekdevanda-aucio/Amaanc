@@ -1,10 +1,15 @@
 "use server"
 
 import { createClient } from "@/lib/supabase/server"
+import { redirect } from "next/navigation"
 
 // Get service by slug for admin (includes unpublished)
 export async function getServiceBySlug(slug: string) {
     const supabase = await createClient()
+    const { data: { user }, } = await supabase.auth.getUser()
+    if (!user) {
+        redirect("/login")
+    }
 
     const { data, error } = await supabase
         .from("services")

@@ -1,7 +1,10 @@
 import { CategoryDialog } from "./_components/category-dialog"
-import { CategoryList } from "./_components/category-list"
 import { CategoryListSkeleton } from "./_components/category-list-skeleton"
 import { Suspense } from "react"
+import { EmptyPlaceholder } from "@/components/empty-placeholder"
+import { FolderOpen } from "lucide-react"
+import { getCategories } from "./_actions/get-categories"
+import { CategoryTable } from "./_components/category-table"
 
 export const metadata = {
     title: "Services | Dashboard",
@@ -26,4 +29,20 @@ export default function ServicesPage() {
             </Suspense>
         </div>
     )
+}
+
+async function CategoryList() {
+    const categories = await getCategories()
+
+    if (!categories || categories.length === 0) {
+        return (
+            <EmptyPlaceholder
+                title="No categories found"
+                description="Get started by creating a service category."
+                icon={FolderOpen}
+            />
+        )
+    }
+
+    return <CategoryTable categories={categories} />
 }

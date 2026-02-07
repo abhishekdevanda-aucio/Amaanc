@@ -1,15 +1,13 @@
+import { Suspense } from "react"
 import { createClient } from "@/lib/supabase/server"
 import { IndustryList } from "./_components/industry-list"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Plus, Factory } from "lucide-react"
 import { EmptyPlaceholder } from "@/components/empty-placeholder"
+import { IndustriesSkeleton } from "./_components/industries-skeleton"
 
-export default async function IndustriesPage() {
-    const supabase = await createClient()
-    // Fetch all for now, assuming low volume. For pagination, we'd add .range()
-    const { data: industries } = await supabase.from("industries").select("*").order("created_at", { ascending: false })
-
+export default function IndustriesPage() {
     return (
         <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">
             <div className="flex items-center justify-between">
@@ -25,15 +23,26 @@ export default async function IndustriesPage() {
                 </Link>
             </div>
 
-            {(!industries || industries.length === 0) ? (
-                <EmptyPlaceholder
-                    title="No industries found"
-                    description="Get started by creating a new industry."
-                    icon={Factory}
-                />
-            ) : (
-                <IndustryList industries={industries || []} />
-            )}
+            <Suspense fallback={<IndustriesSkeleton />}>
+                <IndustriesList />
+            </Suspense>
         </div>
     )
+}
+
+async function IndustriesList() {
+    const supabase = await createClient()
+    const { data: industries } = await supabase.from("industries").select("*").order("created_at", { ascending: false })
+
+    if (!industries || industries.length === 0) {
+        return (
+            <EmptyPlaceholder
+                title="No industries found"
+                description="Get started by creating a new industry."
+                icon={Factory}
+            />
+        )
+    }
+
+    return <IndustryList industries={industries} />
 }
