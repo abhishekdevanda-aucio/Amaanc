@@ -72,7 +72,7 @@ export default async function EditServicePage({ params }: PageProps) {
     }
 
     return (
-        <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col gap-8 p-6 w-full">
             <ServiceForm initialData={serviceForForm} category={categoryForForm} />
         </div>
     )

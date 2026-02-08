@@ -77,7 +77,7 @@ export function HowWeAreDifferentSection() {
     return (
         <section className="py-20 bg-primary text-primary-foreground overflow-hidden relative">
             <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center x-4 lg:px-8">
 
                     {/* Left Column */}
                     <div className="relative py-8 md:px-12 lg:px-16 w-full max-w-md mx-auto lg:max-w-none">

@@ -9,7 +9,7 @@ import { IndustriesSkeleton } from "./_components/industries-skeleton"
 
 export default function IndustriesPage() {
     return (
-        <div className="flex flex-col gap-8 p-6 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col gap-8 p-6 w-full">
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight">Industries</h1>
