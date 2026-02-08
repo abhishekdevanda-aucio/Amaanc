@@ -19,7 +19,7 @@ export default async function MarketingLayout({
     return (
         <>
             <Header navData={navData} />
-            <main className="flex-1 relative">{children}</main>
+            <main className="relative pt-8 sm:pt-16">{children}</main>
             <Footer industries={industries} services={services} />
         </>
     );
