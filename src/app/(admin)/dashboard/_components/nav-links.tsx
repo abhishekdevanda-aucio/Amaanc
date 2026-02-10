@@ -2,6 +2,7 @@
 import {
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -10,64 +11,85 @@ import { BookOpenText, Factory, Image, LayoutDashboard, Settings, Users } from "
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-const navLinks = [
+const navGroups = [
   {
-    title: "Overview",
-    url: "/dashboard",
-    icon: LayoutDashboard,
+    label: "Dashboard",
+    items: [
+      {
+        title: "Overview",
+        url: "/dashboard",
+        icon: LayoutDashboard,
+      },
+    ],
   },
   {
-    title: "Assets",
-    url: "/dashboard/assets",
-    icon: Image,
+    label: "Content",
+    items: [
+      {
+        title: "Assets",
+        url: "/dashboard/assets",
+        icon: Image,
+      },
+      {
+        title: "Services",
+        url: "/dashboard/services",
+        icon: Settings,
+      },
+      {
+        title: "Industries",
+        url: "/dashboard/industries",
+        icon: Factory,
+      },
+      {
+        title: "Case Studies",
+        url: "/dashboard/case-studies",
+        icon: BookOpenText,
+      },
+    ],
   },
   {
-    title: "Services",
-    url: "/dashboard/services",
-    icon: Settings,
-  },
-  {
-    title: "Industries",
-    url: "/dashboard/industries",
-    icon: Factory,
-  },
-  {
-    title: "Case Studies",
-    url: "/dashboard/case-studies",
-    icon: BookOpenText,
-  },
-  {
-    title: "Leads",
-    url: "/dashboard/leads",
-    icon: Users,
+    label: "CRM",
+    items: [
+      {
+        title: "Leads",
+        url: "/dashboard/leads",
+        icon: Users,
+      },
+    ],
   },
 ]
+
 export function NavLinks() {
   const pathname = usePathname()
 
   return (
-    <SidebarGroup>
-      <SidebarGroupContent className="flex flex-col gap-2">
-        <SidebarMenu>
-          {navLinks.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <Link href={item.url} className="block">
-                <SidebarMenuButton
-                  tooltip={item.title}
-                  isActive={
-                    item.url === "/dashboard"
-                      ? pathname === "/dashboard"
-                      : pathname.startsWith(item.url)
-                  }
-                >
-                  {item.icon && <item.icon />}
-                  <span>{item.title}</span>
-                </SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
-      </SidebarGroupContent>
-    </SidebarGroup>
+    <>
+      {navGroups.map((group) => (
+        <SidebarGroup key={group.label}>
+          <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {group.items.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <Link href={item.url} className="block">
+                    <SidebarMenuButton
+                      tooltip={item.title}
+                      isActive={
+                        item.url === "/dashboard"
+                          ? pathname === "/dashboard"
+                          : pathname.startsWith(item.url)
+                      }
+                    >
+                      {item.icon && <item.icon />}
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </Link>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      ))}
+    </>
   )
 }
