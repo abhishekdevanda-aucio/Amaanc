@@ -20,7 +20,7 @@ const industries = [
     image: "/images/home/industry-banking.webp",
   },
   {
-    icon: Factory, // Using Factory for Utilities as generic industrial icon
+    icon: Factory,
     title: "Utilities",
     description: "Grid modernization, customer engagement, and field service management.",
     href: "/industries/utilities",
@@ -34,7 +34,7 @@ const industries = [
     image: "/images/home/industry-railway.webp",
   },
   {
-    icon: Stethoscope, // Using Stethoscope/Shield for insurance usually, keeping Stethoscope if health insurance, but Briefcase/Shield better for general. Let's switch to Shield or similar if available, or keep Briefcase.
+    icon: Stethoscope,
     title: "Insurance",
     description: "Claims processing automation, policy management, and customer insights.",
     href: "/industries/insurance",
@@ -113,7 +113,7 @@ export function IndustriesSection() {
         {/* Other Industries Messaging */}
         <div className="mt-16 max-w-4xl mx-auto text-center bg-card/50 border border-border/50 rounded-2xl p-8 backdrop-blur-sm">
           <blockquote className="text-lg md:text-xl text-foreground font-medium italic mb-6">
-            &ldquo;While we have deep experience in the industries above, our solutions are adaptable. We welcome the opportunity to partner with clients in any sector seeking digital transformation.&rdquo;
+            While we have deep experience in the industries above, our solutions are adaptable. We welcome the opportunity to partner with clients in any sector seeking digital transformation.
           </blockquote>
           <Link href="/contact" className="inline-flex">
             <Button variant="outline">

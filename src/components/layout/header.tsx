@@ -47,7 +47,7 @@ export function Header({ navData }: HeaderProps) {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Logo />
+            <Logo showSubText={false}/>
           </Link>
 
           {/* Desktop Navigation */}
@@ -125,7 +125,7 @@ export function Header({ navData }: HeaderProps) {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Link href="/contact-us">
-              <Button>Get Started</Button>
+              <Button>Contact Us</Button>
             </Link>
           </div>
 

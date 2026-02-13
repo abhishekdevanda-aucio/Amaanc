@@ -7,35 +7,39 @@ import { ArrowRight, Cloud, Brain, Workflow, Code2 } from "lucide-react"
 const services = [
   {
     icon: Cloud,
-    title: "Salesforce Consultancy",
+    title: "Strategic Salesforce Orchestration",
+    subtitle: "Optimizing Customer Ecosystems",
     description:
-      "Strategic implementation and optimization of Sales Cloud, Service Cloud, and Marketing Cloud to drive customer success.",
+      "We provide high-level implementation and architectural optimization of Sales, Service, and Marketing Clouds. Our goal is to transform your CRM into a seamless engine for long-term customer success and operational efficiency.",
     href: "/services/salesforce",
-    features: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "Einstein AI"],
+    features: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "Revenue Cloud"],
   },
   {
     icon: Brain,
-    title: "Artificial Intelligence",
+    title: "Cognitive Enterprise Intelligence",
+    subtitle: "Predictive & Agentic Solutions",
     description:
-      "Transforming business operations with predictive analytics, machine learning models, and intelligent automation.",
+      "Elevating business operations through advanced predictive analytics, machine learning, and intelligent automation. We integrate Einstein AI to turn raw data into actionable insights and autonomous workflows.",
     href: "/services/ai-analytics",
-    features: ["Predictive Analytics", "Machine Learning", "Process Automation", "Data Insights"],
+    features: ["Predictive Analytics", "Machine Learning", "Einstein AI", "Data Insights"],
   },
   {
     icon: Workflow,
-    title: "System Integration",
+    title: "Unified Digital Architecture",
+    subtitle: "Seamless Ecosystem Connectivity",
     description:
-      "Seamlessly connecting your enterprise ecosystem with robust API strategies and middleware solutions.",
+      "Connecting your enterprise landscape through robust API strategies, MuleSoft integration, and middleware excellence. We specialize in legacy modernization and real-time synchronization to ensure total data fluidity.",
     href: "/services/integration",
-    features: ["API Development", "MuleSoft", "Legacy Modernization", "Real-time Sync"],
+    features: ["MuleSoft", "API Strategy", "Legacy Modernization", "Real-time Sync"],
   },
   {
     icon: Code2,
-    title: "Enterprise Solutions",
+    title: "Full-Stack Digital Engineering",
+    subtitle: "Resilient SAP & .NET Infrastructure",
     description:
-      "End-to-end digital engineering including .NET, SAP consultancy, and custom mobile application development.",
+      "Delivering mission-critical engineering including SAP solutions, .NET consultancy, and bespoke application development. From UI/UX design to backend stability, we build scalable platforms for complex organizational needs.",
     href: "/services/enterprise",
-    features: [".NET Consultancy", "SAP Solutions", "Mobile Apps", "UI/UX Design"],
+    features: ["SAP Solutions", ".NET Consultancy", "Custom Apps", "UI/UX Design"],
   },
 ]
 
@@ -50,14 +54,13 @@ export function ServicesOverview() {
               Our Services
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
-              Comprehensive Solutions for <br className="hidden md:block" />
+              Accelerating <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                Digital Transformation
+                Enterprise Evolution
               </span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From Salesforce expertise to AI-powered innovation, we deliver end-to-end solutions that drive measurable
-              business outcomes.
+              Leveraging deep technical mastery in Salesforce and AI to turn complex enterprise challenges into measurable commercial advantages.
             </p>
           </div>
           <Link href="/services" className="shrink-0 hidden md:inline-flex">
@@ -76,11 +79,14 @@ export function ServicesOverview() {
               className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50"
             >
               <CardHeader>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0 mt-1">
                     <service.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-xl leading-tight">{service.title}</CardTitle>
+                  <div>
+                    <CardTitle className="text-xl leading-tight mb-1 group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                    <p className="text-sm font-medium text-muted-foreground">{service.subtitle}</p>
+                  </div>
                 </div>
                 <CardDescription className="leading-relaxed">{service.description}</CardDescription>
               </CardHeader>

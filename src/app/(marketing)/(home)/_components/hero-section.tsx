@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Globe, Zap, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, Zap, BarChart3, Layers, Brain, Bot } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
@@ -22,15 +22,15 @@ export function HeroSection() {
               Trusted Salesforce Partner Since 2012
             </Badge>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground text-balance">
-              Empowering <br />
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-foreground text-balance">
+              Empowering Growth Through <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
-                Digital Enterprise
+                Innovation, Integration, and Talent
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              We architect scalable Salesforce solutions and AI integrations that drive operational excellence for Fortune 500 companies.
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              From high-impact Salesforce and AI integrations to bespoke enterprise architecture and strategic talent acquisition, we provide the vision, technical depth, and elite personnel to accelerate your digital evolution. Bring us your most complex challenges; we’ll provide the solution.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
@@ -58,78 +58,117 @@ export function HeroSection() {
             {/* Trust Indicators */}
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm font-medium text-muted-foreground mb-4">Trusted by industry leaders in:</p>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>Finance & Banking</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>Insurance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                <span>Utilities & Retail</span>
+              <div className="grid grid-cols-3 gap-y-2 gap-x-4">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Finance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Banking</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Utilities</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Public Sector</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Health</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Retail</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Insurance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Telecom</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Automotive</span>
+                </div>
+                {/* <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>Defence</span>
+                </div> */}
               </div>
             </div>
           </div>
 
           {/* Right Column: Visual Elements */}
-          <div className="relative hidden lg:block">
+          <div className="relative hidden lg:block h-full">
             {/* Abstract Dashboard/Glass Card Composition */}
             <div className="relative w-full aspect-square max-w-150 mx-auto perspective-1000">
 
-              {/* Floating Cards */}
-              <div className="absolute top-10 right-10 w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-20 animate-float-slow">
+              {/* Card 1: Scalable Architecture (Top Right) */}
+              <div className="absolute top-12 -right-4 w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-20 animate-float-slow">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-blue-500/10">
-                    <Globe className="h-5 w-5 text-blue-500" />
+                    <Layers className="h-5 w-5 text-blue-500" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold">Global Scale</div>
-                    <div className="text-xs text-muted-foreground">Multi-region Rollout</div>
+                    <div className="text-sm font-bold">Scalable Architecture</div>
+                    <div className="text-xs text-muted-foreground">up to 60% Reduction</div>
                   </div>
                 </div>
                 <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-                  <div className="h-full w-[85%] bg-blue-500 rounded-full" />
+                  <div className="h-full w-[60%] bg-blue-500 rounded-full animate-pulse" />
                 </div>
               </div>
 
-              <div className="absolute bottom-20 left-10 w-72 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-30 animate-float-delayed">
+              {/* Card 2: Strategic Predictive Intelligence (Bottom Left) */}
+              <div className="absolute bottom-16 -left-4 w-72 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-30 animate-float-delayed">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-purple-500/10">
-                    <Zap className="h-5 w-5 text-purple-500" />
+                  <div className="p-2 rounded-lg bg-amber-500/10">
+                    <Zap className="h-5 w-5 text-amber-500" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold">AI Integration</div>
-                    <div className="text-xs text-muted-foreground">Predictive Analytics</div>
+                    <div className="text-sm font-bold">Strategic Predictive Intelligence</div>
+                    <div className="text-xs text-muted-foreground">Data insights for your next big move</div>
                   </div>
                 </div>
-                <div className="grid grid-cols-4 gap-2 mt-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-8 bg-purple-500/10 rounded-md" />
-                  ))}
+                <div className="h-2 w-full bg-muted/50 rounded-full overflow-hidden mt-2">
+                  <div className="h-full w-[90%] bg-linear-to-r from-amber-500 to-amber-400 rounded-full animate-pulse" />
                 </div>
               </div>
 
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 p-5 rounded-2xl bg-card/90 backdrop-blur-xl border border-white/20 shadow-2xl z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-green-500/10">
-                      <BarChart3 className="h-5 w-5 text-green-500" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold">Growth Metric</div>
-                      <div className="text-xs text-muted-foreground">+45% Efficiency</div>
-                    </div>
+              {/* Card 3: Growth via Agentic AI (Center - Anchored) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-10 animate-float-slow animation-delay-500">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-pink-500/10">
+                    <Bot className="h-5 w-5 text-pink-500" />
                   </div>
-                  <Badge variant="outline" className="text-green-600 bg-green-50 border-green-200">
-                    +24.5%
-                  </Badge>
+                  <div>
+                    <div className="text-sm font-bold">Growth via Agentic AI</div>
+                    <div className="text-xs text-muted-foreground">Using latest AI tools</div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-2 w-full bg-muted rounded-full" />
-                  <div className="h-2 w-3/4 bg-muted rounded-full" />
-                  <div className="h-2 w-1/2 bg-muted rounded-full" />
+                <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
+                  <div className="h-full w-[70%] bg-pink-500 rounded-full animate-pulse" />
+                </div>
+              </div>
+
+              {/* Card 4: Global Ecosystem Orchestration (Top Left) */}
+              <div className="absolute top-8 left-0 w-72 p-5 rounded-2xl bg-card/90 backdrop-blur-xl border border-white/20 shadow-2xl z-40 animate-float-slow animation-delay-700">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-emerald-500/10">
+                    <Globe className="h-5 w-5 text-emerald-500" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold">Global Ecosystem</div>
+                    <div className="text-xs text-muted-foreground">Handling complex setups</div>
+                  </div>
+                </div>
+                <div className="h-2 w-full bg-muted/50 rounded-full overflow-hidden mt-1">
+                  <div className="h-full w-[95%] bg-linear-to-r from-emerald-500 to-emerald-400 rounded-full animate-pulse" />
                 </div>
               </div>
 

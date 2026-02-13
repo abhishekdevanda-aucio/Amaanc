@@ -15,8 +15,8 @@ import Link from "next/link"
 
 const features = [
     {
-        title: "Business-First Consulting",
-        description: "We don't just deliver tech; we align it with your strategic business goals. Our consultants speak your language and focus on outcomes that drive real value.",
+        title: "Outcome-Engineered Architectural Strategy",
+        description: "Technology is a strategic asset, not a cost center. We specialize in harmonizing advanced Salesforce and AI architectures with your overarching business objectives to drive measurable growth, operational resilience, and long-term ROI.",
         image: "/images/home/how-different-business.png"
     },
     {
@@ -142,7 +142,7 @@ export function HowWeAreDifferentSection() {
                     {/* Right Column */}
                     <div className="flex flex-col justify-center space-y-6 lg:pr-12 min-h-[350px]">
                         <Badge variant="outline" className="w-fit p-4 border-white/20 bg-white/5 text-primary-foreground/90 font-medium tracking-wide mb-6">
-                            We&apos;re Different
+                            The Strategic Distinction
                         </Badge>
 
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" key={current}>
@@ -157,7 +157,7 @@ export function HowWeAreDifferentSection() {
 
                         <div className="pt-4">
                             <Link href="/contact" className="inline-flex items-center gap-2 text-white font-semibold border-b border-white/30 pb-0.5 hover:border-white transition-all group">
-                                Tell Us About Your Salesforce Partner Needs
+                                Initiate Your Strategic Transformation
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>

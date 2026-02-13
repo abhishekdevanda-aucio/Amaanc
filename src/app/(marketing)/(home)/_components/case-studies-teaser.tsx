@@ -6,30 +6,30 @@ import { ArrowRight, ArrowUpRight } from "lucide-react"
 
 const caseStudies = [
   {
-    title: "Global Bank Digital Transformation",
+    title: "Global Banking Architecture Modernization",
     client: "Major Int'l Bank",
     industry: "Banking & Finance",
-    description: "Modernized legacy banking systems to enable real-time personalized customer experiences.",
-    results: ["40% efficiency boost", "Faster onboarding"],
+    description: "Re-engineering legacy financial infrastructure to support real-time, AI-driven personalized customer journeys and secure global compliance.",
+    results: ["Over 60% faster Loan Closing", "Faster Onboarding"],
     image: "/images/home/case-study-global-bank-digital-transformation.png",
     href: "/case-studies/global-bank-transformation",
   },
   {
-    title: "Insurance Claims Automation",
-    client: "National Insurer",
-    industry: "Insurance",
-    description: "Implemented AI-driven claims processing to reduce settlement time and improve fraud detection.",
-    results: ["60% faster claims", "99.9% accuracy"],
-    image: "/images/home/case-study-healthcare-system-integration.webp", // keeping image filename for now to avoid breaking build, ideally rename asset too but out of scope
-    href: "/case-studies/insurance-automation",
+    title: "Crisis-Scale Response & Enquiry Orchestration",
+    client: "Govt Health Dept",
+    industry: "Public Health Emergency Response",
+    description: "Architecting a high-capacity automation framework to manage the surge of public enquiries. By implementing AI-driven triage, we stabilized mission-critical communications and ensured high-priority cases were addressed with architectural precision.",
+    results: ["85% Faster Resolution", ">50% Fewer Escalations"],
+    image: "/images/home/case-study-healthcare-system-integration.webp",
+    href: "/case-studies/public-health-emergency",
   },
   {
-    title: "Smart Grid Data Management",
+    title: "Predictive Grid Intelligence",
     client: "Regional Utility",
-    industry: "Utilities",
-    description: "Unified data platform for smart meter analytics and predictive grid maintenance.",
-    results: ["25% less outages", "$2M annual savings"],
-    image: "/images/home/case-study-manufacturing-ai-implementation.webp", // keeping image filename for now
+    industry: "Energy & Utilities",
+    description: "Harnessing real-time Data Cloud analytics to optimize smart meter maintenance and strengthen infrastructure resilience.",
+    results: ["25% Improved Stability", "Better Reporting"],
+    image: "/images/home/case-study-manufacturing-ai-implementation.webp",
     href: "/case-studies/utilities-grid",
   },
 ]
@@ -40,18 +40,18 @@ export function CaseStudiesTeaser() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
-              Success Stories
+              Proven Performance
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
-              Real Results for <br className="hidden md:block" />
+              Measurable Impact at <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                Real Businesses
+                Enterprise Scale
               </span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Discover how we&apos;ve helped enterprises transform their operations and achieve measurable outcomes.
+              Explore how we architect resilient solutions that solve complex technical challenges and deliver sustainable commercial growth for industry leaders.
             </p>
           </div>
           <Link href="/case-studies" className="shrink-0 hidden md:inline-flex">
@@ -59,7 +59,7 @@ export function CaseStudiesTeaser() {
               variant="outline"
               className="group inline-flex items-center"
             >
-              View All Case Studies
+              Explore Our Portfolio
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
@@ -92,20 +92,21 @@ export function CaseStudiesTeaser() {
 
               {/* Content */}
               <div className="p-6 md:p-8 flex flex-col flex-1">
-                <div className="flex items-center justify-between mb-4">
-                  <Badge variant="secondary" className="font-medium">
+                <div className="flex items-center justify-between mb-4 gap-2">
+                  <Badge variant="secondary" className="font-medium truncate">
                     {study.industry}
                   </Badge>
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                  {/* Client name hidden on small screens if needed, or kept simple */}
+                  {/* <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">
                     {study.client}
-                  </span>
+                  </span> */}
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">
                   {study.title}
                 </h3>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1 line-clamp-4">
                   {study.description}
                 </p>
 
@@ -130,7 +131,7 @@ export function CaseStudiesTeaser() {
               variant="outline"
               className="w-full inline-flex items-center justify-center gap-2"
             >
-              View All Case Studies
+              Explore Our Portfolio
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

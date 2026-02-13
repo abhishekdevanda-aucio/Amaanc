@@ -13,47 +13,33 @@ import { cn } from "@/lib/utils";
 const features = [
     {
         icon: <History className="w-8 h-8 text-primary" />,
-        title: "Validated Expertise",
-        subtitle: "Since 2012",
-        description: "Over a decade of proven success delivering complex enterprise transformations. We bring stability and deep institutional knowledge.",
+        title: "The Foundation of Enterprise Trust Established 2012",
+        subtitle: "13+ Years",
+        description: "True expertise is forged over time. Since 2012, we have specialized in navigating the intricacies of global enterprise ecosystems, turning technical complexity into streamlined operational success for industry leaders.",
         className: "md:col-span-6 bg-primary/5 border-primary/10",
-        // Custom visual for the wide card
-        visual: (
-            <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-linear-to-l from-primary/10 to-transparent hidden md:flex items-center justify-center -mr-8 group-hover:mr-0 transition-all duration-500">
-                <div className="relative p-6">
-                    <div className="flex items-end gap-2 text-primary font-bold opacity-50 group-hover:opacity-100 transition-opacity">
-                        <span className="text-6xl">12</span>
-                        <span className="text-2xl mb-2">+ Years</span>
-                    </div>
-                    <div className="h-2 w-full bg-primary/20 rounded-full mt-2 overflow-hidden">
-                        <div className="h-full w-3/4 bg-primary rounded-full animate-pulse" />
-                    </div>
-                </div>
-            </div>
-        )
     },
     {
         icon: <Zap className="w-8 h-8 text-amber-500" />,
-        title: "Salesforce + AI Core",
-        subtitle: "Technical Excellence",
-        description: "Masters of the ecosystem, enhanced by cutting-edge AI. We architect scalable platforms.",
+        title: "Precision Engineering & Agentic AI",
+        subtitle: "True Artificial Intelligence",
+        description: "Transforming the world’s leading CRM into a cognitive enterprise powerhouse. Our team architects scalable, AI-enhanced solutions that bridge the gap between technical complexity and intuitive user experiences.",
         className: "md:col-span-4",
     },
     {
         icon: <Briefcase className="w-8 h-8 text-blue-600" />,
-        title: "Business-First Approach",
+        title: "Strategic Value Alignment Outcome-Driven Architecture",
         subtitle: "ROI Focused",
-        description: "Technology is just the tool; value is the goal. We align every decision with your strategic objectives.",
+        description: "We look beyond the code to the bottom line. Our 'Business-First' philosophy ensures that every piece of work that we do for our prestigious clients, is architected to eliminate operational friction and accelerate your specific commercial milestones.",
         className: "md:col-span-4",
     },
     {
         icon: <Globe className="w-8 h-8 text-indigo-500" />,
-        title: "Global & Compliant",
-        subtitle: "EMEA & Beyond",
-        description: "Expertise in navigating complex regulatory landscapes (GDPR, UK/EU standards). Secure, compliant solutions globally.",
+        title: "Global Governance & Compliance",
+        subtitle: "Strategic International Frameworks",
+        description: "Architecting secure, multi-region ecosystems that exceed global regulatory mandates. We ensure your Salesforce and AI deployments remain fully compliant with GDPR, HIPAA, ISO & other standards required by our clients, while maintaining peak operational integrity.",
         className: "md:col-span-6 bg-blue-500/5 border-blue-500/10",
         visual: (
-            <div className="absolute top-1/2 -translate-y-1/2 right-8 hidden md:block opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute top-1/3 -translate-y-1/2 right-8 hidden lg:block opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 <div className="grid grid-cols-2 gap-3 transform rotate-12">
                     {['GDPR', 'HIPAA', 'ISO', 'SOC2'].map((tag, i) => (
                         <div key={i} className="bg-background/80 backdrop-blur border border-blue-500/20 px-3 py-1.5 rounded-lg text-xs font-bold text-blue-600 shadow-sm">
@@ -66,12 +52,12 @@ const features = [
     },
     {
         icon: <Layers className="w-8 h-8 text-emerald-500" />,
-        title: "End-to-End Delivery",
-        subtitle: "Full Lifecycle",
-        description: "From strategy to DevOps and support. We are your partner for the entire journey.",
+        title: "Full-Lifecycle Orchestration",
+        subtitle: "Unified Technical Delivery",
+        description: "From initial strategy and architectural design to advanced DevOps (CI/CD) and long-term Change Management. We serve as your dedicated technical partner, ensuring seamless execution across every phase of the digital evolution.",
         className: "md:col-span-5 bg-emerald-500/5 border-emerald-500/10",
         visual: (
-            <div className="mt-6 flex items-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+            <div className="mt-6 hidden lg:flex items-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
                 <div className="h-1.5 w-12 bg-emerald-500/30 rounded-full" />
                 <div className="h-1.5 w-1.5 bg-emerald-500 rounded-full" />
                 <div className="h-1.5 w-12 bg-emerald-500 rounded-full" />
@@ -81,12 +67,12 @@ const features = [
     },
     {
         icon: <Rocket className="w-8 h-8 text-purple-500" />,
-        title: "Agile Enterprise",
-        subtitle: "Speed & Scale",
-        description: "Combining agile speed with enterprise rigor. Fast, quality results that scale.",
+        title: "High-Velocity Enterprise Frameworks",
+        subtitle: "Optimized Scalability",
+        description: "Merging agile delivery with enterprise-grade rigor. We leverage Automated Testing and CI/CD pipelines to ensure fast, high-quality results that scale seamlessly with your organizational growth.",
         className: "md:col-span-5",
         visual: (
-            <div className="absolute bottom-6 right-6 opacity-30 group-hover:opacity-80 transition-opacity">
+            <div className="absolute top-6 right-8 hidden lg:block opacity-30 group-hover:opacity-80 transition-opacity">
                 <TrendingUp className="w-16 h-16 text-purple-500" />
             </div>
         )
@@ -106,12 +92,12 @@ export function WhyAmaancSection() {
                         Why Partner With Us
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
-                        The Amaanc <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            Advantage
+                        The Amaanc <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
+                            Strategic Edge
                         </span>
                     </h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        We don&apos;t just implement software; we transform businesses. Here is why industry leaders trust us with their critical digital infrastructure.
+                    <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                        We don&apos;t just deploy tools; we redefine how businesses operate. From Salesforce architecture to AI-driven automation, we provide the technical depth that industry leaders trust for their mission-critical operations.
                     </p>
                 </div>
 

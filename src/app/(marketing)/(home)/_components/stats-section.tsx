@@ -1,22 +1,27 @@
 import Link from "next/link";
-import { ArrowRight, Trophy, CheckCircle2, Building2 } from "lucide-react";
+import { ArrowRight, Trophy, CheckCircle2, Code2, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
   {
-    value: "150+",
-    label: "Delivered Projects",
+    value: "85+",
+    label: "Enterprise Solutions",
     icon: <CheckCircle2 className="w-5 h-5 text-accent" />
   },
   {
-    value: "250+",
-    label: "Salesforce Certifications",
-    icon: <Trophy className="w-5 h-5 text-accent" />
+    value: "50+",
+    label: "Custom API Integrations",
+    icon: <Code2 className="w-5 h-5 text-accent" />
   },
   {
-    value: "13+",
-    label: "Years of Experience",
-    icon: <Building2 className="w-5 h-5 text-accent" />
+    value: "20+",
+    label: "AI-Driven Automations",
+    icon: <Bot className="w-5 h-5 text-accent" />
+  },
+  {
+    value: "15+",
+    label: "Years of Mastery",
+    icon: <Trophy className="w-5 h-5 text-accent" />
   },
 ];
 
@@ -37,12 +42,11 @@ export function StatsSection() {
           {/* Left Column: CTA */}
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white leading-tight">
-              Seeking Expert <br />
-              <span className="text-primary-foreground">Salesforce Development</span> Services?
+              Enterprise-Grade <br />
+              <span className="text-primary-foreground">Salesforce Solutions</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
-              Partner with a team that has delivered excellence for over a decade. We transform complex requirements into scalable solutions.
-            </p>
+              Excellence is not an act, but a habit formed over 13 years of delivery. We specialize in transforming your most intricate business requirements into scalable, future-proof architectures that drive measurable ROI.            </p>
             <Link href="/contact" className="inline-flex">
               <Button
                 size="lg"
@@ -60,7 +64,7 @@ export function StatsSection() {
           <div className="relative">
             {/* Glassmorphism Card for Stats */}
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-inner">
-              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-8 lg:gap-0 lg:divide-y lg:divide-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 lg:gap-0 lg:divide-y lg:divide-white/10">
                 {stats.map((stat, index) => (
                   <div key={index} className="flex items-center gap-6 py-4 first:pt-0 last:pb-0">
                     <div className="hidden lg:flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-white/5 shadow-sm">

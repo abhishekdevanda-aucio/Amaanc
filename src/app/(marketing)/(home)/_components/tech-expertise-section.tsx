@@ -1,35 +1,35 @@
 import {
     Cloud,
-    Database,
-    Cpu,
+    Share2,
     Server,
+    GitBranch,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const techCategories = [
     {
-        title: "Salesforce Ecosystem",
+        title: "Strategic Salesforce & AI",
         icon: <Cloud className="w-6 h-6 text-primary" />,
-        description: "Comprehensive coverage of the world's #1 CRM platform.",
-        items: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "Commerce Cloud", "Experience Cloud", "Einstein AI", "Industry Clouds", "CPQ & Billing"]
+        description: "Intelligence-Driven CRM",
+        items: ["Data Cloud", "Agentforce", "Einstein AI", "Sales & Service Clouds", "Revenue Cloud (CPQ)", "Tableau", "Industry Clouds"]
     },
     {
-        title: "Integration & Middleware",
-        icon: <Database className="w-6 h-6 text-blue-500" />,
-        description: "Seamlessly connecting your disparate systems.",
-        items: ["MuleSoft", "REST/SOAP APIs", "Kafka", "Talend", "Jitterbit", "Boomi", "Azure Logic Apps", "Custom Connectors"]
+        title: "Seamless Ecosystem Connectivity",
+        icon: <Share2 className="w-6 h-6 text-blue-500" />,
+        description: "Unified Digital Architecture",
+        items: ["MuleSoft", "Boomi", "Jitterbit", "Kafka", "REST/SOAP APIs", "Snowflake", "Azure Logic Apps", "Custom Connectors"]
     },
     {
-        title: "AI & Data Analytics",
-        icon: <Cpu className="w-6 h-6 text-purple-500" />,
-        description: "Turning raw data into actionable intelligence.",
-        items: ["Salesforce Einstein", "Tableau", "Power BI", "Snowflake", "OpenAI API", "TensorFlow", "Predictive Analytics", "Data Cloud"]
-    },
-    {
-        title: "Enterprise Platforms",
+        title: "Enterprise Backend Solutions",
         icon: <Server className="w-6 h-6 text-emerald-500" />,
-        description: "Robust infrastructure for scalable solutions.",
-        items: ["AWS", "Microsoft Azure", "Google Cloud", "Heroku", "Kubernetes", "Docker", "Microservices", "Serverless"]
+        description: "Resilient Infrastructure",
+        items: [".NET Core", "SAP S/4HANA", "Azure", "C#", "Microsoft SQL Server", "Microservices", "Legacy Modernization"]
+    },
+    {
+        title: "Lifecycle Operations",
+        icon: <GitBranch className="w-6 h-6 text-amber-500" />,
+        description: "Managed Quality & Stability",
+        items: ["CI/CD Pipelines", "GitHub Actions", "Automated Testing (Selenium)", "Jira", "Azure DevOps", "Managed Services"]
     }
 ];
 
@@ -45,10 +45,10 @@ export function TechExpertiseSection() {
                         Technology Stack
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
-                        Platforms We <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">Master</span>
+                        The Technical Architecture of <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">Excellence</span>
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        We leverage best-in-class technologies to build robust, scalable, and future-proof solutions for your enterprise.
+                        Orchestrating a sophisticated technology stack to deliver resilient, AI-driven ecosystems designed for global enterprise scale.
                     </p>
                 </div>
 
@@ -76,7 +76,7 @@ export function TechExpertiseSection() {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                                <p className="text-sm text-medium text-primary mb-6 leading-relaxed font-semibold">
                                     {category.description}
                                 </p>
 
