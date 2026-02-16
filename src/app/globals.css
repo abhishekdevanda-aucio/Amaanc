@@ -5,6 +5,7 @@
 
 /* Amaanc brand colors - professional blue/navy palette */
 :root {
+  --main-charcoal: oklch(0.3192 0.0102 216.79);
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.15 0.02 255);
   --card: oklch(1 0 0);
