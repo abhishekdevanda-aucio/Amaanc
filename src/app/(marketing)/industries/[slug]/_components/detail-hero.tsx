@@ -18,7 +18,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
             </div>
 
             <div className="container relative z-10 mx-auto px-4 pt-20 pb-16">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-8 items-center">
 
                     {/* Left Column: Typography & Content */}
                     <div className="flex flex-col space-y-8 animate-in slide-in-from-left-5 fade-in duration-700 max-w-3xl">

@@ -106,10 +106,10 @@ export function HeroSection() {
           {/* Right Column: Visual Elements */}
           <div className="relative hidden lg:block h-full">
             {/* Abstract Dashboard/Glass Card Composition */}
-            <div className="relative w-full aspect-square max-w-150 mx-auto perspective-1000">
+            <div className="relative mx-auto w-full max-w-md xl:max-w-xl 2xl:max-w-160 aspect-square perspective-1000">
 
               {/* Card 1: Scalable Architecture (Top Right) */}
-              <div className="absolute top-12 -right-4 w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-20 animate-float-slow">
+              <div className="absolute top-8 right-1 lg:w-52 xl:w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-20 animate-float-slow xl:top-12 xl:-right-4">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-blue-500/10">
                     <Layers className="h-5 w-5 text-blue-500" />
@@ -125,7 +125,7 @@ export function HeroSection() {
               </div>
 
               {/* Card 2: Strategic Predictive Intelligence (Bottom Left) */}
-              <div className="absolute bottom-16 -left-4 w-72 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-30 animate-float-delayed">
+              <div className="absolute bottom-8 left-0 lg:w-56 xl:w-72 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-30 animate-float-delayed xl:bottom-16 xl:-left-4">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-amber-500/10">
                     <Zap className="h-5 w-5 text-amber-500" />
@@ -141,7 +141,7 @@ export function HeroSection() {
               </div>
 
               {/* Card 3: Growth via Agentic AI (Center - Anchored) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-10 animate-float-slow animation-delay-500">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-52 xl:w-64 p-4 rounded-2xl bg-card/80 backdrop-blur-xl border border-white/20 shadow-2xl z-10 animate-float-slow animation-delay-500">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-pink-500/10">
                     <Bot className="h-5 w-5 text-pink-500" />
@@ -157,7 +157,7 @@ export function HeroSection() {
               </div>
 
               {/* Card 4: Global Ecosystem Orchestration (Top Left) */}
-              <div className="absolute top-8 left-0 w-72 p-5 rounded-2xl bg-card/90 backdrop-blur-xl border border-white/20 shadow-2xl z-40 animate-float-slow animation-delay-700">
+              <div className="absolute top-2 left-1 lg:w-56 xl:w-72 p-5 rounded-2xl bg-card/90 backdrop-blur-xl border border-white/20 shadow-2xl z-40 animate-float-slow animation-delay-700 xl:top-8 xl:left-0">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 rounded-lg bg-emerald-500/10">
                     <Globe className="h-5 w-5 text-emerald-500" />

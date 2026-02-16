@@ -116,9 +116,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <article className="min-h-screen bg-background py-20">
             {/* Hero Section */}
             <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8">
+                <Link href="/blogs" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Home
+                    Back to Blogs
                 </Link>
 
                 <div className="space-y-6 mb-12 border-b border-border/50 pb-12">
