@@ -42,6 +42,7 @@ import { useState } from "react"
 // Zod Schema
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
+    tagline: z.string().min(5, "Tagline must be at least 5 characters").max(100, "Tagline must be less than 100 characters").optional().or(z.literal("")),
     slug: z.string().min(2, "Slug must be at least 2 characters"),
     overview: z.string().min(10, "Overview must be at least 10 characters"),
     full_description: z.string().optional(),
@@ -90,6 +91,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
     const defaultValues: IndustryFormValues = initialData
         ? {
             name: initialData.name,
+            tagline: initialData.tagline || "",
             slug: initialData.slug,
             overview: initialData.description,
             full_description: initialData.content || "",
@@ -104,6 +106,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
         }
         : {
             name: "",
+            tagline: "",
             slug: "",
             overview: "",
             full_description: "",
@@ -320,6 +323,49 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                 </div>
 
                                 <form.Field
+                                    name="tagline"
+                                    children={(field) => {
+                                        const isInvalid =
+                                            field.state.meta.isTouched &&
+                                            !field.state.meta.isValid
+                                        return (
+                                            <Field data-invalid={isInvalid}>
+                                                <FieldLabel
+                                                    htmlFor={field.name}
+                                                >
+                                                    Tagline (Optional)
+                                                </FieldLabel>
+                                                <Input
+                                                    id={field.name}
+                                                    name={field.name}
+                                                    value={field.state.value}
+                                                    onBlur={field.handleBlur}
+                                                    onChange={(e) =>
+                                                        field.handleChange(
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                    aria-invalid={isInvalid}
+                                                    placeholder="e.g. Empowering Digital Transformation"
+                                                    autoComplete="off"
+                                                />
+                                                <FieldDescription>
+                                                    A short, catchy phrase displayed in the hero section
+                                                </FieldDescription>
+                                                {isInvalid && (
+                                                    <FieldError
+                                                        errors={
+                                                            field.state.meta
+                                                                .errors
+                                                        }
+                                                    />
+                                                )}
+                                            </Field>
+                                        )
+                                    }}
+                                />
+
+                                <form.Field
                                     name="icon_name"
                                     children={(field) => {
                                         const isInvalid =
@@ -446,7 +492,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                                     }
                                                     aria-invalid={isInvalid}
                                                     placeholder="Detailed description of the industry and our solutions..."
-                                                    className="min-h-[150px]"
+                                                    className="min-h-37"
                                                 />
                                                 {isInvalid && (
                                                     <FieldError

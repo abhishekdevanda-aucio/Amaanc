@@ -30,10 +30,16 @@ export function DetailHero({ industry }: DetailHeroProps) {
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
-                            {industry.name} <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
-                                Transformation
-                            </span>
+                            {industry.tagline ? (
+                                industry.tagline
+                            ) : (
+                                <>
+                                    {industry.name} <br className="hidden md:block" />
+                                    <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
+                                        Transformation
+                                    </span>
+                                </>
+                            )}
                         </h1>
 
                         <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed border-l-4 border-primary/20 pl-6">
@@ -67,7 +73,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
 
                     {/* Right Column: Visual Component - Tech Ecosystem Style */}
                     <div className="relative animate-in slide-in-from-right-5 fade-in duration-700 delay-200 hidden lg:block">
-                        <div className="relative w-full max-w-[600px] mx-auto">
+                        <div className="relative w-full max-w-150 mx-auto">
 
                             {/* Abstract Pattern Background */}
                             <div className="absolute -top-10 -right-10 w-2/3 h-2/3 bg-linear-to-bl from-primary/20 to-transparent rounded-full blur-3xl" />
@@ -83,8 +89,6 @@ export function DetailHero({ industry }: DetailHeroProps) {
                                         className="object-cover hover:scale-105 transition-transform duration-1000"
                                         priority
                                     />
-                                    {/* Tech Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent" />
                                 </div>
 
                                 {/* Integrated Tech Stack - Floating Pills */}
@@ -98,7 +102,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
                                         </div>
                                     ))}
                                     {industry.techStack && industry.techStack.length > 4 && (
-                                        <div className="px-3 py-1.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/20 text-xs font-semibold text-primary shadow-sm">
+                                        <div className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-foreground/80 shadow-sm">
                                             +{industry.techStack.length - 4} More
                                         </div>
                                     )}
@@ -106,7 +110,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
                             </div>
 
                             {/* Floating "Result" Card - Replacing Generic Stats */}
-                            <div className="absolute -top-6 -left-6 z-20 bg-card p-5 rounded-xl border border-border shadow-xl max-w-[200px] animate-float-slow">
+                            {/* <div className="absolute -top-6 -left-6 z-20 bg-card p-5 rounded-xl border border-border shadow-xl max-w-[200px] animate-float-slow">
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 rounded-lg bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
                                         <BarChart3 className="h-5 w-5" />
@@ -121,10 +125,10 @@ export function DetailHero({ industry }: DetailHeroProps) {
                                         {industry.stats?.[0]?.label || "Success Rate"}
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Floating "Solution" Card */}
-                            <div className="absolute -bottom-8 -right-8 z-20 bg-primary text-primary-foreground p-5 rounded-xl shadow-xl max-w-[220px] animate-float-delayed hidden xl:block">
+                            {/* <div className="absolute -bottom-8 -right-8 z-20 bg-primary text-primary-foreground p-5 rounded-xl shadow-xl max-w-[220px] animate-float-delayed hidden xl:block">
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="p-2 rounded-lg bg-white/20">
                                         <Zap className="h-5 w-5 text-white" />
@@ -139,7 +143,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
                                         {industry.stats?.[1]?.label || "Optimization"}
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>

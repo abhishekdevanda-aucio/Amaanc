@@ -19,9 +19,9 @@ export function DetailChallenges({ industry }: DetailChallengesProps) {
                     </Badge>
 
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                        Bridging the Gap Between <br className="hidden md:block" />
+                        Solving Today’s Challenges  <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            Issue & Innovation
+                            with Tomorrow’s Tech
                         </span>
                     </h2>
 
@@ -49,11 +49,11 @@ export function DetailChallenges({ industry }: DetailChallengesProps) {
 
                             <div className="space-y-6 relative">
                                 {/* Vertical Connector Line */}
-                                <div className="absolute left-[19px] top-0 bottom-0 w-px bg-border/50 group-hover:bg-primary/20 transition-colors" />
+                                <div className="absolute left-5 top-0 bottom-0 w-px bg-border/50 group-hover:bg-primary/20 transition-colors" />
 
                                 {/* Problem Item */}
                                 <div className="relative pl-10">
-                                    <div className="absolute left-[15px] top-1.5 w-2 h-2 rounded-full bg-red-400 border-2 border-card z-10" />
+                                    <div className="absolute left-4 top-1.5 w-2 h-2 rounded-full bg-red-400 border-2 border-card z-10" />
                                     <p className="text-muted-foreground text-sm leading-relaxed">
                                         <span className="font-semibold text-foreground block mb-1">Challenge</span>
                                         {item.problem}
@@ -62,7 +62,7 @@ export function DetailChallenges({ industry }: DetailChallengesProps) {
 
                                 {/* Solution Item */}
                                 <div className="relative pl-10">
-                                    <div className="absolute left-[15px] top-1.5 w-2 h-2 rounded-full bg-green-500 border-2 border-card z-10" />
+                                    <div className="absolute left-4 top-1.5 w-2 h-2 rounded-full bg-green-500 border-2 border-card z-10" />
                                     <p className="text-foreground/90 font-medium text-sm leading-relaxed">
                                         <span className="font-semibold text-primary block mb-1">Impact</span>
                                         {item.solution}

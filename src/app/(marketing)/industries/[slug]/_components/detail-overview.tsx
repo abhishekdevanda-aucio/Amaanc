@@ -11,8 +11,8 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
     return (
         <section className="py-24 bg-muted/30 relative overflow-hidden">
             {/* Decorative Background Elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-125 h-125 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-75 h-75 bg-blue-500/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
             <div className="container px-4 md:px-6 mx-auto relative z-10">
 
@@ -23,15 +23,14 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                     </Badge>
 
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground leading-tight mb-6">
-                        Navigating the<br className="hidden md:block" />
+                        Mastering the <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            {industry.name} Landscape
+                            Digital Shift in {industry.name}
                         </span>
                     </h2>
 
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        We help forward-thinking organizations adapt, evolve, and lead in a digital-first world
-                        through tailored strategies and cutting-edge technology.
+                        We help forward-thinking organizations modernize core systems and scale operations through tailored strategies and predictive technology.
                     </p>
                 </div>
 
@@ -42,7 +41,7 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                         {/* Main Description with Editorial Styling */}
                         <div className="prose prose-lg dark:prose-invert max-w-none">
                             <p className="text-xl md:text-2xl leading-relaxed text-foreground font-light mb-8 border-l-4 border-primary pl-6">
-                                &quot;{industry.description}&quot;
+                                {industry.description}
                             </p>
                             <p className="text-muted-foreground leading-loose">
                                 {industry.content}

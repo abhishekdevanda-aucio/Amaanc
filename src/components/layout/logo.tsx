@@ -16,7 +16,7 @@ export function Logo({ className, showText = true, showSubText = true, subtext }
                 alt="Amaanc Logo"
                 width={40}
                 height={40}
-                className="h-8 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 priority
             />
             {showText && (

@@ -40,6 +40,7 @@ export const iconMap: Record<string, LucideIcon> = {
 export interface Industry {
     id: string;
     name: string;
+    tagline: string | null;
     slug: string;
     description: string;
     content: string | null;
@@ -69,6 +70,7 @@ export type IndustryRow = {
     id: string;
     created_at: string;
     name: string;
+    tagline: string | null;
     slug: string;
     description: string;
     content: string | null;
@@ -90,6 +92,7 @@ function parseIndustry(row: IndustryRow): Industry {
         id: row.id,
         createdAt: row.created_at,
         name: row.name,
+        tagline: row.tagline,
         slug: row.slug,
         description: row.description,
         content: row.content,

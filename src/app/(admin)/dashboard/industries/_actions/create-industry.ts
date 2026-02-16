@@ -14,6 +14,7 @@ export async function createIndustry(prevState: unknown, formData: FormData) {
 
     const rawData = {
         name: formData.get("name") as string,
+        tagline: formData.get("tagline") as string || null,
         slug: formData.get("slug") as string,
         description: formData.get("overview") as string,
         content: formData.get("full_description") as string,

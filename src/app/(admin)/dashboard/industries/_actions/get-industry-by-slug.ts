@@ -26,6 +26,7 @@ export async function getIndustryBySlug(slug: string) {
         id: data.id,
         createdAt: data.created_at,
         name: data.name,
+        tagline: data.tagline,
         slug: data.slug,
         description: data.description,
         content: data.content,

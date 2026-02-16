@@ -20,9 +20,9 @@ export function DetailTestimonial({ industry }: DetailTestimonialProps) {
                         Client Success
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                        Trusted by Leaders in <br className="hidden md:block" />
+                        Success Stories<br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
-                            {industry.name}
+                            How We Empower {industry.name} Leaders
                         </span>
                     </h2>
                 </div>
@@ -60,7 +60,7 @@ export function DetailTestimonial({ industry }: DetailTestimonialProps) {
 
                                     {/* Quote */}
                                     <blockquote className="text-xl font-medium leading-relaxed text-foreground mb-8 flex-1">
-                                        &quot;{testimonial.quote}&quot;
+                                        {testimonial.quote}
                                     </blockquote>
 
                                     {/* Footer: Author */}
