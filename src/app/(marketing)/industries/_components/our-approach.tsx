@@ -16,16 +16,20 @@ const features = [
         description: "We don't just know tech; we know your business. Our teams are led by industry veterans who understand your specific challenges.",
         className: "md:col-span-6 bg-primary/5 border-primary/10",
         visual: (
-            <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-linear-to-l from-primary/10 to-transparent hidden md:flex items-center justify-center -mr-8 group-hover:mr-0 transition-all duration-500">
-                <div className="relative p-6">
+            <div className="absolute right-0 bottom-4 w-1/3 h-full hidden xl:flex flex-col justify-center items-center opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                <div className="relative p-6 -translate-y-4 transform rotate-6 scale-90 group-hover:scale-100 group-hover:rotate-0 transition-all duration-500">
                     <div className="flex -space-x-4">
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className={`w-12 h-12 rounded-full border-2 border-background bg-muted flex items-center justify-center z-${10 - i}`}>
-                                <Users className="w-6 h-6 text-muted-foreground" />
+                        {[
+                            { id: 1, z: "z-30", bg: "bg-muted" },
+                            { id: 2, z: "z-20", bg: "bg-background" },
+                            { id: 3, z: "z-10", bg: "bg-muted" },
+                        ].map((item) => (
+                            <div key={item.id} className={`w-12 h-12 rounded-full border-2 border-background ${item.bg} flex items-center justify-center relative ${item.z} shadow-sm`}>
+                                <Users className="w-5 h-5 text-muted-foreground" />
                             </div>
                         ))}
                     </div>
-                    <div className="mt-4 bg-background/80 backdrop-blur rounded-lg p-2 text-xs font-bold text-center border shadow-sm">
+                    <div className="mt-4 bg-background/90 backdrop-blur rounded-lg px-4 py-2 text-xs font-bold text-center border border-border/50 shadow-sm text-foreground">
                         Expert Team
                     </div>
                 </div>
@@ -53,19 +57,19 @@ const features = [
         description: "We focus on the metrics that matter. Reduced costs, faster time-to-market, and improved customer satisfaction.",
         className: "md:col-span-6 bg-purple-500/5 border-purple-500/10",
         visual: (
-            <div className="absolute top-1/2 -translate-y-1/2 right-10 hidden md:block w-32">
-                <div className="space-y-2 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="h-2 w-full bg-purple-200 rounded-full overflow-hidden">
-                        <div className="h-full w-3/4 bg-purple-500 rounded-full" />
+            <div className="absolute top-1/2 -translate-y-1/2 right-12 hidden xl:block w-32 pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="space-y-3 -translate-y-4 transform -rotate-6 scale-90 group-hover:scale-100 group-hover:rotate-0 transition-all duration-500">
+                    <div className="h-2.5 w-full bg-purple-500/20 rounded-full overflow-hidden shadow-inner">
+                        <div className="h-full w-3/4 bg-linear-to-r from-purple-500 to-purple-400 rounded-full" />
                     </div>
-                    <div className="h-2 w-full bg-purple-200 rounded-full overflow-hidden">
-                        <div className="h-full w-[90%] bg-purple-500 rounded-full" />
+                    <div className="h-2.5 w-full bg-purple-500/20 rounded-full overflow-hidden shadow-inner">
+                        <div className="h-full w-[90%] bg-linear-to-r from-purple-500 to-purple-400 rounded-full" />
                     </div>
-                    <div className="h-2 w-full bg-purple-200 rounded-full overflow-hidden">
-                        <div className="h-full w-1/2 bg-purple-500 rounded-full" />
+                    <div className="h-2.5 w-full bg-purple-500/20 rounded-full overflow-hidden shadow-inner">
+                        <div className="h-full w-1/2 bg-linear-to-r from-purple-500 to-purple-400 rounded-full" />
                     </div>
                 </div>
-                <div className="mt-2 text-right text-xs font-bold text-purple-600">
+                <div className="mt-3 text-right text-xs font-bold text-purple-600 dark:text-purple-400 transform -rotate-6 group-hover:rotate-0 transition-all duration-500">
                     Growth Metrics
                 </div>
             </div>
@@ -116,6 +120,9 @@ export function OurApproach() {
                                     <h3 className="text-xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
                                         {feature.title}
                                     </h3>
+
+                                    {/* Render Custom Visual if present */}
+                                    {feature.visual}
                                 </div>
 
                                 {/* Content */}
@@ -127,9 +134,6 @@ export function OurApproach() {
                                     <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl">
                                         {feature.description}
                                     </p>
-
-                                    {/* Render Custom Visual if present */}
-                                    {feature.visual}
                                 </div>
                             </div>
 
