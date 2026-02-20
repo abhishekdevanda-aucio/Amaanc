@@ -43,6 +43,9 @@ import { useState } from "react"
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
     tagline: z.string().min(5, "Tagline must be at least 5 characters").max(100, "Tagline must be less than 100 characters").optional().or(z.literal("")),
+    quote: z.string().optional(),
+    cta_title: z.string().optional(),
+    cta_subtitle: z.string().optional(),
     slug: z.string().min(2, "Slug must be at least 2 characters"),
     overview: z.string().min(10, "Overview must be at least 10 characters"),
     full_description: z.string().optional(),
@@ -56,6 +59,7 @@ const formSchema = z.object({
             value: z.string().min(1, "Value required"),
         })
     ),
+    cta_points: z.array(z.string()).optional(),
     challenges: z.array(
         z.object({
             title: z.string().min(1, "Title required"),
@@ -92,6 +96,9 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
         ? {
             name: initialData.name,
             tagline: initialData.tagline || "",
+            quote: initialData.quote || "",
+            cta_title: initialData.ctaTitle || "",
+            cta_subtitle: initialData.ctaSubtitle || "",
             slug: initialData.slug,
             overview: initialData.description,
             full_description: initialData.content || "",
@@ -99,6 +106,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
             image_url: initialData.imageUrl || "",
             is_published: initialData.isPublished,
             features: initialData.features || [],
+            cta_points: initialData.ctaPoints || [],
             stats: initialData.stats || [],
             challenges: initialData.challenges || [],
             tech_stack: initialData.techStack || [],
@@ -107,6 +115,9 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
         : {
             name: "",
             tagline: "",
+            quote: "",
+            cta_title: "",
+            cta_subtitle: "",
             slug: "",
             overview: "",
             full_description: "",
@@ -114,6 +125,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
             image_url: "",
             is_published: false,
             features: [],
+            cta_points: [],
             stats: [],
             challenges: [],
             tech_stack: [],
@@ -214,7 +226,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
 
                 {/* Tabs */}
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                    <TabsList className="grid w-full grid-cols-2 md:grid-cols-5">
+                    <TabsList className="grid w-full grid-cols-2 md:grid-cols-6">
                         <TabsTrigger value="basic">Basic Info</TabsTrigger>
                         <TabsTrigger value="content">
                             Content & Tech
@@ -223,6 +235,7 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                         <TabsTrigger value="testimonials">
                             Testimonials
                         </TabsTrigger>
+                        <TabsTrigger value="cta">CTA Section</TabsTrigger>
                         <TabsTrigger value="settings">Settings</TabsTrigger>
                     </TabsList>
 
@@ -351,6 +364,49 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                                 />
                                                 <FieldDescription>
                                                     A short, catchy phrase displayed in the hero section
+                                                </FieldDescription>
+                                                {isInvalid && (
+                                                    <FieldError
+                                                        errors={
+                                                            field.state.meta
+                                                                .errors
+                                                        }
+                                                    />
+                                                )}
+                                            </Field>
+                                        )
+                                    }}
+                                />
+
+                                <form.Field
+                                    name="quote"
+                                    children={(field) => {
+                                        const isInvalid =
+                                            field.state.meta.isTouched &&
+                                            !field.state.meta.isValid
+                                        return (
+                                            <Field data-invalid={isInvalid}>
+                                                <FieldLabel
+                                                    htmlFor={field.name}
+                                                >
+                                                    Industry Quote (Optional)
+                                                </FieldLabel>
+                                                <Textarea
+                                                    id={field.name}
+                                                    name={field.name}
+                                                    value={field.state.value}
+                                                    onBlur={field.handleBlur}
+                                                    onChange={(e) =>
+                                                        field.handleChange(
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                    aria-invalid={isInvalid}
+                                                    placeholder="e.g. Finance is the lifeblood of business."
+                                                    rows={2}
+                                                />
+                                                <FieldDescription>
+                                                    A quote related to this industry that will be featured on service overview pages.
                                                 </FieldDescription>
                                                 {isInvalid && (
                                                     <FieldError
@@ -1630,6 +1686,106 @@ export function IndustryForm({ initialData }: IndustryFormProps) {
                                         </>
                                     )}
                                 />
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+
+                    {/* CTA Tab */}
+                    <TabsContent value="cta" className="space-y-4 pt-4">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Call to Action</CardTitle>
+                                <CardDescription>
+                                    Customize the CTA section at the bottom of the industry page.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="space-y-4">
+                                <form.Field
+                                    name="cta_title"
+                                    children={(field) => {
+                                        const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
+                                        return (
+                                            <Field data-invalid={isInvalid}>
+                                                <FieldLabel htmlFor={field.name}>Title</FieldLabel>
+                                                <Input
+                                                    id={field.name}
+                                                    name={field.name}
+                                                    value={field.state.value}
+                                                    onBlur={field.handleBlur}
+                                                    onChange={e => field.handleChange(e.target.value)}
+                                                    placeholder="Ready to Transform Your Operations?"
+                                                />
+                                            </Field>
+                                        )
+                                    }}
+                                />
+                                <form.Field
+                                    name="cta_subtitle"
+                                    children={(field) => {
+                                        const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid
+                                        return (
+                                            <Field data-invalid={isInvalid}>
+                                                <FieldLabel htmlFor={field.name}>Subtitle</FieldLabel>
+                                                <Textarea
+                                                    id={field.name}
+                                                    name={field.name}
+                                                    value={field.state.value}
+                                                    onBlur={field.handleBlur}
+                                                    onChange={e => field.handleChange(e.target.value)}
+                                                    placeholder="Leverage our deep expertise to drive efficiency..."
+                                                    rows={3}
+                                                />
+                                            </Field>
+                                        )
+                                    }}
+                                />
+                                <div className="space-y-4">
+                                    <div className="flex items-center justify-between">
+                                        <div className="space-y-1">
+                                            <h4 className="text-sm font-medium leading-none">Highlights</h4>
+                                            <p className="text-sm text-muted-foreground">List of key points to show on the CTA box.</p>
+                                        </div>
+                                    </div>
+                                    <form.Field
+                                        name="cta_points"
+                                        mode="array"
+                                        children={(field) => (
+                                            <>
+                                                {field.state.value?.map((_, index) => (
+                                                    <div key={index} className="flex gap-2 mb-2">
+                                                        <form.Field
+                                                            name={`cta_points[${index}]`}
+                                                            children={(subField) => (
+                                                                <Input
+                                                                    value={subField.state.value}
+                                                                    onChange={(e) => subField.handleChange(e.target.value)}
+                                                                    placeholder="e.g. Industry-Specific Solutions"
+                                                                />
+                                                            )}
+                                                        />
+                                                        <Button
+                                                            type="button"
+                                                            variant="destructive"
+                                                            size="icon"
+                                                            onClick={() => field.removeValue(index)}
+                                                        >
+                                                            <Trash2 className="h-4 w-4" />
+                                                        </Button>
+                                                    </div>
+                                                ))}
+                                                <Button
+                                                    type="button"
+                                                    onClick={() => field.pushValue("")}
+                                                    variant="outline"
+                                                    className="w-full mt-2"
+                                                >
+                                                    <Plus className="mr-2 h-4 w-4" />
+                                                    Add Point
+                                                </Button>
+                                            </>
+                                        )}
+                                    />
+                                </div>
                             </CardContent>
                         </Card>
                     </TabsContent>

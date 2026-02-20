@@ -51,6 +51,10 @@ export interface Industry {
     stats: { label: string; value: string }[] | null;
     challenges: { title: string; problem: string; solution: string }[] | null;
     testimonials: { quote: string; author: string; role: string; company: string; image?: string }[] | null;
+    quote: string | null;
+    ctaTitle?: string | null;
+    ctaSubtitle?: string | null;
+    ctaPoints?: string[] | null;
     isPublished: boolean;
     createdAt: string;
 }
@@ -81,6 +85,10 @@ export type IndustryRow = {
     challenges: { title: string; problem: string; solution: string }[] | null;
     tech_stack: string[] | null;
     testimonials: { quote: string; author: string; role: string; company: string; image?: string }[] | null;
+    quote: string | null;
+    cta_title?: string | null;
+    cta_subtitle?: string | null;
+    cta_points?: string[] | null;
     is_published: boolean;
 };
 
@@ -103,6 +111,10 @@ function parseIndustry(row: IndustryRow): Industry {
         challenges: Array.isArray(row.challenges) ? row.challenges.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         techStack: row.tech_stack,
         testimonials: Array.isArray(row.testimonials) ? row.testimonials.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
+        quote: row.quote,
+        ctaTitle: row.cta_title,
+        ctaSubtitle: row.cta_subtitle,
+        ctaPoints: row.cta_points,
         isPublished: row.is_published
     };
 }

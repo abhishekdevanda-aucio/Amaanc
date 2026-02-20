@@ -41,7 +41,7 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                         {/* Main Description with Editorial Styling */}
                         <div className="prose prose-lg dark:prose-invert max-w-none">
                             <p className="text-xl md:text-2xl leading-relaxed text-foreground font-light mb-8 border-l-4 border-primary pl-6">
-                                {industry.description}
+                                {industry.quote}
                             </p>
                             <p className="text-muted-foreground leading-loose">
                                 {industry.content}
@@ -62,9 +62,9 @@ export function DetailOverview({ industry }: DetailOverviewProps) {
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {industry.features.map((feature, idx) => (
-                                        <Card key={idx} className="p-3 flex items-center gap-3 border-border/50 hover:border-primary/50 transition-colors bg-background/50 hover:bg-background shadow-xs hover:shadow-md group">
-                                            <div className="shrink-0 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                                                <Check className="h-3.5 w-3.5" />
+                                        <Card key={idx} className="p-3 flex items-center gap-3 border-border/50 transition-all duration-300 bg-background/50 hover:bg-background shadow-xs hover:shadow-md hover:-translate-y-1 group cursor-pointer">
+                                            <div className="shrink-0 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-accent">
+                                                <Check className="h-3.5 w-3.5 text-primary group-hover:text-accent-foreground" />
                                             </div>
                                             <span className="font-medium text-sm text-foreground/90 leading-tight">
                                                 {feature}

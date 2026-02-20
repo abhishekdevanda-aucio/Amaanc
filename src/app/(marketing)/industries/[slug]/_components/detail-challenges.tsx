@@ -34,7 +34,7 @@ export function DetailChallenges({ industry }: DetailChallengesProps) {
                     {industry.challenges.map((item, index) => (
                         <div
                             key={index}
-                            className="group relative bg-card border border-border/50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/20"
+                            className="group relative bg-card border border-border/50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:border-primary/20 hover:-translate-y-1"
                         >
                             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 

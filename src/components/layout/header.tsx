@@ -47,7 +47,7 @@ export function Header({ navData }: HeaderProps) {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Logo showSubText={false}/>
+            <Logo showSubText={false} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +70,7 @@ export function Header({ navData }: HeaderProps) {
                                 <ul className="space-y-1">
                                   {group.items.map((subItem) => (
                                     <li key={subItem.title}>
-                                      <NavigationMenuLink href={subItem.href} className="block select-none rounded-sm p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                      <NavigationMenuLink href={subItem.href} className="block select-none rounded-sm p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground hover:font-semibold">
                                         {subItem.title}
                                       </NavigationMenuLink>
                                     </li>
@@ -97,7 +97,7 @@ export function Header({ navData }: HeaderProps) {
                           {item.items.map((subItem) => (
                             <li key={subItem.title}>
                               <NavigationMenuLink href={subItem.href} className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                <div className="text-sm font-medium leading-none">{subItem.title}</div>
+                                <div className="text-sm font-medium leading-none group-hover:font-semibold">{subItem.title}</div>
                                 {subItem.description && (
                                   <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-primary-foreground">
                                     {subItem.description}

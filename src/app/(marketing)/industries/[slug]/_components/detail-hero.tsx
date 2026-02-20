@@ -1,7 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Industry } from "@/data/industries";
 
 interface DetailHeroProps {
@@ -13,8 +21,8 @@ export function DetailHero({ industry }: DetailHeroProps) {
         <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-background">
             {/* Background Gradients & Patterns */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 right-0 w-200 h-200 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 animate-pulse" />
-                <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+                <div className="absolute top-0 right-0 w-200 h-200 bg-primary/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 animate-pulse" />
+                <div className="absolute bottom-0 left-0 w-150 h-150 bg-primary/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
             </div>
 
             <div className="container relative z-10 mx-auto px-4 pt-20 pb-16">
@@ -22,24 +30,35 @@ export function DetailHero({ industry }: DetailHeroProps) {
 
                     {/* Left Column: Typography & Content */}
                     <div className="flex flex-col space-y-8 animate-in slide-in-from-left-5 fade-in duration-700 max-w-3xl">
-                        <div className="flex flex-col items-start gap-4">
-                            <div className="flex items-center gap-3 text-sm font-medium text-primary uppercase tracking-widest">
-                                <span className="w-12 h-0.5 bg-linear-to-r from-primary to-transparent"></span>
-                                Industry Focus
-                            </div>
-                        </div>
+                        <Breadcrumb className="mb-2">
+                            <BreadcrumbList>
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbSeparator />
+                                <BreadcrumbItem>
+                                    <BreadcrumbLink href="/industries">Industries</BreadcrumbLink>
+                                </BreadcrumbItem>
+                                <BreadcrumbSeparator />
+                                <BreadcrumbItem>
+                                    <BreadcrumbPage>{industry.name}</BreadcrumbPage>
+                                </BreadcrumbItem>
+                            </BreadcrumbList>
+                        </Breadcrumb>
 
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
-                            {industry.tagline ? (
-                                industry.tagline
-                            ) : (
-                                <>
-                                    {industry.name} <br className="hidden md:block" />
-                                    <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
-                                        Transformation
-                                    </span>
-                                </>
-                            )}
+                            {(() => {
+                                const text = industry.tagline || industry.name;
+                                const words = text.split(" ");
+                                if (words.length < 2) return text;
+                                const lastTwo = words.slice(-2).join(" ");
+                                const rest = words.slice(0, -2).join(" ");
+                                return (
+                                    <>
+                                        {rest} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">{lastTwo}</span>
+                                    </>
+                                );
+                            })()}
                         </h1>
 
                         <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed border-l-4 border-primary/20 pl-6">
@@ -54,6 +73,15 @@ export function DetailHero({ industry }: DetailHeroProps) {
                                 >
                                     Consult an Expert
                                     <ArrowRight className="h-5 w-5" />
+                                </Button>
+                            </Link>
+                            <Link href="/industries" className="inline-flex">
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="h-12 px-8 text-base transition-all hover:scale-105 inline-flex items-center gap-2"
+                                >
+                                    Explore Industries
                                 </Button>
                             </Link>
                         </div>
@@ -93,58 +121,16 @@ export function DetailHero({ industry }: DetailHeroProps) {
 
                                 {/* Integrated Tech Stack - Floating Pills */}
                                 <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
-                                    {industry.techStack && industry.techStack.slice(0, 4).map((tech, i) => (
+                                    {industry.techStack && industry.techStack.map((tech, i) => (
                                         <div
                                             key={i}
-                                            className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-foreground/80 shadow-sm"
+                                            className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-foreground/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-background/90 hover:border-primary/50 cursor-default"
                                         >
                                             {tech}
                                         </div>
                                     ))}
-                                    {industry.techStack && industry.techStack.length > 4 && (
-                                        <div className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-foreground/80 shadow-sm">
-                                            +{industry.techStack.length - 4} More
-                                        </div>
-                                    )}
                                 </div>
                             </div>
-
-                            {/* Floating "Result" Card - Replacing Generic Stats */}
-                            {/* <div className="absolute -top-6 -left-6 z-20 bg-card p-5 rounded-xl border border-border shadow-xl max-w-[200px] animate-float-slow">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <div className="p-2 rounded-lg bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
-                                        <BarChart3 className="h-5 w-5" />
-                                    </div>
-                                    <span className="text-xs font-bold uppercase text-muted-foreground">Impact</span>
-                                </div>
-                                <div className="space-y-1">
-                                    <div className="text-2xl font-bold tracking-tight">
-                                        {industry.stats?.[0]?.value || "100%"}
-                                    </div>
-                                    <div className="text-xs text-muted-foreground leading-tight">
-                                        {industry.stats?.[0]?.label || "Success Rate"}
-                                    </div>
-                                </div>
-                            </div> */}
-
-                            {/* Floating "Solution" Card */}
-                            {/* <div className="absolute -bottom-8 -right-8 z-20 bg-primary text-primary-foreground p-5 rounded-xl shadow-xl max-w-[220px] animate-float-delayed hidden xl:block">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <div className="p-2 rounded-lg bg-white/20">
-                                        <Zap className="h-5 w-5 text-white" />
-                                    </div>
-                                    <span className="text-xs font-bold uppercase opacity-80">Speed</span>
-                                </div>
-                                <div className="space-y-1">
-                                    <div className="text-2xl font-bold tracking-tight">
-                                        {industry.stats?.[1]?.value || "Fast"}
-                                    </div>
-                                    <div className="text-xs opacity-80 leading-tight">
-                                        {industry.stats?.[1]?.label || "Optimization"}
-                                    </div>
-                                </div>
-                            </div> */}
-
                         </div>
                     </div>
                 </div>

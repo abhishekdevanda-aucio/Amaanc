@@ -21,23 +21,37 @@ export function DetailCTA({ industry }: DetailCTAProps) {
                         {/* Text Content */}
                         <div className="max-w-3xl flex-1">
                             <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-6 text-balance leading-tight">
-                                Ready to Transform Your <br className="hidden lg:block" />
-                                {industry.name} Operations?
+                                {industry.ctaTitle ? (
+                                    <>{industry.ctaTitle}</>
+                                ) : (
+                                    <>Ready to Transform Your <br className="hidden lg:block" /> {industry.name} Operations?</>
+                                )}
                             </h2>
                             <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed mb-8">
-                                Leverage our deep expertise in {industry.name.toLowerCase()} to drive efficiency, innovation, and growth. Let&apos;s build a future-proof roadmap together.
+                                {industry.ctaSubtitle || `Leverage our deep expertise in ${industry.name.toLowerCase()} to drive efficiency, innovation, and growth. Let's build a future-proof roadmap together.`}
                             </p>
 
                             {/* Trust Indicators */}
                             <div className="flex flex-wrap gap-4 md:gap-8">
-                                <div className="flex items-center gap-2 text-primary-foreground/90">
-                                    <CheckCircle2 className="w-5 h-5 text-accent" />
-                                    <span className="font-medium">Industry-Specific Solutions</span>
-                                </div>
-                                <div className="flex items-center gap-2 text-primary-foreground/90">
-                                    <CheckCircle2 className="w-5 h-5 text-accent" />
-                                    <span className="font-medium">Rapid ROI</span>
-                                </div>
+                                {(industry.ctaPoints && industry.ctaPoints.length > 0) ? (
+                                    industry.ctaPoints.map((point, idx) => (
+                                        <div key={idx} className="flex items-center gap-2 text-primary-foreground/90">
+                                            <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
+                                            <span className="font-medium">{point}</span>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <>
+                                        <div className="flex items-center gap-2 text-primary-foreground/90">
+                                            <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
+                                            <span className="font-medium">Industry-Specific Solutions</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 text-primary-foreground/90">
+                                            <CheckCircle2 className="w-5 h-5 text-primary-foreground" />
+                                            <span className="font-medium">Rapid ROI</span>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
 

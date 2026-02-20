@@ -37,6 +37,10 @@ export async function getIndustryBySlug(slug: string) {
         challenges: Array.isArray(data.challenges) ? data.challenges.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
         techStack: data.tech_stack,
         testimonials: Array.isArray(data.testimonials) ? data.testimonials.map((item: any) => typeof item === 'string' ? JSON.parse(item) : item) : [],
+        quote: data.quote,
+        ctaTitle: data.cta_title,
+        ctaSubtitle: data.cta_subtitle,
+        ctaPoints: data.cta_points,
         isPublished: data.is_published
     }
 }
