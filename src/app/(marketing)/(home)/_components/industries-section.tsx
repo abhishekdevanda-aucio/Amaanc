@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Building2, Stethoscope, Factory, ShoppingCart, Landmark, TrainFront } from "lucide-react"
+import { ArrowRight, Building2, Stethoscope, Factory, ShoppingCart, Landmark, TrainFront, Laptop, Truck, Briefcase, Smartphone, Car } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -38,14 +38,56 @@ const industries = [
     title: "Insurance",
     description: "Claims processing automation, policy management, and customer insights.",
     href: "/industries/insurance",
-    image: "/images/home/industry-insurance.webp",
+    image: "/images/home/industry-insurance.png",
   },
   {
     icon: ShoppingCart,
     title: "Retail",
     description: "Omnichannel commerce, supply chain visibility, and loyalty programs.",
     href: "/industries/retail",
-    image: "/images/home/industry-retail.webp",
+    image: "/images/home/industry-retail.png",
+  },
+  {
+    icon: Laptop,
+    title: "Technology",
+    description: "SaaS platform engineering, product analytics, and scalable cloud operations.",
+    href: "/industries/technology",
+    image: "/images/home/industry-technology.png",
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing",
+    description: "Smart operations, production visibility, and connected supply chain orchestration.",
+    href: "/industries/manufacturing",
+    image: "/images/home/industry-manufacturing.png",
+  },
+  {
+    icon: Truck,
+    title: "Logistics",
+    description: "Route optimization, fulfillment intelligence, and end-to-end shipment tracking.",
+    href: "/industries/logistics",
+    image: "/images/home/industry-logistics.png",
+  },
+  {
+    icon: Briefcase,
+    title: "Public Sector",
+    description: "Citizen service modernization, secure workflows, and compliance-first operations.",
+    href: "/industries/public-sector",
+    image: "/images/home/industry-public-sector.png",
+  },
+  {
+    icon: Stethoscope,
+    title: "Health",
+    description: "Connected care experiences, patient engagement, and data-driven outcomes.",
+    href: "/industries/healthcare",
+    image: "/images/home/industry-healthcare.png",
+  },
+  {
+    icon: Smartphone,
+    title: "Telecom",
+    description: "Service lifecycle automation, customer retention, and omnichannel support.",
+    href: "/industries/telecommunications",
+    image: "/images/home/industry-telecom.png",
   },
 ]
 
@@ -65,7 +107,7 @@ export function IndustriesSection() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our industry-specific solutions address unique challenges with proven methodologies developed over 13+ years
+            Our industry-specific solutions address unique challenges with proven methodologies developed over 15+ Years
             of experience.
           </p>
         </div>

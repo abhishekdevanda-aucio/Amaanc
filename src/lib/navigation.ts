@@ -42,10 +42,11 @@ export function getNavData(industries: IndustryNavItem[], services: ServiceNavIt
             title: "Engage With Us",
             href: "/engage",
             items: [
+                { title: "About Us", href: "/about-us", description: "Learn about our mission and values." },
                 { title: "Case Studies", href: "/case-studies", description: "See how we solved client challenges." },
                 { title: "Blogs", href: "/blogs", description: "Insights, trends, and news." },
                 { title: "Newsroom", href: "/newsroom", description: "Announcements and press releases." },
-                { title: "Resources", href: "/resources", description: "White papers, e-books, and reports." },
+                { title: "Testimonials", href: "/testimonials", description: "What our clients say about us." },
                 { title: "Events", href: "/events", description: "Webinars and conferences." },
             ],
         },

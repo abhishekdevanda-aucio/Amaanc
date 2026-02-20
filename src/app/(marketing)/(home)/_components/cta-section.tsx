@@ -14,7 +14,7 @@ export function CTASection() {
                 Architect Your Enterprise Future
               </h2>
               <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-2xl">
-                Leverage our 14+ years of technical leadership in Salesforce, AI, and Complex Integrations to drive measurable commercial impact. Let’s discuss how we can orchestrate a resilient digital roadmap tailored to your global objectives.
+                Leverage our 15+ years of technical leadership in Salesforce, AI, and Complex Integrations to drive measurable commercial impact. Let’s discuss how we can orchestrate a resilient digital roadmap tailored to your global objectives.
               </p>
             </div>
 

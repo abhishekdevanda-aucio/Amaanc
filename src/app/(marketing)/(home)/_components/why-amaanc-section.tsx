@@ -14,7 +14,7 @@ const features = [
     {
         icon: <History className="w-8 h-8 text-primary" />,
         title: "The Foundation of Enterprise Trust Established 2012",
-        subtitle: "13+ Years",
+        subtitle: "15+ Years",
         description: "True expertise is forged over time. Since 2012, we have specialized in navigating the intricacies of global enterprise ecosystems, turning technical complexity into streamlined operational success for industry leaders.",
         className: "md:col-span-6 bg-primary/5 border-primary/10",
     },
@@ -39,7 +39,7 @@ const features = [
         description: "Architecting secure, multi-region ecosystems that exceed global regulatory mandates. We ensure your Salesforce and AI deployments remain fully compliant with GDPR, HIPAA, ISO & other standards required by our clients, while maintaining peak operational integrity.",
         className: "md:col-span-6 bg-blue-500/5 border-blue-500/10",
         visual: (
-            <div className="absolute top-1/3 -translate-y-1/2 right-8 hidden lg:block opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute top-1/3 -translate-y-1/2 right-8 hidden xl:block opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 <div className="grid grid-cols-2 gap-3 transform rotate-12">
                     {['GDPR', 'HIPAA', 'ISO', 'SOC2'].map((tag, i) => (
                         <div key={i} className="bg-background/80 backdrop-blur border border-blue-500/20 px-3 py-1.5 rounded-lg text-xs font-bold text-blue-600 shadow-sm">
@@ -56,14 +56,6 @@ const features = [
         subtitle: "Unified Technical Delivery",
         description: "From initial strategy and architectural design to advanced DevOps (CI/CD) and long-term Change Management. We serve as your dedicated technical partner, ensuring seamless execution across every phase of the digital evolution.",
         className: "md:col-span-5 bg-emerald-500/5 border-emerald-500/10",
-        visual: (
-            <div className="mt-6 hidden lg:flex items-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
-                <div className="h-1.5 w-12 bg-emerald-500/30 rounded-full" />
-                <div className="h-1.5 w-1.5 bg-emerald-500 rounded-full" />
-                <div className="h-1.5 w-12 bg-emerald-500 rounded-full" />
-                <div className="text-xs font-semibold text-emerald-700">Delivery Pipeline</div>
-            </div>
-        )
     },
     {
         icon: <Rocket className="w-8 h-8 text-purple-500" />,
@@ -83,9 +75,15 @@ export function WhyAmaancSection() {
     return (
         <section className="py-20 bg-background relative overflow-hidden">
             {/* Background Decorators */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/3 rounded-full blur-[120px] -z-10" />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <div className="sticky top-0 h-screen">
+                    <div className="absolute top-0 right-0 w-200 h-200 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 animate-pulse" />
+                    <div className="absolute bottom-0 left-0 w-150 h-150 bg-accent/30 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+                    {/* <div className="absolute inset-0 bg-linear-to-tr from-primary/30 to-accent/40 rounded-full blur-[80px] -z-10" /> */}
+                </div>
+            </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <Badge variant="outline" className="mb-4 p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary backdrop-blur-sm">
@@ -122,6 +120,9 @@ export function WhyAmaancSection() {
                                     <h3 className="text-xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
                                         {feature.title}
                                     </h3>
+
+                                    {/* Render Custom Visual if present */}
+                                    {feature.visual}
                                 </div>
 
                                 {/* Content */}
@@ -130,14 +131,10 @@ export function WhyAmaancSection() {
                                         {feature.subtitle}
                                     </Badge>
 
-
-
                                     <p className="text-muted-foreground text-[15px] leading-relaxed max-w-xl">
                                         {feature.description}
                                     </p>
 
-                                    {/* Render Custom Visual if present */}
-                                    {feature.visual}
                                 </div>
                             </div>
 

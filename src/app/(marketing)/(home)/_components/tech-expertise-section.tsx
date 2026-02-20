@@ -11,7 +11,7 @@ const techCategories = [
         title: "Strategic Salesforce & AI",
         icon: <Cloud className="w-6 h-6 text-primary" />,
         description: "Intelligence-Driven CRM",
-        items: ["Data Cloud", "Agentforce", "Einstein AI", "Sales & Service Clouds", "Revenue Cloud (CPQ)", "Tableau", "Industry Clouds"]
+        items: ["Data Cloud", "Agentforce", "Einstein AI", "OpenAI", "Anthropic", "Gemini", "Sales & Service Clouds", "Revenue Cloud (CPQ)", "Tableau", "Industry Clouds"]
     },
     {
         title: "Seamless Ecosystem Connectivity",
@@ -23,7 +23,7 @@ const techCategories = [
         title: "Enterprise Backend Solutions",
         icon: <Server className="w-6 h-6 text-emerald-500" />,
         description: "Resilient Infrastructure",
-        items: [".NET Core", "SAP S/4HANA", "Azure", "C#", "Microsoft SQL Server", "Microservices", "Legacy Modernization"]
+        items: [".NET Core", "SAP S/4HANA", "Azure", "C#", "Microsoft SQL Server", "Microservices", "Legacy Modernization", "AWS"]
     },
     {
         title: "Lifecycle Operations",

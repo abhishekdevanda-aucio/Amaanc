@@ -20,7 +20,7 @@ const caseStudies = [
     industry: "Public Health Emergency Response",
     description: "Architecting a high-capacity automation framework to manage the surge of public enquiries. By implementing AI-driven triage, we stabilized mission-critical communications and ensured high-priority cases were addressed with architectural precision.",
     results: ["85% Faster Resolution", ">50% Fewer Escalations"],
-    image: "/images/home/case-study-healthcare-system-integration.webp",
+    image: "/images/home/case-study-crisis-scale-response.png",
     href: "/case-studies/public-health-emergency",
   },
   {
@@ -29,7 +29,7 @@ const caseStudies = [
     industry: "Energy & Utilities",
     description: "Harnessing real-time Data Cloud analytics to optimize smart meter maintenance and strengthen infrastructure resilience.",
     results: ["25% Improved Stability", "Better Reporting"],
-    image: "/images/home/case-study-manufacturing-ai-implementation.webp",
+    image: "/images/home/case-study-predictive-grid-intelligence.png",
     href: "/case-studies/utilities-grid",
   },
 ]

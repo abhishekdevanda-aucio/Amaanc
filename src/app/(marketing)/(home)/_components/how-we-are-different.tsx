@@ -156,9 +156,15 @@ export function HowWeAreDifferentSection() {
                         </div>
 
                         <div className="pt-4">
-                            <Link href="/contact" className="inline-flex items-center gap-2 text-white font-semibold border-b border-white/30 pb-0.5 hover:border-white transition-all group">
-                                Initiate Your Strategic Transformation
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <Link href="/contact" className="inline-flex">
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="group border-white/30 bg-white/5 text-white hover:bg-white hover:text-primary transition-all"
+                                >
+                                    Initiate Your Strategic Transformation
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </Button>
                             </Link>
                         </div>
                     </div>

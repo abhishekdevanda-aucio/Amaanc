@@ -68,24 +68,25 @@ export function HowWeWorkSection() {
                         {/* Desktop Process Insight Card */}
                         <div className="hidden lg:block mt-12 relative group">
                             {/* Gradient Border/Glow Effect - Enhanced Blue Glow */}
-                            <div className="absolute -inset-1 bg-linear-to-r from-blue-500/30 to-cyan-500/30 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition duration-500" />
+                            <div className="absolute -inset-1 bg-linear-to-r from-blue-500/30 to-cyan-500/30 rounded-2xl blur-xl opacity-60 group-hover:opacity-90 transition duration-500" />
 
-                            <div className="relative rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 p-6 overflow-hidden shadow-lg">
+                            <div className="relative rounded-2xl bg-card/40 backdrop-blur-xl border border-white/10 p-6 overflow-hidden shadow-lg transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:shadow-blue-500/20">
                                 <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                 <div className="relative z-10">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/10 shrink-0 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)]">
+                                        <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/10 shrink-0 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_0_22px_-2px_rgba(59,130,246,0.45)]">
                                             <Trophy className="h-6 w-6 text-primary" />
                                         </div>
 
-                                        <h3 className="text-xl font-bold leading-tight">
+                                        <h3 className="text-xl font-bold leading-tight transition-colors duration-300 group-hover:text-primary">
                                             Architectural Excellence
                                         </h3>
                                     </div>
 
                                     <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                                        Our refined delivery framework is built upon <span className="text-primary font-semibold drop-shadow-[0_0_8px_rgba(59,130,246,0.3)]">13+ years</span> of technical leadership, designed to mitigate enterprise risk and accelerate your digital evolution.
+                                        Our refined delivery framework is built upon<span className="inline-flex items-center rounded-md border border-transparent bg-transparent px-2 py-0.5 text-primary font-bold tracking-wide shadow-none transition-all duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/15 group-hover:shadow-[0_0_18px_-2px_rgba(59,130,246,0.65)]">15+ Years</span>of technical leadership, designed to mitigate enterprise risk and accelerate your digital evolution.
                                     </p>
 
                                     <Link href="/case-studies" className="inline-flex items-center text-sm font-semibold text-primary hover:text-accent transition-colors group/link">
