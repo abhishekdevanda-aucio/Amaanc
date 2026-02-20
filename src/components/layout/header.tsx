@@ -125,7 +125,7 @@ export function Header({ navData }: HeaderProps) {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Link href="/contact-us">
-              <Button className={'bg-(--main-charcoal)'}>Contact Us</Button>
+              <Button className="bg-(--main-charcoal) hover:bg-zinc-700 transition-colors">Contact Us</Button>
             </Link>
           </div>
 
@@ -154,7 +154,7 @@ export function Header({ navData }: HeaderProps) {
 
               <div className="p-6 border-t border-border/10">
                 <Link href="/contact-us" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="bg-(--main-charcoal) w-full text-base font-semibold py-6 shadow-lg" size="lg">
+                  <Button className="bg-(--main-charcoal) hover:bg-zinc-700 transition-colors w-full text-base font-semibold py-6 shadow-lg" size="lg">
                     Contact Us
                   </Button>
                 </Link>

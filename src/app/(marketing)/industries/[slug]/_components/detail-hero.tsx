@@ -69,7 +69,7 @@ export function DetailHero({ industry }: DetailHeroProps) {
                             <Link href="/contact" className="inline-flex">
                                 <Button
                                     size="lg"
-                                    className="bg-(--main-charcoal) h-12 px-8 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105 inline-flex items-center gap-2"
+                                    className="bg-(--main-charcoal) hover:bg-zinc-700 h-12 px-8 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105 inline-flex items-center gap-2"
                                 >
                                     Consult an Expert
                                     <ArrowRight className="h-5 w-5" />
