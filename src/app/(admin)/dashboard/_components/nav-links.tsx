@@ -7,7 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { BookOpenText, Factory, Image, LayoutDashboard, Settings, Users } from "lucide-react"
+import { BookOpenText, Factory, Image, LayoutDashboard, MessageSquareQuote, Settings, Users } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -44,6 +44,11 @@ const navGroups = [
         title: "Case Studies",
         url: "/dashboard/case-studies",
         icon: BookOpenText,
+      },
+      {
+        title: "Testimonials",
+        url: "/dashboard/testimonials",
+        icon: MessageSquareQuote,
       },
     ],
   },
