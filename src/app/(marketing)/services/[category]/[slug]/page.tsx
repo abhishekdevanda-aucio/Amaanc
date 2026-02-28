@@ -6,10 +6,12 @@ import {
     getServicesByCategory
 } from "@/data/services";
 import { ServiceHero } from "./_components/service-hero";
-import { ServiceOverview } from "./_components/service-overview";
-import { ProblemsSolutions } from "./_components/problems-solutions";
-import { RelatedServices } from "./_components/related-services";
-import { ServiceCTA } from "./_components/service-cta";
+import { ServiceChallenges } from "./_components/service-challenges";
+import { ServiceExpertise } from "./_components/service-expertise";
+import { ServiceEcosystem } from "./_components/service-ecosystem";
+import { ServiceMetrics } from "./_components/service-metrics";
+import { WhyAmaanc } from "./_components/why-amaanc";
+import { ServiceFAQ } from "./_components/service-faq";
 
 interface PageProps {
     params: Promise<{
@@ -68,10 +70,12 @@ export default async function ServicePage({ params }: PageProps) {
     return (
         <>
             <ServiceHero service={service} />
-            <ServiceOverview service={service} />
-            <ProblemsSolutions service={service} />
-            <RelatedServices services={relatedServices} categorySlug={category} />
-            <ServiceCTA service={service} />
+            <ServiceChallenges service={service} />
+            <ServiceExpertise service={service} />
+            <ServiceEcosystem service={service} />
+            <ServiceMetrics service={service} />
+            <WhyAmaanc service={service} />
+            <ServiceFAQ service={service} />
         </>
     );
 }

@@ -32,6 +32,9 @@ export interface Service {
     isFeatured: boolean
     isPublished: boolean
     displayOrder: number
+    metrics?: { label: string; value: string }[]
+    whyAmaanc?: { title: string; points: string[]; clientQuote: { text: string; author: string } }
+    faqs?: { question: string; answer: string }[]
 }
 
 // =====================================================
@@ -131,6 +134,9 @@ export async function getServices(): Promise<Service[]> {
         isFeatured: service.is_featured || false,
         isPublished: service.is_published || false,
         displayOrder: service.display_order || 0,
+        metrics: service.metrics || [],
+        whyAmaanc: service.why_amaanc || null,
+        faqs: service.faqs || [],
     }))
 }
 
@@ -171,6 +177,9 @@ export async function getFeaturedServices(): Promise<Service[]> {
         isFeatured: service.is_featured || false,
         isPublished: service.is_published || false,
         displayOrder: service.display_order || 0,
+        metrics: service.metrics || [],
+        whyAmaanc: service.why_amaanc || null,
+        faqs: service.faqs || [],
     }))
 }
 
@@ -219,6 +228,9 @@ export async function getServicesByCategory(categorySlug: string): Promise<Servi
         isFeatured: service.is_featured || false,
         isPublished: service.is_published || false,
         displayOrder: service.display_order || 0,
+        metrics: service.metrics || [],
+        whyAmaanc: service.why_amaanc || null,
+        faqs: service.faqs || [],
     }))
 }
 
@@ -259,6 +271,9 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
         isFeatured: data.is_featured || false,
         isPublished: data.is_published || false,
         displayOrder: data.display_order || 0,
+        metrics: data.metrics || [],
+        whyAmaanc: data.why_amaanc || null,
+        faqs: data.faqs || [],
     }
 }
 
