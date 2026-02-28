@@ -49,24 +49,20 @@ export function CategoryHero({ category, serviceCount }: CategoryHeroProps) {
                             </BreadcrumbList>
                         </Breadcrumb>
 
-                        <div className="flex items-center gap-3 text-sm font-medium text-primary uppercase tracking-widest">
-                            <span className="w-12 h-0.5 bg-linear-to-r from-primary to-transparent"></span>
-                            Service Category
-                        </div>
-
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-blue-600 to-accent animate-gradient bg-300%">
                                 {category.name}
-                            </span>
+                            </span>{" "}
+                            Consulting Services
                         </h1>
 
-                        <Badge variant="outline" className="w-fit p-4 text-sm font-medium border-primary/20 bg-primary/5 text-primary">
-                            {serviceCount} {serviceCount === 1 ? "Service" : "Services"} Available
-                        </Badge>
-
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed border-l-4 border-primary/20 pl-6">
-                            {category.description}
+                        <p className="text-xl md:text-2xl font-medium text-foreground max-w-2xl leading-relaxed">
+                            Strategic technology capabilities designed to drive scalable enterprise transformation.
                         </p>
+
+                        <div className="flex items-center gap-3 text-sm font-medium text-muted-foreground">
+                            <span className="px-2">15+ Years of Consulting Excellence</span>
+                        </div>
 
                         <div className="flex flex-wrap gap-4 pt-2">
                             <Link href="/contact">
@@ -74,7 +70,7 @@ export function CategoryHero({ category, serviceCount }: CategoryHeroProps) {
                                     size="lg"
                                     className="h-12 px-8 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105 inline-flex items-center gap-2"
                                 >
-                                    Consult an Expert
+                                    Speak With Our Experts
                                     <ArrowRight className="h-5 w-5" />
                                 </Button>
                             </Link>

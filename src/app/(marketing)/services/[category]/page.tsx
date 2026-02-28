@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { getServiceCategories, getCategoryBySlug, getServicesByCategory } from "@/data/services";
 import { CategoryHero } from "./_components/category-hero";
+import { CategoryOverview } from "./_components/category-overview";
 import { ServicesGrid } from "./_components/services-grid";
-import { CategoryCTA } from "./_components/category-cta";
-import { MoreCategories } from "./_components/more-categories";
+import { CategoryImpact } from "./_components/category-impact";
+import { IntegratedApproach } from "./_components/integrated-approach";
 
 interface PageProps {
     params: Promise<{
@@ -49,9 +50,10 @@ export default async function CategoryPage({ params }: PageProps) {
     return (
         <>
             <CategoryHero category={categoryData} serviceCount={services.length} />
+            <CategoryOverview category={categoryData} />
             <ServicesGrid services={services} categorySlug={category} />
-            <MoreCategories categories={allCategories} currentCategorySlug={category} />
-            <CategoryCTA category={categoryData} />
+            <CategoryImpact />
+            <IntegratedApproach />
         </>
     );
 }
