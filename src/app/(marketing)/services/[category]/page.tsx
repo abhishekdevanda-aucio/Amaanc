@@ -52,7 +52,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <CategoryHero category={categoryData} serviceCount={services.length} />
             <CategoryOverview category={categoryData} />
             <ServicesGrid services={services} categorySlug={category} />
-            <CategoryImpact />
+            <CategoryImpact category={categoryData} />
             <IntegratedApproach />
         </>
     );
